@@ -1,0 +1,146 @@
+# ====================================
+# macOS
+# ====================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# ====================================
+# Xcode
+# ====================================
+
+## User settings
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+## Build generated
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Various settings
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Obj-C/Swift specific
+*.hmap
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# ====================================
+# Swift Package Manager
+# ====================================
+.build/
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+
+# Uncomment dòng dưới nếu muốn commit Package.resolved (khuyến nghị cho app)
+# !Package.resolved
+
+# ====================================
+# CocoaPods (nếu dùng)
+# ====================================
+Pods/
+*.xcworkspace
+!default.xcworkspace
+
+# ====================================
+# Carthage (nếu dùng)
+# ====================================
+Carthage/Build/
+Carthage/Checkouts
+
+# ====================================
+# Secrets & API Keys
+# ====================================
+Resources/Secrets.xcconfig
+**/Secrets.xcconfig
+*.xcconfig.local
+.env
+.env.local
+secrets.json
+GoogleService-Info.plist
+
+# ====================================
+# Fastlane
+# ====================================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ====================================
+# Code Injection
+# ====================================
+iOSInjectionProject/
+
+# ====================================
+# IDE - VSCode (nếu dùng)
+# ====================================
+.vscode/
+*.code-workspace
+
+# ====================================
+# IDE - JetBrains AppCode
+# ====================================
+.idea/
+*.iml
+
+# ====================================
+# Realm
+# ====================================
+*.realm
+*.realm.lock
+*.realm.management/
+*.realm.note
+
+# ====================================
+# Logs & Temp
+# ====================================
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# ====================================
+# Tests
+# ====================================
+test_output/
+fastlane/test_output/
+
+# ====================================
+# Documentation generators
+# ====================================
+docs/
+.jazzy.yaml.local
+
+# ====================================
+# Custom
+# ====================================
+TODO.private.md
+NOTES.private.md
