@@ -13,11 +13,24 @@
 		5E61145B2FB210C200A15D10 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E61145A2FB210C200A15D10 /* RealmSwift */; };
 		5E61145D2FB211F100A15D10 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5E61145C2FB211F100A15D10 /* Debug.xcconfig */; };
 		5E61145F2FB2126A00A15D10 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5E61145E2FB2126A00A15D10 /* Release.xcconfig */; };
-		5E6114612FB2129D00A15D10 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5E6114602FB2129D00A15D10 /* Secrets.xcconfig */; };
 		5E6114642FB2150000A15D10 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114632FB214FF00A15D10 /* AppEnvironment.swift */; };
 		5E6114662FB215E400A15D10 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114652FB215DD00A15D10 /* Configuration.swift */; };
 		5E61146B2FB22C7B00A15D10 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114672FB21A5A00A15D10 /* Logger.swift */; };
 		5E61146C2FB22CB000A15D10 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114682FB21C2C00A15D10 /* KeychainManager.swift */; };
+		5E6114702FB2CFB400A15D10 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5E61146F2FB2CFB400A15D10 /* Secrets.xcconfig */; };
+		5E6114722FB2D3FD00A15D10 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114712FB2D3F900A15D10 /* Colors.swift */; };
+		5E6114752FB2DA6F00A15D10 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114742FB2DA6700A15D10 /* Typography.swift */; };
+		5E6114782FB2E0E000A15D10 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114772FB2E0DA00A15D10 /* Spacing.swift */; };
+		5E61147A2FB2E2F800A15D10 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114792FB2E2EF00A15D10 /* CardStyle.swift */; };
+		5E61147C2FB2E47B00A15D10 /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61147B2FB2E47300A15D10 /* ShimmerEffect.swift */; };
+		5E61147E2FB2E62F00A15D10 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61147D2FB2E62600A15D10 /* PrimaryButton.swift */; };
+		5E6114802FB2E96500A15D10 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61147F2FB2E95D00A15D10 /* SecondaryButton.swift */; };
+		5E6114822FB2FAE500A15D10 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114812FB2FAE000A15D10 /* LoadingView.swift */; };
+		5E6114842FB2FE7500A15D10 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114832FB2FE6700A15D10 /* SkeletonView.swift */; };
+		5E6114862FB302D600A15D10 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114852FB302CF00A15D10 /* ErrorView.swift */; };
+		5E6114882FB3055500A15D10 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114872FB3054700A15D10 /* EmptyStateView.swift */; };
+		5E61148A2FB307BC00A15D10 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114892FB307B800A15D10 /* RatingView.swift */; };
+		5E61148C2FB30C4D00A15D10 /* DesignSystemCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61148B2FB30C4200A15D10 /* DesignSystemCatalog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +40,26 @@
 		5E6114582FB20FB600A15D10 /* CineTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E61145C2FB211F100A15D10 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		5E61145E2FB2126A00A15D10 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		5E6114602FB2129D00A15D10 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		5E6114622FB213ED00A15D10 /* CineTracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CineTracker-Info.plist"; sourceTree = "<group>"; };
 		5E6114632FB214FF00A15D10 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		5E6114652FB215DD00A15D10 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5E6114672FB21A5A00A15D10 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5E6114682FB21C2C00A15D10 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		5E6114692FB221C200A15D10 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .swiftlint.yml; sourceTree = "<group>"; };
+		5E61146F2FB2CFB400A15D10 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		5E6114712FB2D3F900A15D10 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5E6114742FB2DA6700A15D10 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		5E6114772FB2E0DA00A15D10 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		5E6114792FB2E2EF00A15D10 /* CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
+		5E61147B2FB2E47300A15D10 /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
+		5E61147D2FB2E62600A15D10 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		5E61147F2FB2E95D00A15D10 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		5E6114812FB2FAE000A15D10 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5E6114832FB2FE6700A15D10 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		5E6114852FB302CF00A15D10 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		5E6114872FB3054700A15D10 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		5E6114892FB307B800A15D10 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		5E61148B2FB30C4200A15D10 /* DesignSystemCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemCatalog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +135,7 @@
 				5E6114262FB20A0600A15D10 /* Assets.xcassets */,
 				5E61145C2FB211F100A15D10 /* Debug.xcconfig */,
 				5E61145E2FB2126A00A15D10 /* Release.xcconfig */,
-				5E6114602FB2129D00A15D10 /* Secrets.xcconfig */,
+				5E61146F2FB2CFB400A15D10 /* Secrets.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -157,7 +183,11 @@
 		5E61143D2FB20E2100A15D10 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				5E6114402FB20E3D00A15D10 /* New Group */,
+				5E61148B2FB30C4200A15D10 /* DesignSystemCatalog.swift */,
+				5E6114772FB2E0DA00A15D10 /* Spacing.swift */,
+				5E6114762FB2DAA900A15D10 /* Modifiers */,
+				5E6114742FB2DA6700A15D10 /* Typography.swift */,
+				5E6114712FB2D3F900A15D10 /* Colors.swift */,
 				5E61143F2FB20E3300A15D10 /* Components */,
 			);
 			path = DesignSystem;
@@ -166,15 +196,15 @@
 		5E61143F2FB20E3300A15D10 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5E6114892FB307B800A15D10 /* RatingView.swift */,
+				5E6114872FB3054700A15D10 /* EmptyStateView.swift */,
+				5E6114852FB302CF00A15D10 /* ErrorView.swift */,
+				5E6114832FB2FE6700A15D10 /* SkeletonView.swift */,
+				5E6114812FB2FAE000A15D10 /* LoadingView.swift */,
+				5E61147F2FB2E95D00A15D10 /* SecondaryButton.swift */,
+				5E61147D2FB2E62600A15D10 /* PrimaryButton.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		5E6114402FB20E3D00A15D10 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		5E6114412FB20E5600A15D10 /* Navigation */ = {
@@ -355,6 +385,15 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		5E6114762FB2DAA900A15D10 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				5E61147B2FB2E47300A15D10 /* ShimmerEffect.swift */,
+				5E6114792FB2E2EF00A15D10 /* CardStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,7 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6114612FB2129D00A15D10 /* Secrets.xcconfig in Resources */,
+				5E6114702FB2CFB400A15D10 /* Secrets.xcconfig in Resources */,
 				5E61145D2FB211F100A15D10 /* Debug.xcconfig in Resources */,
 				5E6114272FB20A0600A15D10 /* Assets.xcassets in Resources */,
 				5E61145F2FB2126A00A15D10 /* Release.xcconfig in Resources */,
@@ -459,10 +498,23 @@
 			files = (
 				5E61146B2FB22C7B00A15D10 /* Logger.swift in Sources */,
 				5E61146C2FB22CB000A15D10 /* KeychainManager.swift in Sources */,
+				5E6114782FB2E0E000A15D10 /* Spacing.swift in Sources */,
+				5E61148A2FB307BC00A15D10 /* RatingView.swift in Sources */,
+				5E61147C2FB2E47B00A15D10 /* ShimmerEffect.swift in Sources */,
+				5E6114752FB2DA6F00A15D10 /* Typography.swift in Sources */,
+				5E6114882FB3055500A15D10 /* EmptyStateView.swift in Sources */,
+				5E6114822FB2FAE500A15D10 /* LoadingView.swift in Sources */,
 				5E6114252FB20A0400A15D10 /* ContentView.swift in Sources */,
+				5E6114802FB2E96500A15D10 /* SecondaryButton.swift in Sources */,
+				5E61147E2FB2E62F00A15D10 /* PrimaryButton.swift in Sources */,
+				5E6114722FB2D3FD00A15D10 /* Colors.swift in Sources */,
 				5E6114232FB20A0400A15D10 /* CineTrackerApp.swift in Sources */,
+				5E61148C2FB30C4D00A15D10 /* DesignSystemCatalog.swift in Sources */,
+				5E6114842FB2FE7500A15D10 /* SkeletonView.swift in Sources */,
+				5E61147A2FB2E2F800A15D10 /* CardStyle.swift in Sources */,
 				5E6114662FB215E400A15D10 /* Configuration.swift in Sources */,
 				5E6114642FB2150000A15D10 /* AppEnvironment.swift in Sources */,
+				5E6114862FB302D600A15D10 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

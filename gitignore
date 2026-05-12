@@ -77,8 +77,9 @@ Carthage/Checkouts
 # ====================================
 # Secrets & API Keys
 # ====================================
-Resources/Secrets.xcconfig
+**/Resources/Secrets.xcconfig
 **/Secrets.xcconfig
+Secrets.xcconfig
 *.xcconfig.local
 .env
 .env.local
