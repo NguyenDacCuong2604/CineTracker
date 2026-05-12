@@ -1,21 +1,14 @@
-//
-//  .swiftlint.yml
-//  CineTracker
-//
-//  Created by MAC VN on 11/5/26.
-//
-
-included:
-  - CineTracker
-  - CineTrackerTests
-  - CineTrackerUITests
+#included:
+#  - CineTracker
+#  - CineTrackerTests
+#  - CineTrackerUITests
 
 excluded:
   - Carthage
   - Pods
   - DerivedData
   - .build
-  - ${PWD}/CineTracker/Resources
+  - CineTracker/Resources
 
 opt_in_rules:
   - empty_count
@@ -24,14 +17,15 @@ opt_in_rules:
   - overridden_super_call
   - redundant_nil_coalescing
   - sorted_imports
-  - unused_import
   - vertical_whitespace_closing_braces
   - vertical_whitespace_opening_braces
+
+analyzer_rules:
+  - unused_import
 
 disabled_rules:
   - trailing_whitespace
   - todo
-  - line_length
 
 line_length:
   warning: 150
@@ -52,12 +46,11 @@ file_length:
   error: 1000
 
 identifier_name:
-  min_length: 2  # cho phép "id", "ok"
+  min_length: 2
   excluded:
     - id
     - ok
     - to
     - vc
 
-# Reporter
 reporter: "xcode"
