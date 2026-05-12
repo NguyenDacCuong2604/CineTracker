@@ -1,0 +1,16 @@
+// Debug.xcconfig
+// Cấu hình cho Debug build
+
+#include "Secrets.xcconfig"
+
+// Environment indicator
+APP_ENVIRONMENT = debug
+
+// Logging
+ENABLE_VERBOSE_LOGGING = YES
+
+// Bundle Identifier suffix (để cài cả 2 version dev + prod trên 1 máy)
+PRODUCT_BUNDLE_IDENTIFIER = $(inherited).debug
+
+// Display name khác để phân biệt
+DISPLAY_NAME = CineTracker Dev

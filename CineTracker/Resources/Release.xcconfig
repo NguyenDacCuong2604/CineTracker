@@ -1,0 +1,16 @@
+// Release.xcconfig
+// Cấu hình cho Release build
+
+#include "Secrets.xcconfig"
+
+// Environment indicator
+APP_ENVIRONMENT = production
+
+// Logging
+ENABLE_VERBOSE_LOGGING = NO
+
+// Bundle Identifier giữ nguyên (production)
+// PRODUCT_BUNDLE_IDENTIFIER kế thừa từ project
+
+// Display name
+DISPLAY_NAME = CineTracker
