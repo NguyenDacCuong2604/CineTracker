@@ -30,17 +30,3 @@ struct SavedMovie: Identifiable, Hashable {
     }
 }
 
-extension SavedMovieObject {
-    func toSavedMovie() -> SavedMovie {
-        SavedMovie(
-            id: id,
-            movie: toDomain(),
-            status: SavedMovie.Status(rawValue: statusRaw) ?? .wantToWatch,
-            userRating: userRating,
-            userReview: userReview,
-            watchedDate: watchedDate,
-            addedDate: addedDate,
-            isFavorite: isFavorite
-        )
-    }
-}

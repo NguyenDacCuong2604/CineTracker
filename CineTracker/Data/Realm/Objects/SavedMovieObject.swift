@@ -35,32 +35,3 @@ final class SavedMovieObject: Object, ObjectKeyIdentifiable {
         case watched = 1
     }
 }
-
-extension SavedMovieObject {
-    convenience init(from movie: Movie) {
-        self.init()
-        id = movie.id
-        title = movie.title
-        overview = movie.overview
-        posterURLString = movie.posterURL?.absoluteString
-        backdropURLString = movie.backdropURL?.absoluteString
-        releaseDate = movie.releaseDate
-        rating = movie.rating
-        voteCount = movie.voteCount
-        addedDate = Date()
-    }
-
-    func toDomain() -> Movie {
-        Movie(
-            id: id,
-            title: title,
-            overview: overview,
-            posterURL: URL(string: posterURLString ?? ""),
-            backdropURL: URL(string: backdropURLString ?? ""),
-            releaseDate: releaseDate,
-            rating: rating,
-            voteCount: voteCount,
-            genreIDs: []
-        )
-    }
-}

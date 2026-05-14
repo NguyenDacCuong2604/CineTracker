@@ -58,6 +58,14 @@
 		5E6114BF2FB46A1C00A15D10 /* WatchlistRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114BE2FB46A1000A15D10 /* WatchlistRepositoryImpl.swift */; };
 		5E6114C12FB4789300A15D10 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114C02FB4788D00A15D10 /* ImageCache.swift */; };
 		5E6114C32FB484C800A15D10 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114C22FB484BE00A15D10 /* CachedAsyncImage.swift */; };
+		5E6114CE2FB5A90600A15D10 /* SavedMovieRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114CD2FB5A8FC00A15D10 /* SavedMovieRealmMapper.swift */; };
+		5E6114D02FB5ABC400A15D10 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114CF2FB5ABBC00A15D10 /* UseCase.swift */; };
+		5E6114D22FB5ACB700A15D10 /* FetchPopularMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114D12FB5ACA900A15D10 /* FetchPopularMovieUseCase.swift */; };
+		5E6114D42FB5ADD300A15D10 /* SearchMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114D32FB5ADC900A15D10 /* SearchMoviesUseCase.swift */; };
+		5E6114D62FB5AFEA00A15D10 /* AddToWatchlistUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114D52FB5AFD800A15D10 /* AddToWatchlistUseCase.swift */; };
+		5E6114D82FB5B08E00A15D10 /* RemoveFromWatchlistUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114D72FB5B08100A15D10 /* RemoveFromWatchlistUseCase.swift */; };
+		5E6114DA2FB5B10500A15D10 /* MarkAsWatchedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114D92FB5B0FA00A15D10 /* MarkAsWatchedUseCase.swift */; };
+		5E6114DC2FB5B48B00A15D10 /* GetWatchlistUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114DB2FB5B48100A15D10 /* GetWatchlistUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +122,14 @@
 		5E6114BE2FB46A1000A15D10 /* WatchlistRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistRepositoryImpl.swift; sourceTree = "<group>"; };
 		5E6114C02FB4788D00A15D10 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5E6114C22FB484BE00A15D10 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		5E6114CD2FB5A8FC00A15D10 /* SavedMovieRealmMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMovieRealmMapper.swift; sourceTree = "<group>"; };
+		5E6114CF2FB5ABBC00A15D10 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		5E6114D12FB5ACA900A15D10 /* FetchPopularMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopularMovieUseCase.swift; sourceTree = "<group>"; };
+		5E6114D32FB5ADC900A15D10 /* SearchMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesUseCase.swift; sourceTree = "<group>"; };
+		5E6114D52FB5AFD800A15D10 /* AddToWatchlistUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWatchlistUseCase.swift; sourceTree = "<group>"; };
+		5E6114D72FB5B08100A15D10 /* RemoveFromWatchlistUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFromWatchlistUseCase.swift; sourceTree = "<group>"; };
+		5E6114D92FB5B0FA00A15D10 /* MarkAsWatchedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsWatchedUseCase.swift; sourceTree = "<group>"; };
+		5E6114DB2FB5B48100A15D10 /* GetWatchlistUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWatchlistUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +194,6 @@
 				5E6114412FB20E5600A15D10 /* Navigation */,
 				5E61143D2FB20E2100A15D10 /* DesignSystem */,
 				5E6114362FB20D8700A15D10 /* Storage */,
-				5E6114352FB20D7300A15D10 /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -212,7 +227,6 @@
 		5E6114362FB20D8700A15D10 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				5E61146E2FB2C83200A15D10 /* Cache */,
 				5E61143C2FB20E1500A15D10 /* Preferences */,
 				5E61143B2FB20E0600A15D10 /* Keychain */,
 				5E6114372FB20D9000A15D10 /* Realm */,
@@ -295,49 +309,21 @@
 		5E6114452FB20E8000A15D10 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5E61144E2FB20F0100A15D10 /* Services */,
+				5E6114CA2FB5A6FD00A15D10 /* DTOs */,
 				5E61144B2FB20EB700A15D10 /* Repositories */,
-				5E6114462FB20E8A00A15D10 /* Models */,
+				5E6114492FB20EA400A15D10 /* Realm */,
+				5E61144A2FB20EAD00A15D10 /* Mappers */,
+				5E6114352FB20D7300A15D10 /* Network */,
+				5E61146E2FB2C83200A15D10 /* Cache */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		5E6114462FB20E8A00A15D10 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5E61144A2FB20EAD00A15D10 /* Mappers */,
-				5E6114492FB20EA400A15D10 /* Realm */,
-				5E6114482FB20E9B00A15D10 /* Domain */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		5E6114472FB20E9200A15D10 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				5E6114AA2FB4256E00A15D10 /* CastDTO.swift */,
-				5E6114A82FB423D000A15D10 /* MovieDetailDTO.swift */,
-				5E61149B2FB3316D00A15D10 /* MovieDTO.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		5E6114482FB20E9B00A15D10 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				5E6114BC2FB467D400A15D10 /* SavedMovie.swift */,
-				5E6114A62FB4234100A15D10 /* Cast.swift */,
-				5E6114A42FB4219800A15D10 /* MovieDetail.swift */,
-				5E6114A22FB4201E00A15D10 /* Movie.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		5E6114492FB20EA400A15D10 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				5E6114B82FB4638700A15D10 /* RealmManager.swift */,
-				5E6114B62FB45CD400A15D10 /* SavedMovieObject.swift */,
+				5E6114CC2FB5A73C00A15D10 /* Mappers */,
+				5E6114CB2FB5A72500A15D10 /* Objects */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -353,40 +339,17 @@
 		5E61144B2FB20EB700A15D10 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				5E61144D2FB20ECA00A15D10 /* Implementations */,
-				5E61144C2FB20EC200A15D10 /* Protocols */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		5E61144C2FB20EC200A15D10 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5E6114BA2FB466C900A15D10 /* WatchlistRepository.swift */,
-				5E6114B22FB4376300A15D10 /* MovieRepository.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		5E61144D2FB20ECA00A15D10 /* Implementations */ = {
-			isa = PBXGroup;
-			children = (
 				5E6114BE2FB46A1000A15D10 /* WatchlistRepositoryImpl.swift */,
 				5E6114B42FB43AA400A15D10 /* MovieRepositoryImpl.swift */,
 			);
-			path = Implementations;
-			sourceTree = "<group>";
-		};
-		5E61144E2FB20F0100A15D10 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		5E61144F2FB20F0F00A15D10 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5E6114C92FB5A6B100A15D10 /* Repositories */,
+				5E6114C82FB5A66500A15D10 /* Entities */,
 				5E6114502FB20F1700A15D10 /* UseCases */,
 			);
 			path = Domain;
@@ -395,6 +358,13 @@
 		5E6114502FB20F1700A15D10 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				5E6114DB2FB5B48100A15D10 /* GetWatchlistUseCase.swift */,
+				5E6114D92FB5B0FA00A15D10 /* MarkAsWatchedUseCase.swift */,
+				5E6114D72FB5B08100A15D10 /* RemoveFromWatchlistUseCase.swift */,
+				5E6114D52FB5AFD800A15D10 /* AddToWatchlistUseCase.swift */,
+				5E6114D32FB5ADC900A15D10 /* SearchMoviesUseCase.swift */,
+				5E6114D12FB5ACA900A15D10 /* FetchPopularMovieUseCase.swift */,
+				5E6114CF2FB5ABBC00A15D10 /* UseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -423,7 +393,6 @@
 		5E6114532FB20F3200A15D10 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				5E6114472FB20E9200A15D10 /* DTO */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -473,6 +442,53 @@
 				5E6114792FB2E2EF00A15D10 /* CardStyle.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		5E6114C82FB5A66500A15D10 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5E6114BC2FB467D400A15D10 /* SavedMovie.swift */,
+				5E6114A62FB4234100A15D10 /* Cast.swift */,
+				5E6114A42FB4219800A15D10 /* MovieDetail.swift */,
+				5E6114A22FB4201E00A15D10 /* Movie.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5E6114C92FB5A6B100A15D10 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5E6114BA2FB466C900A15D10 /* WatchlistRepository.swift */,
+				5E6114B22FB4376300A15D10 /* MovieRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5E6114CA2FB5A6FD00A15D10 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				5E6114AA2FB4256E00A15D10 /* CastDTO.swift */,
+				5E6114A82FB423D000A15D10 /* MovieDetailDTO.swift */,
+				5E61149B2FB3316D00A15D10 /* MovieDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		5E6114CB2FB5A72500A15D10 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5E6114B82FB4638700A15D10 /* RealmManager.swift */,
+				5E6114B62FB45CD400A15D10 /* SavedMovieObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		5E6114CC2FB5A73C00A15D10 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				5E6114CD2FB5A8FC00A15D10 /* SavedMovieRealmMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,6 +595,7 @@
 			files = (
 				5E6114AB2FB4257100A15D10 /* CastDTO.swift in Sources */,
 				5E61149E2FB334DA00A15D10 /* APIClientImpl.swift in Sources */,
+				5E6114D42FB5ADD300A15D10 /* SearchMoviesUseCase.swift in Sources */,
 				5E61146B2FB22C7B00A15D10 /* Logger.swift in Sources */,
 				5E6114B72FB45CDE00A15D10 /* SavedMovieObject.swift in Sources */,
 				5E61146C2FB22CB000A15D10 /* KeychainManager.swift in Sources */,
@@ -589,6 +606,7 @@
 				5E6114B32FB4376C00A15D10 /* MovieRepository.swift in Sources */,
 				5E61147C2FB2E47B00A15D10 /* ShimmerEffect.swift in Sources */,
 				5E6114AF2FB42D4100A15D10 /* MemoryCache.swift in Sources */,
+				5E6114D62FB5AFEA00A15D10 /* AddToWatchlistUseCase.swift in Sources */,
 				5E6114B12FB4302500A15D10 /* DiskCache.swift in Sources */,
 				5E6114752FB2DA6F00A15D10 /* Typography.swift in Sources */,
 				5E6114882FB3055500A15D10 /* EmptyStateView.swift in Sources */,
@@ -597,9 +615,11 @@
 				5E61148E2FB3167700A15D10 /* HTTPMethod.swift in Sources */,
 				5E6114252FB20A0400A15D10 /* ContentView.swift in Sources */,
 				5E6114802FB2E96500A15D10 /* SecondaryButton.swift in Sources */,
+				5E6114CE2FB5A90600A15D10 /* SavedMovieRealmMapper.swift in Sources */,
 				5E61147E2FB2E62F00A15D10 /* PrimaryButton.swift in Sources */,
 				5E6114A32FB4202100A15D10 /* Movie.swift in Sources */,
 				5E6114722FB2D3FD00A15D10 /* Colors.swift in Sources */,
+				5E6114DC2FB5B48B00A15D10 /* GetWatchlistUseCase.swift in Sources */,
 				5E6114AD2FB4260300A15D10 /* MovieMapper.swift in Sources */,
 				5E6114B52FB43B2100A15D10 /* MovieRepositoryImpl.swift in Sources */,
 				5E6114A72FB4234400A15D10 /* Cast.swift in Sources */,
@@ -609,11 +629,15 @@
 				5E6114C32FB484C800A15D10 /* CachedAsyncImage.swift in Sources */,
 				5E6114842FB2FE7500A15D10 /* SkeletonView.swift in Sources */,
 				5E6114C12FB4789300A15D10 /* ImageCache.swift in Sources */,
+				5E6114D02FB5ABC400A15D10 /* UseCase.swift in Sources */,
 				5E61147A2FB2E2F800A15D10 /* CardStyle.swift in Sources */,
 				5E6114662FB215E400A15D10 /* Configuration.swift in Sources */,
 				5E61149F2FB337D500A15D10 /* MovieDTO.swift in Sources */,
 				5E6114642FB2150000A15D10 /* AppEnvironment.swift in Sources */,
+				5E6114DA2FB5B10500A15D10 /* MarkAsWatchedUseCase.swift in Sources */,
 				5E6114862FB302D600A15D10 /* ErrorView.swift in Sources */,
+				5E6114D22FB5ACB700A15D10 /* FetchPopularMovieUseCase.swift in Sources */,
+				5E6114D82FB5B08E00A15D10 /* RemoveFromWatchlistUseCase.swift in Sources */,
 				5E6114922FB31A9400A15D10 /* Endpoint.swift in Sources */,
 				5E6114942FB320F400A15D10 /* APIClient.swift in Sources */,
 				5E6114BF2FB46A1C00A15D10 /* WatchlistRepositoryImpl.swift in Sources */,

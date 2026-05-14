@@ -41,14 +41,14 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
     private func publishCurrent() {
         let movies = realm.objects(SavedMovieObject.self)
             .sorted(byKeyPath: "addedDate", ascending: false)
-            .map { $0.toSavedMovie() }
+            .map { SavedMovierealmMapper.toDomain($0) }
         subject.send(Array(movies))
     }
 
     func add(_ movie: Movie) throws {
         if contains(id: movie.id) { return }
         try realm.write {
-            let object = SavedMovieObject(from: movie)
+            let object = SavedMovierealmMapper.toRealmObject(movie)
             realm.add(object)
         }
         AppLogger.database.info("Added movie to watchlist: \(movie.title)")
@@ -92,7 +92,7 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
         Array(
             realm.objects(SavedMovieObject.self)
                 .sorted(byKeyPath: "addedDate", ascending: false)
-                .map { $0.toSavedMovie() }
+                .map { SavedMovierealmMapper.toDomain($0) }
         )
     }
 
@@ -104,10 +104,10 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
             return Array(
                 base
                     .where { $0.statusRaw == status.rawValue }
-                    .map { $0.toSavedMovie() }
+                    .map { SavedMovierealmMapper.toDomain($0) }
             )
         }
-        return Array(base.map { $0.toSavedMovie() })
+        return Array(base.map { SavedMovierealmMapper.toDomain($0) })
     }
 
     func search(query: String) -> [SavedMovie] {
@@ -116,7 +116,7 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
             realm.objects(SavedMovieObject.self)
                 .where { $0.title.contains(query, options: .caseInsensitive) }
                 .sorted(byKeyPath: "addedDate", ascending: false)
-                .map { $0.toSavedMovie() }
+                .map { SavedMovierealmMapper.toDomain($0) }
         )
     }
 }
