@@ -14,24 +14,24 @@ struct RatingView: View {
     var starSize: CGFloat = 20
     var filledColor: Color = .appBrandSecondary
     var emptyColor: Color = .appTextTertiary
-    
+
     init(rating: Double, maxRating: Int = 5, starSize: CGFloat = 20) {
-        self._rating = .constant(rating)
+        _rating = .constant(rating)
         self.maxRating = maxRating
-        self.isInteractive = false
+        isInteractive = false
         self.starSize = starSize
     }
-    
+
     init(rating: Binding<Double>, maxRating: Int = 5, starSize: CGFloat = 32, isInteractive: Bool = true) {
-        self._rating = rating
+        _rating = rating
         self.maxRating = maxRating
         self.starSize = starSize
         self.isInteractive = isInteractive
     }
-    
+
     var body: some View {
         HStack(spacing: AppSpacing.xs) {
-            ForEach(1...maxRating, id: \.self) {
+            ForEach(1 ... maxRating, id: \.self) {
                 index in starImage(for: index)
                     .resizable()
                     .scaledToFit()
@@ -47,7 +47,7 @@ struct RatingView: View {
             }
         }
     }
-    
+
     private func starImage(for index: Int) -> Image {
         let position = Double(index)
         if rating >= position {
@@ -72,7 +72,7 @@ struct RatingView: View {
 #Preview("Interactive") {
     struct InteractivePreview: View {
         @State var rating: Double = 2.5
-        
+
         var body: some View {
             VStack(spacing: AppSpacing.lg) {
                 RatingView(rating: $rating)

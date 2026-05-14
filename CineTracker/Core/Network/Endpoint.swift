@@ -17,15 +17,14 @@ enum Endpoint {
     case movieCredits(id: Int)
     case movieVideos(id: Int)
     case similarMovies(id: Int, page: Int)
-    
-    // Search
+
+    /// Search
     case searchMovies(query: String, page: Int)
-    
-    // Genres
+
+    /// Genres
     case movieGenres
-    
-    
-    // Path of endpoint
+
+    /// Path of endpoint
     var path: String {
         switch self {
         case .popularMovies:
@@ -36,13 +35,13 @@ enum Endpoint {
             return "/movie/upcoming"
         case .nowPlayingMovies:
             return "/movie/now_playing"
-        case .movieDetail(let id):
+        case let .movieDetail(id):
             return "/movie/\(id)"
-        case .movieCredits(let id):
+        case let .movieCredits(id):
             return "/movie/\(id)/credits"
-        case .movieVideos(let id):
+        case let .movieVideos(id):
             return "/movie/\(id)/videos"
-        case .similarMovies(let id, _):
+        case let .similarMovies(id, _):
             return "/movie/\(id)/similar"
         case .searchMovies:
             return "/search/movie"
@@ -50,49 +49,49 @@ enum Endpoint {
             return "/genre/movie/list"
         }
     }
-    
-    var method: HTTPMethod{
+
+    var method: HTTPMethod {
         .get
     }
-    
+
     var queryItems: [URLQueryItem] {
         var items: [URLQueryItem] = [
-            URLQueryItem(name: "language", value: "en-US")
+            URLQueryItem(name: "language", value: "en-US"),
         ]
         switch self {
-        case .popularMovies(let page),
-                .topRatedMovies(let page),
-                .upcomingMovies(let page),
-                .nowPlayingMovies(let page):
+        case let .popularMovies(page),
+             let .topRatedMovies(page),
+             let .upcomingMovies(page),
+             let .nowPlayingMovies(page):
             items.append(URLQueryItem(name: "page", value: "\(page)"))
-        case .similarMovies(_, let page):
+        case let .similarMovies(_, page):
             items.append(URLQueryItem(name: "page", value: "\(page)"))
-        case .searchMovies(let query, let page):
+        case let .searchMovies(query, page):
             items.append(URLQueryItem(name: "query", value: query))
             items.append(URLQueryItem(name: "page", value: "\(page)"))
             items.append(URLQueryItem(name: "include_adult", value: "false"))
         case .movieDetail, .movieCredits, .movieVideos, .movieGenres:
             break
         }
-        
+
         return items
     }
-    
+
     func url(baseURL: URL, apiKey: String) throws -> URL {
         let fullURL = baseURL.appendingPathComponent(path)
-        
+
         guard var components = URLComponents(url: fullURL, resolvingAgainstBaseURL: false) else {
             throw APIError.invalidURL
         }
-        
+
         var allItems = queryItems
         allItems.append(URLQueryItem(name: "api_key", value: apiKey))
         components.queryItems = allItems
-        
+
         guard let finalURL = components.url else {
             throw APIError.invalidURL
         }
-        
+
         return finalURL
     }
 }

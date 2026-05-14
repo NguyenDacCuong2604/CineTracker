@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDTO: Decodable, Identifiable {
+struct MovieDTO: Codable, Identifiable {
     let id: Int
     let title: String
     let overview: String?
@@ -21,7 +21,7 @@ struct MovieDTO: Decodable, Identifiable {
     let genreIds: [Int]?
 }
 
-struct PagedResponse<T: Decodable>: Decodable {
+struct PagedResponse<T: Codable>: Codable {
     let page: Int
     let results: [T]
     let totalPages: Int

@@ -32,7 +32,7 @@ extension APIError: LocalizedError {
             return "Kết nối quá lâu. Vui lòng thử lại."
         case .cancelled:
             return "Yêu cầu đã bị huỷ."
-        case .badRequest(let message):
+        case let .badRequest(message):
             return message ?? "Yêu cầu không hợp lệ."
         case .unauthorized:
             return "API key không hợp lệ hoặc đã hết hạn."
@@ -40,17 +40,17 @@ extension APIError: LocalizedError {
             return "Bạn không có quyền truy cập tài nguyên này."
         case .notFound:
             return "Không tìm thấy nội dung."
-        case .serverError(let code):
+        case let .serverError(code):
             return "Lỗi máy chủ (\(code)). Vui lòng thử lại sau."
-        case .httpError(let code, let message):
+        case let .httpError(code, message):
             return message ?? "Lỗi HTTP \(code)"
-        case .decodingFailed(let error):
+        case let .decodingFailed(error):
             return "Không xử lý được dữ liệu: \(error.localizedDescription)"
         case .invalidURL:
             return "URL không hợp lệ."
-        case.invalidResponse:
+        case .invalidResponse:
             return "Phản hồi không hợp lệ."
-        case .unknown(let error):
+        case let .unknown(error):
             return error.localizedDescription
         }
     }
@@ -65,7 +65,7 @@ extension APIError {
             return false
         }
     }
-    
+
     var isUserFacing: Bool {
         switch self {
         case .cancelled:

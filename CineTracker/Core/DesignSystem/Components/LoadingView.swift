@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadingView: View {
     var message: String? = nil
-    
+
     var body: some View {
         VStack(spacing: AppSpacing.lg) {
             ProgressView().scaleEffect(1.5).tint(.appBrand)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DesignSystemCatalog: View {
     @State private var interactiveRating: Double = 3
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -17,23 +17,23 @@ struct DesignSystemCatalog: View {
                     section("🎨 Colors") {
                         colorGrid
                     }
-                    
+
                     section("✍️ Typography") {
                         typographyList
                     }
-                    
+
                     section("🔘 Buttons") {
                         buttonsList
                     }
-                    
+
                     section("⏳ Loading & Skeleton") {
                         loadingList
                     }
-                    
+
                     section("⭐ Rating") {
                         ratingList
                     }
-                    
+
                     section("📦 Cards") {
                         cardsList
                     }
@@ -44,8 +44,7 @@ struct DesignSystemCatalog: View {
             .navigationTitle("Design System")
         }
     }
-    
-    @ViewBuilder
+
     private func section<Content: View>(
         _ title: String,
         @ViewBuilder content: () -> Content
@@ -57,7 +56,7 @@ struct DesignSystemCatalog: View {
             content()
         }
     }
-    
+
     private var colorGrid: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: AppSpacing.sm) {
             colorTile("Brand", .appBrand)
@@ -70,7 +69,7 @@ struct DesignSystemCatalog: View {
             colorTile("Info", .appInfo)
         }
     }
-    
+
     private func colorTile(_ name: String, _ color: Color) -> some View {
         HStack {
             RoundedRectangle(cornerRadius: AppRadius.sm)
@@ -85,7 +84,7 @@ struct DesignSystemCatalog: View {
             Spacer()
         }
     }
-       
+
     private var typographyList: some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
             Text("Display Large").appFont(.displayLarge)
@@ -101,19 +100,19 @@ struct DesignSystemCatalog: View {
         }
         .foregroundColor(.appTextPrimary)
     }
-       
+
     private var buttonsList: some View {
         VStack(spacing: AppSpacing.md) {
             PrimaryButton(title: "Primary Button") {}
             PrimaryButton(title: "With Icon", icon: "plus") {}
             PrimaryButton(title: "Loading", isLoading: true) {}
             PrimaryButton(title: "Disabled", isEnabled: false) {}
-            
+
             SecondaryButton(title: "Secondary Button") {}
             SecondaryButton(title: "With Icon", icon: "square.and.arrow.up") {}
         }
     }
-       
+
     private var loadingList: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
             HStack(spacing: AppSpacing.md) {
@@ -122,20 +121,20 @@ struct DesignSystemCatalog: View {
                     .tint(.appBrand)
                 Text("Spinner").appFont(.bodyMedium)
             }
-            
+
             Text("Skeleton placeholders:")
                 .appFont(.bodyMedium)
-            
+
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: AppSpacing.md) {
-                    ForEach(0..<3, id: \.self) { _ in
+                    ForEach(0 ..< 3, id: \.self) { _ in
                         MovieCardSkeleton()
                     }
                 }
             }
         }
     }
-      
+
     private var ratingList: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
             HStack {
@@ -156,7 +155,7 @@ struct DesignSystemCatalog: View {
         }
         .foregroundColor(.appTextPrimary)
     }
-     
+
     private var cardsList: some View {
         VStack(spacing: AppSpacing.md) {
             VStack(alignment: .leading, spacing: AppSpacing.sm) {
@@ -166,7 +165,7 @@ struct DesignSystemCatalog: View {
                     .foregroundColor(.appTextSecondary)
             }
             .cardStyle()
-            
+
             HStack {
                 VStack(alignment: .leading, spacing: AppSpacing.xs) {
                     Text("Custom Card").appFont(.headlineSmall)

@@ -12,7 +12,7 @@ struct PrimaryButton: View {
     var isLoading: Bool = false
     var isEnabled: Bool = true
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             HStack(spacing: AppSpacing.sm) {

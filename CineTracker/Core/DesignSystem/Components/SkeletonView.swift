@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SkeletonView: View {
     var cornerRadius: CGFloat = AppRadius.sm
-    
+
     var body: some View {
         RoundedRectangle(cornerRadius: cornerRadius).fill(Color.appBackgroundTertiary).shimmer()
     }
@@ -37,7 +37,7 @@ struct MovieCardSkeleton: View {
 #Preview("Movie Cards") {
     ScrollView(.horizontal, showsIndicators: false) {
         HStack(spacing: AppSpacing.md) {
-            ForEach(0..<5, id: \.self) { _ in MovieCardSkeleton()}
+            ForEach(0 ..< 5, id: \.self) { _ in MovieCardSkeleton() }
         }
         .padding()
     }

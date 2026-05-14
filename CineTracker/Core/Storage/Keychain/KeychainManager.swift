@@ -33,6 +33,7 @@ final class KeychainManager {
             }
         }
     }
+
     func save(_ value: String, for key: Key) throws {
         guard let data = value.data(using: .utf8) else {
             throw KeychainError.invalidData
@@ -50,6 +51,7 @@ final class KeychainManager {
         }
         AppLogger.auth.debug("Saved item for key: \(key.rawValue)")
     }
+
     func read(_ key: Key) throws -> String {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -83,6 +85,7 @@ final class KeychainManager {
             throw KeychainError.unhandled(status)
         }
     }
+
     func exists(_ key: Key) -> Bool {
         (try? read(key)) != nil
     }

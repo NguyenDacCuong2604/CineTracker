@@ -5,26 +5,26 @@
 //  Created by MAC VN on 12/5/26.
 //
 
-import SwiftUI
 import OSLog
+import SwiftUI
 
 struct NetworkTestView: View {
     @State private var state: ViewState = .idle
     @StateObject private var networkMonitor = NetworkMonitor.shared
-    
-    private let apiClient: APIClient = APIClientImpl()
-    
+
+    private let movieRepository: MovieRepository = MovieRepositoryImpl(apiClient: APIClientImpl())
+
     enum ViewState {
         case idle
         case loading
-        case loaded(PagedResponse<MovieDTO>)
+        case loaded([Movie])
         case error(String)
     }
-    
+
     var body: some View {
         NavigationStack {
             content
-                .navigationTitle("Network Test")
+                .navigationTitle("Respository Test")
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         if !networkMonitor.isConnected {
@@ -35,7 +35,7 @@ struct NetworkTestView: View {
                 }
         }
     }
-    
+
     @ViewBuilder
     private var content: some View {
         switch state {
@@ -43,30 +43,26 @@ struct NetworkTestView: View {
             VStack(spacing: AppSpacing.lg) {
                 Text("Tap để fetch popular movies")
                     .appFont(.bodyLarge)
-                
+
                 PrimaryButton(title: "Fetch Movies") {
                     Task { await loadMovies() }
                 }
                 .frame(maxWidth: 250)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+
         case .loading:
             LoadingView(message: "Đang tải phim...")
-            
-        case .loaded(let response):
-            List {
-                Section("Page \(response.page) of \(response.totalPages)") {
-                    ForEach(response.results) { movie in
-                        movieRow(movie)
-                    }
-                }
+
+        case let .loaded(movies):
+            List(movies) { movie in
+                movieRow(movie)
             }
             .refreshable {
-                await loadMovies()
+                await loadMovies(forceRefresh: true)
             }
-            
-        case .error(let message):
+
+        case let .error(message):
             ErrorView(
                 message: message,
                 onRetry: {
@@ -75,37 +71,37 @@ struct NetworkTestView: View {
             )
         }
     }
-    
-    @ViewBuilder
-    private func movieRow(_ movie: MovieDTO) -> some View {
-        VStack(alignment: .leading, spacing: AppSpacing.xs) {
-            Text(movie.title)
-                .appFont(.headlineSmall)
-            HStack {
-                Image(systemName: "star.fill")
-                    .foregroundColor(.appBrandSecondary)
-                    .font(.caption)
-                Text(String(format: "%.1f", movie.voteAverage))
-                    .appFont(.bodySmall)
-                Text("•")
-                    .foregroundColor(.appTextTertiary)
-                Text(movie.releaseDate ?? "N/A")
-                    .appFont(.bodySmall)
-                    .foregroundColor(.appTextSecondary)
+
+    private func movieRow(_ movie: Movie) -> some View {
+        HStack(spacing: AppSpacing.md) {
+            CachedAsyncImage(url: movie.posterURL) {
+                SkeletonView()
+            }
+            .aspectRatio(2 / 3, contentMode: .fill)
+            .frame(width: 60, height: 90)
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.sm))
+
+            VStack(alignment: .leading, spacing: AppSpacing.xs) {
+                Text(movie.title).appFont(.headlineSmall)
+                HStack(spacing: AppSpacing.xs) {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.appBrandSecondary)
+                        .font(.caption)
+                    Text(movie.formattedRating).appFont(.bodySmall)
+                    Text("⌘").foregroundColor(.appTextTertiary)
+                    Text(movie.releaseYear).appFont(.bodySmall).foregroundColor(.appTextSecondary)
+                }
             }
         }
         .padding(.vertical, AppSpacing.xs)
     }
 
-    private func loadMovies() async {
+    private func loadMovies(forceRefresh: Bool = false) async {
         state = .loading
-        
         do {
-            let response: PagedResponse<MovieDTO> = try await apiClient.request(
-                .popularMovies(page: 1)
-            )
-            state = .loaded(response)
-            AppLogger.network.info("Loaded \(response.results.count) movies")
+            let movies = try await movieRepository.popularMovies(page: 1, forceRefresh: forceRefresh)
+            state = .loaded(movies)
+            AppLogger.app.info("Loaded \(movies.count) movies")
         } catch let error as APIError {
             state = .error(error.localizedDescription)
             AppLogger.network.error("Failed: \(error.localizedDescription)")

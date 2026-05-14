@@ -9,47 +9,47 @@ import Foundation
 import SwiftUI
 
 enum AppSpacing {
-    // 2pt
+    /// 2pt
     static let xxs: CGFloat = 2
-    
-    // 4pt
+
+    /// 4pt
     static let xs: CGFloat = 4
-    
-    // 8pt
+
+    /// 8pt
     static let sm: CGFloat = 8
-    
-    // 12pt
+
+    /// 12pt
     static let md: CGFloat = 12
-    
-    // 16pt
+
+    /// 16pt
     static let lg: CGFloat = 16
-    
-    // 24pt
+
+    /// 24pt
     static let xl: CGFloat = 24
-    
-    // 32pt
+
+    /// 32pt
     static let xxl: CGFloat = 32
-    
-    // 48pt
+
+    /// 48pt
     static let xxxl: CGFloat = 48
 }
 
 enum AppRadius {
-    // 4pt
+    /// 4pt
     static let sm: CGFloat = 4
-    
-    // 8pt
+
+    /// 8pt
     static let md: CGFloat = 8
-    
-    // 12pt
+
+    /// 12pt
     static let lg: CGFloat = 12
-    
-    // 16pt
+
+    /// 16pt
     static let xl: CGFloat = 16
-    
-    // 24pt
+
+    /// 24pt
     static let xxl: CGFloat = 24
-    
-    // Full
+
+    /// Full
     static let full: CGFloat = .infinity
 }

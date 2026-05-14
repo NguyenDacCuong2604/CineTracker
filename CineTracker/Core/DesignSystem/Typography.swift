@@ -10,21 +10,21 @@ import SwiftUI
 struct AppFont {
     let font: Font
     let lineHeight: CGFloat
-    
+
     // Display
     static let displayLarge = AppFont(font: .system(size: 36, weight: .bold, design: .default), lineHeight: 44)
     static let displayMedium = AppFont(font: .system(size: 28, weight: .bold, design: .default), lineHeight: 36)
-    
+
     // Headline
     static let headlineLarge = AppFont(font: .system(size: 22, weight: .semibold, design: .default), lineHeight: 28)
     static let headlineMedium = AppFont(font: .system(size: 18, weight: .semibold, design: .default), lineHeight: 24)
     static let headlineSmall = AppFont(font: .system(size: 16, weight: .semibold, design: .default), lineHeight: 18)
-    
+
     // Body
     static let bodyLarge = AppFont(font: .system(size: 17, weight: .regular, design: .default), lineHeight: 24)
     static let bodyMedium = AppFont(font: .system(size: 15, weight: .regular, design: .default), lineHeight: 20)
     static let bodySmall = AppFont(font: .system(size: 13, weight: .regular, design: .default), lineHeight: 18)
-    
+
     // Label
     static let label = AppFont(font: .system(size: 12, weight: .medium, design: .default), lineHeight: 16)
     static let caption = AppFont(font: .system(size: 11, weight: .regular, design: .default), lineHeight: 14)
@@ -32,7 +32,7 @@ struct AppFont {
 
 extension View {
     func appFont(_ appFont: AppFont) -> some View {
-        self.font(appFont.font)
+        font(appFont.font)
             .lineSpacing(appFont.lineHeight - UIFont.systemFont(ofSize: 17).lineHeight)
     }
 }

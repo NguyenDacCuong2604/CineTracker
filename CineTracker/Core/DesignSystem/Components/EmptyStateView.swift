@@ -13,16 +13,16 @@ struct EmptyStateView: View {
     let message: String
     var actionTitle: String? = nil
     var action: (() -> Void)? = nil
-    
+
     var body: some View {
         VStack(spacing: AppSpacing.lg) {
             Image(systemName: icon).font(.system(size: 70)).foregroundColor(.appTextTertiary)
-            
+
             VStack(spacing: AppSpacing.sm) {
                 Text(title).appFont(.headlineMedium).foregroundColor(.appTextPrimary)
                 Text(message).appFont(.bodyMedium).foregroundColor(.appTextSecondary).multilineTextAlignment(.center)
             }
-            
+
             if let actionTitle = actionTitle, let action = action {
                 PrimaryButton(title: actionTitle, action: action).frame(maxWidth: 240).padding(.top, AppSpacing.sm)
             }

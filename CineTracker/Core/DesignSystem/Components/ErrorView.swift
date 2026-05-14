@@ -13,17 +13,17 @@ struct ErrorView: View {
     let message: String
     var retryTitle: String = "Thử lại"
     let onRetry: (() -> Void)?
-    
+
     var body: some View {
         VStack(spacing: AppSpacing.lg) {
             Image(systemName: icon).font(.system(size: 60)).foregroundColor(.appError)
-            
+
             VStack(spacing: AppSpacing.sm) {
                 Text(title).appFont(.headlineMedium).foregroundColor(.appTextPrimary)
                 Text(message).appFont(.bodyMedium).foregroundColor(.appTextSecondary).multilineTextAlignment(.center)
             }
             .padding(.horizontal, AppSpacing.xl)
-            
+
             if let onRetry = onRetry {
                 PrimaryButton(
                     title: retryTitle,

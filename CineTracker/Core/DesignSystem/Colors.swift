@@ -10,17 +10,17 @@ extension Color {
     // Brand
     static let appBrand = Color("brandPrimary")
     static let appBrandSecondary = Color("brandSecondary")
-    
+
     // Background
     static let appBackground = Color("backgroundPrimary")
     static let appBackgroundSecondary = Color("backgroundSecondary")
     static let appBackgroundTertiary = Color("backgroundTertiary")
-    
+
     // Text
     static let appTextPrimary = Color("textPrimary")
     static let appTextSecondary = Color("textSecondary")
     static let appTextTertiary = Color("textTertiary")
-    
+
     // Status
     static let appSuccess = Color("success")
     static let appWarning = Color("warning")
@@ -45,7 +45,6 @@ extension Color {
     }
 }
 
-@ViewBuilder
 private func colorRow(_ name: String, color: Color) -> some View {
     HStack {
         Text(name)

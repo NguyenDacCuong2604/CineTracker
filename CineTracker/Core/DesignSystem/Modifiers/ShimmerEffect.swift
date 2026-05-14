@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShimmerEffectModifier: ViewModifier {
     @State private var phase: CGFloat = 0
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(
@@ -17,7 +17,7 @@ struct ShimmerEffectModifier: ViewModifier {
                     gradient: Gradient(colors: [
                         Color.white.opacity(0),
                         Color.white.opacity(0.3),
-                        Color.white.opacity(0)
+                        Color.white.opacity(0),
                     ]),
                     startPoint: .leading,
                     endPoint: .trailing
@@ -29,7 +29,7 @@ struct ShimmerEffectModifier: ViewModifier {
             .onAppear {
                 withAnimation(
                     .linear(duration: 1.5)
-                    .repeatForever(autoreverses: false)
+                        .repeatForever(autoreverses: false)
                 ) {
                     phase = 400
                 }

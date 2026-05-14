@@ -11,7 +11,7 @@ struct SecondaryButton: View {
     var icon: String? = nil
     var isEnabled: Bool = true
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             HStack(spacing: AppSpacing.sm) {
