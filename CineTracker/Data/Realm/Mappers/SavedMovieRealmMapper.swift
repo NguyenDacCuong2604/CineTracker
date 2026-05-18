@@ -30,7 +30,7 @@ enum SavedMovierealmMapper {
             isFavorite: object.isFavorite
         )
     }
-    
+
     static func toRealmObject(_ movie: Movie) -> SavedMovieObject {
         let object = SavedMovieObject()
         object.id = movie.id

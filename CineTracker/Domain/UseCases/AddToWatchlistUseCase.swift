@@ -10,14 +10,14 @@ import Foundation
 struct AddToWatchlistUseCase: UseCase {
     typealias Input = Movie
     typealias Output = Void
-    
+
     private let repository: WatchlistRepository
-    
+
     init(repository: WatchlistRepository) {
         self.repository = repository
     }
-    
-    func execute(_ input: Movie) async throws -> Void {
+
+    func execute(_ input: Movie) async throws {
         try repository.add(input)
     }
 }

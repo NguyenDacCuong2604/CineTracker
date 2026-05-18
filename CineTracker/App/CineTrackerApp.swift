@@ -17,9 +17,7 @@ struct CineTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            // ContentView()
-            // DesignSystemCatalog()
-            NetworkTestView()
+            MainTabView()
         }
     }
 

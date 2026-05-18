@@ -29,4 +29,3 @@ struct SavedMovie: Identifiable, Hashable {
         }
     }
 }
-

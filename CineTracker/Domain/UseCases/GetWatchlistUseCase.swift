@@ -4,16 +4,16 @@
 //
 //  Created by MAC VN on 14/5/26.
 //
-import Foundation
 import Combine
+import Foundation
 
 struct GetWatchlistUseCase {
     private let repository: WatchlistRepository
-    
+
     init(repository: WatchlistRepository) {
         self.repository = repository
     }
-    
+
     func execute(filter: SavedMovie.Status? = nil) -> AnyPublisher<[SavedMovie], Never> {
         repository.savedMoviesPublisher
             .map { movies in

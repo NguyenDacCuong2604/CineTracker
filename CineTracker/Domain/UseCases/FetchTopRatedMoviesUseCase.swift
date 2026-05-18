@@ -1,5 +1,5 @@
 //
-//  FetchPopularMovieUseCase.swift
+//  FetchTopRatedMoviesUseCase.swift
 //  CineTracker
 //
 //  Created by MAC VN on 14/5/26.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FetchPopularMovieUseCase: UseCase {
+struct FetchTopRatedMoviesUseCase: UseCase {
     struct Input {
         let page: Int
         let forceRefresh: Bool
@@ -27,6 +27,6 @@ struct FetchPopularMovieUseCase: UseCase {
     }
 
     func execute(_ input: Input) async throws -> [Movie] {
-        try await repository.popularMovies(page: input.page, forceRefresh: input.forceRefresh)
+        try await repository.topRatedMovies(page: input.page, forceRefresh: input.forceRefresh)
     }
 }
