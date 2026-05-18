@@ -5,10 +5,12 @@
 //  Created by MAC VN on 14/5/26.
 //
 
+import OSLog
 import SwiftUI
 
 struct MainTabView: View {
     @State private var coordinator = AppCoordinator()
+    @SceneStorage("selectedTab") private var savedTab: String = AppTab.discover.rawValue
 
     var body: some View {
         TabView(selection: $coordinator.selectedTab) {
@@ -24,7 +26,7 @@ struct MainTabView: View {
             .tag(AppTab.discover)
 
             NavigationStack(path: $coordinator.searchPath) {
-                PlaceholderView(tab: .search)
+                SearchView()
                     .navigationDestination(for: Route.self) { route in
                         destinationView(for: route)
                     }
@@ -63,6 +65,28 @@ struct MainTabView: View {
         }
         .tint(.appBrand)
         .environment(coordinator)
+        .onOpenURL { url in
+            handleDeepLink(url)
+        }
+        .onAppear {
+            if let restored = AppTab(rawValue: savedTab) {
+                coordinator.selectedTab = restored
+            }
+        }
+        .onChange(of: coordinator.selectedTab) { _, newTab in
+            savedTab = newTab.rawValue
+        }
+    }
+
+    private func handleDeepLink(_ url: URL) {
+        AppLogger.navigation.info("Received deep link: \(url.absoluteString)")
+
+        guard let result = DeepLinkHandler.parse(url) else {
+            AppLogger.navigation.warning("Failed to parse deep link: \(url.absoluteString)")
+            return
+        }
+
+        coordinator.handle(result)
     }
 
     @ViewBuilder

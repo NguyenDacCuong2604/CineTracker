@@ -10,6 +10,7 @@ final class DIContainer {
     static let shared = DIContainer()
     lazy var apiClient: APIClient = APIClientImpl()
     lazy var movieRepository: MovieRepository = MovieRepositoryImpl(apiClient: apiClient)
+    lazy var recentSearchesRepository: RecentSearchesRepository = RecentSearchesRepositoryImpl()
     lazy var watchlistRepository: WatchlistRepository = {
         do {
             return try WatchlistRepositoryImpl()
@@ -56,6 +57,22 @@ final class DIContainer {
 
     var getWatchlistUseCase: GetWatchlistUseCase {
         GetWatchlistUseCase(repository: watchlistRepository)
+    }
+
+    var getRecentSearchesUseCase: GetRecentSearchesUseCase {
+        GetRecentSearchesUseCase(repository: recentSearchesRepository)
+    }
+
+    var saveRecentSearchUseCase: SaveRecentSearchUseCase {
+        SaveRecentSearchUseCase(repository: recentSearchesRepository)
+    }
+
+    var removeRecentSearchUseCase: RemoveRecentSearchUseCase {
+        RemoveRecentSearchUseCase(repository: recentSearchesRepository)
+    }
+
+    var clearRecentSearchesUseCase: ClearRecentSearchesUseCase {
+        ClearRecentSearchesUseCase(repository: recentSearchesRepository)
     }
 
     private init() {}

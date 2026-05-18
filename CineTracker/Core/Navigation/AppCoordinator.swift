@@ -5,6 +5,7 @@
 //  Created by MAC VN on 14/5/26.
 //
 
+import OSLog
 import SwiftUI
 
 @Observable
@@ -78,5 +79,13 @@ enum AppTab: String, CaseIterable, Hashable {
         case .statistics: return "chart.bar.fill"
         case .profile: return "person.fill"
         }
+    }
+}
+
+extension AppCoordinator {
+    func handle(_ deepLink: DeepLinkResult) {
+        selectedTab = deepLink.targetTab
+        push(deepLink.route, on: deepLink.targetTab)
+        AppLogger.navigation.info("Handled deep link: \(String(describing: deepLink.route)) on \(String(describing: deepLink.targetTab))")
     }
 }

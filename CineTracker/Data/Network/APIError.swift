@@ -75,3 +75,30 @@ extension APIError {
         }
     }
 }
+
+extension APIError: Equatable {
+    static func == (lhs: APIError, rhs: APIError) -> Bool {
+        switch (lhs, rhs) {
+        case (.noInternet, .noInternet),
+             (.timeout, .timeout),
+             (.cancelled, .cancelled),
+             (.unauthorized, .unauthorized),
+             (.forbidden, .forbidden),
+             (.notFound, .notFound),
+             (.invalidURL, .invalidURL),
+             (.invalidResponse, .invalidResponse):
+            return true
+        case let (.serverError(l), .serverError(r)):
+            return l == r
+        case let (.badRequest(l), .badRequest(r)):
+            return l == r
+        case let (.httpError(lc, lm), .httpError(rc, rm)):
+            return lc == rc && lm == rm
+        case (.decodingFailed, .decodingFailed),
+             (.unknown, .unknown):
+            return true
+        default:
+            return false
+        }
+    }
+}

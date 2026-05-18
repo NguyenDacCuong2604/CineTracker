@@ -29,7 +29,7 @@ struct SearchMoviesUseCase: UseCase {
     func execute(_ input: Input) async throws -> [Movie] {
         let trimmed = input.query.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        guard trimmed.count >= 1 else {
+        guard !trimmed.isEmpty else {
             return []
         }
 

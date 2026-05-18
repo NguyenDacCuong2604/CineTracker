@@ -4,6 +4,19 @@
 <dict>
 	<key>APP_ENVIRONMENT</key>
 	<string>$(ENABLE_VERBOSE_LOGGING)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.cinetracker.urlscheme</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>cinetracker</string>
+			</array>
+		</dict>
+	</array>
 	<key>TMDB_API_KEY</key>
 	<string>$(TMDB_API_KEY)</string>
 	<key>TMDB_BASE_URL</key>

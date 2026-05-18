@@ -80,7 +80,33 @@
 		5ECA69AC2FBAB75100BBAFBE /* HeroBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69AB2FBAB74C00BBAFBE /* HeroBanner.swift */; };
 		5ECA69AE2FBAC01A00BBAFBE /* MovieCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69AD2FBAC00C00BBAFBE /* MovieCarousel.swift */; };
 		5ECA69B02FBAC51F00BBAFBE /* MoviePosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69AF2FBAC51900BBAFBE /* MoviePosterCard.swift */; };
+		5ECA69B12FBAEADF00BBAFBE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5E61145A2FB210C200A15D10 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5ECA69B42FBAED4600BBAFBE /* RecentSearchesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B32FBAED3600BBAFBE /* RecentSearchesRepository.swift */; };
+		5ECA69B62FBAEDC600BBAFBE /* RecentSearchesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B52FBAEDB400BBAFBE /* RecentSearchesRepositoryImpl.swift */; };
+		5ECA69B82FBAF06E00BBAFBE /* GetRecentSearchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B72FBAF06500BBAFBE /* GetRecentSearchesUseCase.swift */; };
+		5ECA69BA2FBAF18D00BBAFBE /* SaveRecentSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B92FBAF18100BBAFBE /* SaveRecentSearchUseCase.swift */; };
+		5ECA69BC2FBAF23E00BBAFBE /* RemoveRecentSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69BB2FBAF23200BBAFBE /* RemoveRecentSearchUseCase.swift */; };
+		5ECA69BE2FBAF2BA00BBAFBE /* ClearRecentSearchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69BD2FBAF2A600BBAFBE /* ClearRecentSearchesUseCase.swift */; };
+		5ECA69C02FBAF57700BBAFBE /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69BF2FBAF57100BBAFBE /* SearchState.swift */; };
+		5ECA69C22FBAF5CF00BBAFBE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69C12FBAF5C900BBAFBE /* SearchViewModel.swift */; };
+		5ECA69C42FBAF9DE00BBAFBE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69C32FBAF9DB00BBAFBE /* SearchView.swift */; };
+		5ECA69C92FBB013800BBAFBE /* RecentSearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69C82FBB013000BBAFBE /* RecentSearchesView.swift */; };
+		5ECA69CB2FBB054200BBAFBE /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69CA2FBB053C00BBAFBE /* DeepLinkHandler.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5ECA69B22FBAEADF00BBAFBE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5ECA69B12FBAEADF00BBAFBE /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5E6114222FB20A0400A15D10 /* CineTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineTrackerApp.swift; sourceTree = "<group>"; };
@@ -158,6 +184,17 @@
 		5ECA69AB2FBAB74C00BBAFBE /* HeroBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroBanner.swift; sourceTree = "<group>"; };
 		5ECA69AD2FBAC00C00BBAFBE /* MovieCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCarousel.swift; sourceTree = "<group>"; };
 		5ECA69AF2FBAC51900BBAFBE /* MoviePosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePosterCard.swift; sourceTree = "<group>"; };
+		5ECA69B32FBAED3600BBAFBE /* RecentSearchesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesRepository.swift; sourceTree = "<group>"; };
+		5ECA69B52FBAEDB400BBAFBE /* RecentSearchesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesRepositoryImpl.swift; sourceTree = "<group>"; };
+		5ECA69B72FBAF06500BBAFBE /* GetRecentSearchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentSearchesUseCase.swift; sourceTree = "<group>"; };
+		5ECA69B92FBAF18100BBAFBE /* SaveRecentSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecentSearchUseCase.swift; sourceTree = "<group>"; };
+		5ECA69BB2FBAF23200BBAFBE /* RemoveRecentSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRecentSearchUseCase.swift; sourceTree = "<group>"; };
+		5ECA69BD2FBAF2A600BBAFBE /* ClearRecentSearchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRecentSearchesUseCase.swift; sourceTree = "<group>"; };
+		5ECA69BF2FBAF57100BBAFBE /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
+		5ECA69C12FBAF5C900BBAFBE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5ECA69C32FBAF9DB00BBAFBE /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		5ECA69C82FBB013000BBAFBE /* RecentSearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesView.swift; sourceTree = "<group>"; };
+		5ECA69CA2FBB053C00BBAFBE /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +353,7 @@
 		5E6114412FB20E5600A15D10 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69CA2FBB053C00BBAFBE /* DeepLinkHandler.swift */,
 				5E6114EB2FB5C38900A15D10 /* AppCoordinator.swift */,
 				5E6114E92FB5C2B400A15D10 /* Route.swift */,
 			);
@@ -370,6 +408,7 @@
 		5E61144B2FB20EB700A15D10 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69B52FBAEDB400BBAFBE /* RecentSearchesRepositoryImpl.swift */,
 				5E6114BE2FB46A1000A15D10 /* WatchlistRepositoryImpl.swift */,
 				5E6114B42FB43AA400A15D10 /* MovieRepositoryImpl.swift */,
 			);
@@ -389,6 +428,10 @@
 		5E6114502FB20F1700A15D10 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69BD2FBAF2A600BBAFBE /* ClearRecentSearchesUseCase.swift */,
+				5ECA69BB2FBAF23200BBAFBE /* RemoveRecentSearchUseCase.swift */,
+				5ECA69B92FBAF18100BBAFBE /* SaveRecentSearchUseCase.swift */,
+				5ECA69B72FBAF06500BBAFBE /* GetRecentSearchesUseCase.swift */,
 				5E6114E72FB5BF7F00A15D10 /* FetchNowPlayingMoviesUseCase.swift */,
 				5E6114E52FB5BD7B00A15D10 /* FetchUpcomingMoviesUseCase.swift */,
 				5E6114E12FB5BBDF00A15D10 /* FetchTopRatedMoviesUseCase.swift */,
@@ -433,6 +476,10 @@
 		5E6114532FB20F3200A15D10 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69C72FBB012700BBAFBE /* Components */,
+				5ECA69C32FBAF9DB00BBAFBE /* SearchView.swift */,
+				5ECA69C12FBAF5C900BBAFBE /* SearchViewModel.swift */,
+				5ECA69BF2FBAF57100BBAFBE /* SearchState.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -498,6 +545,7 @@
 		5E6114C92FB5A6B100A15D10 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69B32FBAED3600BBAFBE /* RecentSearchesRepository.swift */,
 				5E6114BA2FB466C900A15D10 /* WatchlistRepository.swift */,
 				5E6114B22FB4376300A15D10 /* MovieRepository.swift */,
 			);
@@ -541,6 +589,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5ECA69C72FBB012700BBAFBE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5ECA69C82FBB013000BBAFBE /* RecentSearchesView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -552,6 +608,7 @@
 				5E61141B2FB20A0400A15D10 /* Sources */,
 				5E61141C2FB20A0400A15D10 /* Frameworks */,
 				5E61141D2FB20A0400A15D10 /* Resources */,
+				5ECA69B22FBAEADF00BBAFBE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -650,9 +707,12 @@
 				5E61146B2FB22C7B00A15D10 /* Logger.swift in Sources */,
 				5E6114E22FB5BBEA00A15D10 /* FetchTopRatedMoviesUseCase.swift in Sources */,
 				5E6114B72FB45CDE00A15D10 /* SavedMovieObject.swift in Sources */,
+				5ECA69C92FBB013800BBAFBE /* RecentSearchesView.swift in Sources */,
 				5E61146C2FB22CB000A15D10 /* KeychainManager.swift in Sources */,
+				5ECA69CB2FBB054200BBAFBE /* DeepLinkHandler.swift in Sources */,
 				5E6114A92FB423D900A15D10 /* MovieDetailDTO.swift in Sources */,
 				5E6114982FB32BF700A15D10 /* RequestInterceptor.swift in Sources */,
+				5ECA69C42FBAF9DE00BBAFBE /* SearchView.swift in Sources */,
 				5E6114782FB2E0E000A15D10 /* Spacing.swift in Sources */,
 				5E61148A2FB307BC00A15D10 /* RatingView.swift in Sources */,
 				5E6114B32FB4376C00A15D10 /* MovieRepository.swift in Sources */,
@@ -674,6 +734,7 @@
 				5E6114802FB2E96500A15D10 /* SecondaryButton.swift in Sources */,
 				5E6114CE2FB5A90600A15D10 /* SavedMovieRealmMapper.swift in Sources */,
 				5E61147E2FB2E62F00A15D10 /* PrimaryButton.swift in Sources */,
+				5ECA69B82FBAF06E00BBAFBE /* GetRecentSearchesUseCase.swift in Sources */,
 				5ECA69B02FBAC51F00BBAFBE /* MoviePosterCard.swift in Sources */,
 				5E6114A32FB4202100A15D10 /* Movie.swift in Sources */,
 				5E6114722FB2D3FD00A15D10 /* Colors.swift in Sources */,
@@ -681,10 +742,13 @@
 				5E6114F02FB5CEAD00A15D10 /* DiscoverView.swift in Sources */,
 				5E6114AD2FB4260300A15D10 /* MovieMapper.swift in Sources */,
 				5E6114B52FB43B2100A15D10 /* MovieRepositoryImpl.swift in Sources */,
+				5ECA69BA2FBAF18D00BBAFBE /* SaveRecentSearchUseCase.swift in Sources */,
 				5E6114EA2FB5C2B700A15D10 /* Route.swift in Sources */,
 				5E6114A72FB4234400A15D10 /* Cast.swift in Sources */,
+				5ECA69C22FBAF5CF00BBAFBE /* SearchViewModel.swift in Sources */,
 				5E6114232FB20A0400A15D10 /* CineTrackerApp.swift in Sources */,
 				5E6114E02FB5BAB300A15D10 /* FetchTrendingMoviesUseCase.swift in Sources */,
+				5ECA69B62FBAEDC600BBAFBE /* RecentSearchesRepositoryImpl.swift in Sources */,
 				5E6114BB2FB466DC00A15D10 /* WatchlistRepository.swift in Sources */,
 				5E61148C2FB30C4D00A15D10 /* DesignSystemCatalog.swift in Sources */,
 				5E6114C32FB484C800A15D10 /* CachedAsyncImage.swift in Sources */,
@@ -692,9 +756,12 @@
 				5E6114C12FB4789300A15D10 /* ImageCache.swift in Sources */,
 				5E6114D02FB5ABC400A15D10 /* UseCase.swift in Sources */,
 				5E61147A2FB2E2F800A15D10 /* CardStyle.swift in Sources */,
+				5ECA69BE2FBAF2BA00BBAFBE /* ClearRecentSearchesUseCase.swift in Sources */,
 				5E6114662FB215E400A15D10 /* Configuration.swift in Sources */,
 				5ECA69AE2FBAC01A00BBAFBE /* MovieCarousel.swift in Sources */,
 				5E61149F2FB337D500A15D10 /* MovieDTO.swift in Sources */,
+				5ECA69B42FBAED4600BBAFBE /* RecentSearchesRepository.swift in Sources */,
+				5ECA69C02FBAF57700BBAFBE /* SearchState.swift in Sources */,
 				5E6114642FB2150000A15D10 /* AppEnvironment.swift in Sources */,
 				5E6114DA2FB5B10500A15D10 /* MarkAsWatchedUseCase.swift in Sources */,
 				5E6114862FB302D600A15D10 /* ErrorView.swift in Sources */,
@@ -708,6 +775,7 @@
 				5E6114A52FB4219E00A15D10 /* MovieDetail.swift in Sources */,
 				5E61149A2FB32DD300A15D10 /* NetwordMonitor.swift in Sources */,
 				5E6114902FB316F000A15D10 /* APIError.swift in Sources */,
+				5ECA69BC2FBAF23E00BBAFBE /* RemoveRecentSearchUseCase.swift in Sources */,
 				5E6114F22FB5CF2400A15D10 /* DiscoverViewModel.swift in Sources */,
 				5E61149D2FB332F300A15D10 /* MockAPIClient.swift in Sources */,
 				5E6114BD2FB467DA00A15D10 /* SavedMovie.swift in Sources */,
@@ -851,7 +919,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CineTracker-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "CineTracker Dev";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -885,7 +953,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CineTracker-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "CineTracker Dev";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
