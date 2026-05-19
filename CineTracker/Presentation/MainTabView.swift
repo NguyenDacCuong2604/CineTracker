@@ -93,7 +93,7 @@ struct MainTabView: View {
     private func destinationView(for route: Route) -> some View {
         switch route {
         case let .movieDetail(id):
-            PlaceholderDetailView(title: "Movie Detail", subtitle: "ID: \(id)")
+            MovieDetailView(movieID: id)
         case let .castDetail(id):
             PlaceholderDetailView(title: "Cast Detail", subtitle: "ID: \(id)")
         case let .allMovies(category):

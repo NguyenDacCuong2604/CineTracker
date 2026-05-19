@@ -75,5 +75,25 @@ final class DIContainer {
         ClearRecentSearchesUseCase(repository: recentSearchesRepository)
     }
 
+    var fetchMovieDetailUseCase: FetchMovieDetailUseCase {
+        FetchMovieDetailUseCase(repository: movieRepository)
+    }
+
+    var fetchMovieCastUseCase: FetchMovieCastUseCase {
+        FetchMovieCastUseCase(repository: movieRepository)
+    }
+
+    var fetchMovieVideosUseCase: FetchMovieVideosUseCase {
+        FetchMovieVideosUseCase(repository: movieRepository)
+    }
+
+    var fetchSimilarMoviesUseCase: FetchSimilarMoviesUseCase {
+        FetchSimilarMoviesUseCase(repository: movieRepository)
+    }
+
+    var isInWatchlistUseCase: IsInWatchlistUseCase {
+        IsInWatchlistUseCase(repository: watchlistRepository)
+    }
+
     private init() {}
 }

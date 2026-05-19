@@ -74,9 +74,9 @@ final class SearchViewModel {
 
     private func onQueryChanged() {
         searchTask?.cancel()
-        
+
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+
         if trimmed.isEmpty {
             state = .idle
             return
@@ -84,10 +84,10 @@ final class SearchViewModel {
 
         searchTask = Task { [weak self] in
             guard let self else { return }
-            
+
             try? await Task.sleep(nanoseconds: Self.debounceMilliseconds * 1_000_000)
             guard !Task.isCancelled else { return }
-            
+
             await fetchSuggestions(query: trimmed)
         }
     }

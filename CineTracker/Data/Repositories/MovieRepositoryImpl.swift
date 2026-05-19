@@ -158,4 +158,33 @@ final class MovieRepositoryImpl: MovieRepository {
 
         return MovieMapper.map(response.results)
     }
+
+    func movieVideos(id: Int) async throws -> [Video] {
+        let cacheKey = "videos_\(id)"
+
+        if let data = memoryCache.get(cacheKey),
+           let response = try? JSONDecoder().decode(VideosResponse.self, from: data)
+        {
+            return mapVideos(response.results)
+        }
+
+        let response: VideosResponse = try await apiClient.request(.movieVideos(id: id))
+
+        if let data = try? JSONEncoder().encode(response) {
+            memoryCache.set(data, for: cacheKey)
+        }
+
+        return mapVideos(response.results)
+    }
+
+    private func mapVideos(_ dtos: [VideoDTO]) -> [Video] {
+        dtos
+            .map(VideoMapper.map)
+            .filter { $0.site == .youtube }
+            .sorted { lhs, rhs in
+                if lhs.type == .trailer, rhs.type != .trailer { return true }
+                if lhs.type != .trailer, rhs.type == .trailer { return false }
+                return lhs.isOfficial && !rhs.isOfficial
+            }
+    }
 }

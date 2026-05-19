@@ -38,6 +38,10 @@ struct MovieDetail: Identifiable, Hashable {
         formatter.dateFormat = "yyyy"
         return formatter.string(from: date)
     }
+
+    var formattedRating: String {
+        String(format: "%.1f", rating)
+    }
 }
 
 struct Genre: Identifiable, Hashable {

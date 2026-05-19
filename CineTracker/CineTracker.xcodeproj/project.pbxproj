@@ -92,6 +92,23 @@
 		5ECA69C42FBAF9DE00BBAFBE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69C32FBAF9DB00BBAFBE /* SearchView.swift */; };
 		5ECA69C92FBB013800BBAFBE /* RecentSearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69C82FBB013000BBAFBE /* RecentSearchesView.swift */; };
 		5ECA69CB2FBB054200BBAFBE /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69CA2FBB053C00BBAFBE /* DeepLinkHandler.swift */; };
+		5ECA69CD2FBC35C700BBAFBE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69CC2FBC35C500BBAFBE /* Video.swift */; };
+		5ECA69CF2FBC3B0900BBAFBE /* VideoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69CE2FBC3B0400BBAFBE /* VideoDTO.swift */; };
+		5ECA69D12FBC3B9A00BBAFBE /* VideoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69D02FBC3B9500BBAFBE /* VideoMapper.swift */; };
+		5ECA69D32FBC3C9E00BBAFBE /* FetchMovieDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69D22FBC3C9400BBAFBE /* FetchMovieDetailUseCase.swift */; };
+		5ECA69D52FBC3D7400BBAFBE /* FetchMovieCastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69D42FBC3D6600BBAFBE /* FetchMovieCastUseCase.swift */; };
+		5ECA69D72FBC3E3100BBAFBE /* FetchMovieVideosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69D62FBC3E2200BBAFBE /* FetchMovieVideosUseCase.swift */; };
+		5ECA69D92FBC3F1100BBAFBE /* FetchSimilarMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69D82FBC3F0500BBAFBE /* FetchSimilarMoviesUseCase.swift */; };
+		5ECA69DB2FBC403400BBAFBE /* IsInWatchlistUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69DA2FBC402C00BBAFBE /* IsInWatchlistUseCase.swift */; };
+		5ECA69DD2FBC437800BBAFBE /* MovieDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69DC2FBC437100BBAFBE /* MovieDetailState.swift */; };
+		5ECA69DF2FBC448800BBAFBE /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69DE2FBC447F00BBAFBE /* MovieDetailViewModel.swift */; };
+		5ECA69E22FBC4C3F00BBAFBE /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69E12FBC4C3700BBAFBE /* ParallaxHeader.swift */; };
+		5ECA69E42FBC4F7F00BBAFBE /* CastSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69E32FBC4F7700BBAFBE /* CastSection.swift */; };
+		5ECA69E62FBC552C00BBAFBE /* TrailerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69E52FBC552200BBAFBE /* TrailerPlayer.swift */; };
+		5ECA69E82FBC56CF00BBAFBE /* TrailerThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69E72FBC56C600BBAFBE /* TrailerThumbnail.swift */; };
+		5ECA69EA2FBC589300BBAFBE /* SimilarMoviesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69E92FBC588B00BBAFBE /* SimilarMoviesSection.swift */; };
+		5ECA69EC2FBC5A5100BBAFBE /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69EB2FBC5A4C00BBAFBE /* MovieDetailView.swift */; };
+		5ECA69EF2FBC770F00BBAFBE /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5ECA69EE2FBC770F00BBAFBE /* YouTubePlayerKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -195,6 +212,22 @@
 		5ECA69C32FBAF9DB00BBAFBE /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5ECA69C82FBB013000BBAFBE /* RecentSearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesView.swift; sourceTree = "<group>"; };
 		5ECA69CA2FBB053C00BBAFBE /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
+		5ECA69CC2FBC35C500BBAFBE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		5ECA69CE2FBC3B0400BBAFBE /* VideoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDTO.swift; sourceTree = "<group>"; };
+		5ECA69D02FBC3B9500BBAFBE /* VideoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMapper.swift; sourceTree = "<group>"; };
+		5ECA69D22FBC3C9400BBAFBE /* FetchMovieDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMovieDetailUseCase.swift; sourceTree = "<group>"; };
+		5ECA69D42FBC3D6600BBAFBE /* FetchMovieCastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMovieCastUseCase.swift; sourceTree = "<group>"; };
+		5ECA69D62FBC3E2200BBAFBE /* FetchMovieVideosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMovieVideosUseCase.swift; sourceTree = "<group>"; };
+		5ECA69D82FBC3F0500BBAFBE /* FetchSimilarMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSimilarMoviesUseCase.swift; sourceTree = "<group>"; };
+		5ECA69DA2FBC402C00BBAFBE /* IsInWatchlistUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsInWatchlistUseCase.swift; sourceTree = "<group>"; };
+		5ECA69DC2FBC437100BBAFBE /* MovieDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailState.swift; sourceTree = "<group>"; };
+		5ECA69DE2FBC447F00BBAFBE /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		5ECA69E12FBC4C3700BBAFBE /* ParallaxHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
+		5ECA69E32FBC4F7700BBAFBE /* CastSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastSection.swift; sourceTree = "<group>"; };
+		5ECA69E52FBC552200BBAFBE /* TrailerPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerPlayer.swift; sourceTree = "<group>"; };
+		5ECA69E72FBC56C600BBAFBE /* TrailerThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerThumbnail.swift; sourceTree = "<group>"; };
+		5ECA69E92FBC588B00BBAFBE /* SimilarMoviesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMoviesSection.swift; sourceTree = "<group>"; };
+		5ECA69EB2FBC5A4C00BBAFBE /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECA69EF2FBC770F00BBAFBE /* YouTubePlayerKit in Frameworks */,
 				5E61145B2FB210C200A15D10 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +434,7 @@
 		5E61144A2FB20EAD00A15D10 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69D02FBC3B9500BBAFBE /* VideoMapper.swift */,
 				5E6114AC2FB425FB00A15D10 /* MovieMapper.swift */,
 			);
 			path = Mappers;
@@ -428,6 +463,11 @@
 		5E6114502FB20F1700A15D10 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69DA2FBC402C00BBAFBE /* IsInWatchlistUseCase.swift */,
+				5ECA69D82FBC3F0500BBAFBE /* FetchSimilarMoviesUseCase.swift */,
+				5ECA69D62FBC3E2200BBAFBE /* FetchMovieVideosUseCase.swift */,
+				5ECA69D42FBC3D6600BBAFBE /* FetchMovieCastUseCase.swift */,
+				5ECA69D22FBC3C9400BBAFBE /* FetchMovieDetailUseCase.swift */,
 				5ECA69BD2FBAF2A600BBAFBE /* ClearRecentSearchesUseCase.swift */,
 				5ECA69BB2FBAF23200BBAFBE /* RemoveRecentSearchUseCase.swift */,
 				5ECA69B92FBAF18100BBAFBE /* SaveRecentSearchUseCase.swift */,
@@ -487,6 +527,10 @@
 		5E6114542FB20F3C00A15D10 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69EB2FBC5A4C00BBAFBE /* MovieDetailView.swift */,
+				5ECA69E02FBC4C2D00BBAFBE /* Components */,
+				5ECA69DE2FBC447F00BBAFBE /* MovieDetailViewModel.swift */,
+				5ECA69DC2FBC437100BBAFBE /* MovieDetailState.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -534,6 +578,7 @@
 		5E6114C82FB5A66500A15D10 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69CC2FBC35C500BBAFBE /* Video.swift */,
 				5E6114BC2FB467D400A15D10 /* SavedMovie.swift */,
 				5E6114A62FB4234100A15D10 /* Cast.swift */,
 				5E6114A42FB4219800A15D10 /* MovieDetail.swift */,
@@ -555,6 +600,7 @@
 		5E6114CA2FB5A6FD00A15D10 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA69CE2FBC3B0400BBAFBE /* VideoDTO.swift */,
 				5E6114AA2FB4256E00A15D10 /* CastDTO.swift */,
 				5E6114A82FB423D000A15D10 /* MovieDetailDTO.swift */,
 				5E61149B2FB3316D00A15D10 /* MovieDTO.swift */,
@@ -597,6 +643,18 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5ECA69E02FBC4C2D00BBAFBE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5ECA69E92FBC588B00BBAFBE /* SimilarMoviesSection.swift */,
+				5ECA69E72FBC56C600BBAFBE /* TrailerThumbnail.swift */,
+				5ECA69E52FBC552200BBAFBE /* TrailerPlayer.swift */,
+				5ECA69E32FBC4F7700BBAFBE /* CastSection.swift */,
+				5ECA69E12FBC4C3700BBAFBE /* ParallaxHeader.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -617,6 +675,7 @@
 			name = CineTracker;
 			packageProductDependencies = (
 				5E61145A2FB210C200A15D10 /* RealmSwift */,
+				5ECA69EE2FBC770F00BBAFBE /* YouTubePlayerKit */,
 			);
 			productName = CineTracker;
 			productReference = 5E6114582FB20FB600A15D10 /* CineTracker.app */;
@@ -648,6 +707,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				5E6114592FB210C200A15D10 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				5ECA69ED2FBC770F00BBAFBE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5E6114162FB20A0400A15D10;
@@ -708,28 +768,40 @@
 				5E6114E22FB5BBEA00A15D10 /* FetchTopRatedMoviesUseCase.swift in Sources */,
 				5E6114B72FB45CDE00A15D10 /* SavedMovieObject.swift in Sources */,
 				5ECA69C92FBB013800BBAFBE /* RecentSearchesView.swift in Sources */,
+				5ECA69DF2FBC448800BBAFBE /* MovieDetailViewModel.swift in Sources */,
+				5ECA69E22FBC4C3F00BBAFBE /* ParallaxHeader.swift in Sources */,
 				5E61146C2FB22CB000A15D10 /* KeychainManager.swift in Sources */,
 				5ECA69CB2FBB054200BBAFBE /* DeepLinkHandler.swift in Sources */,
 				5E6114A92FB423D900A15D10 /* MovieDetailDTO.swift in Sources */,
 				5E6114982FB32BF700A15D10 /* RequestInterceptor.swift in Sources */,
 				5ECA69C42FBAF9DE00BBAFBE /* SearchView.swift in Sources */,
 				5E6114782FB2E0E000A15D10 /* Spacing.swift in Sources */,
+				5ECA69E42FBC4F7F00BBAFBE /* CastSection.swift in Sources */,
 				5E61148A2FB307BC00A15D10 /* RatingView.swift in Sources */,
+				5ECA69D92FBC3F1100BBAFBE /* FetchSimilarMoviesUseCase.swift in Sources */,
 				5E6114B32FB4376C00A15D10 /* MovieRepository.swift in Sources */,
 				5E61147C2FB2E47B00A15D10 /* ShimmerEffect.swift in Sources */,
 				5E6114DE2FB5B91A00A15D10 /* DIContainer.swift in Sources */,
+				5ECA69EA2FBC589300BBAFBE /* SimilarMoviesSection.swift in Sources */,
 				5E6114AF2FB42D4100A15D10 /* MemoryCache.swift in Sources */,
 				5E6114F42FB5D12D00A15D10 /* DiscoverState.swift in Sources */,
 				5E6114D62FB5AFEA00A15D10 /* AddToWatchlistUseCase.swift in Sources */,
 				5E6114E82FB5BF8700A15D10 /* FetchNowPlayingMoviesUseCase.swift in Sources */,
+				5ECA69CF2FBC3B0900BBAFBE /* VideoDTO.swift in Sources */,
 				5E6114E62FB5BD8B00A15D10 /* FetchUpcomingMoviesUseCase.swift in Sources */,
+				5ECA69D52FBC3D7400BBAFBE /* FetchMovieCastUseCase.swift in Sources */,
+				5ECA69DB2FBC403400BBAFBE /* IsInWatchlistUseCase.swift in Sources */,
 				5E6114B12FB4302500A15D10 /* DiskCache.swift in Sources */,
 				5E6114752FB2DA6F00A15D10 /* Typography.swift in Sources */,
 				5E6114882FB3055500A15D10 /* EmptyStateView.swift in Sources */,
 				5ECA69AC2FBAB75100BBAFBE /* HeroBanner.swift in Sources */,
+				5ECA69EC2FBC5A5100BBAFBE /* MovieDetailView.swift in Sources */,
+				5ECA69E62FBC552C00BBAFBE /* TrailerPlayer.swift in Sources */,
 				5E6114822FB2FAE500A15D10 /* LoadingView.swift in Sources */,
 				5E6114B92FB4639000A15D10 /* RealmManager.swift in Sources */,
+				5ECA69CD2FBC35C700BBAFBE /* Video.swift in Sources */,
 				5E61148E2FB3167700A15D10 /* HTTPMethod.swift in Sources */,
+				5ECA69E82FBC56CF00BBAFBE /* TrailerThumbnail.swift in Sources */,
 				5E6114252FB20A0400A15D10 /* ContentView.swift in Sources */,
 				5E6114802FB2E96500A15D10 /* SecondaryButton.swift in Sources */,
 				5E6114CE2FB5A90600A15D10 /* SavedMovieRealmMapper.swift in Sources */,
@@ -743,6 +815,7 @@
 				5E6114AD2FB4260300A15D10 /* MovieMapper.swift in Sources */,
 				5E6114B52FB43B2100A15D10 /* MovieRepositoryImpl.swift in Sources */,
 				5ECA69BA2FBAF18D00BBAFBE /* SaveRecentSearchUseCase.swift in Sources */,
+				5ECA69D72FBC3E3100BBAFBE /* FetchMovieVideosUseCase.swift in Sources */,
 				5E6114EA2FB5C2B700A15D10 /* Route.swift in Sources */,
 				5E6114A72FB4234400A15D10 /* Cast.swift in Sources */,
 				5ECA69C22FBAF5CF00BBAFBE /* SearchViewModel.swift in Sources */,
@@ -754,6 +827,7 @@
 				5E6114C32FB484C800A15D10 /* CachedAsyncImage.swift in Sources */,
 				5E6114842FB2FE7500A15D10 /* SkeletonView.swift in Sources */,
 				5E6114C12FB4789300A15D10 /* ImageCache.swift in Sources */,
+				5ECA69D12FBC3B9A00BBAFBE /* VideoMapper.swift in Sources */,
 				5E6114D02FB5ABC400A15D10 /* UseCase.swift in Sources */,
 				5E61147A2FB2E2F800A15D10 /* CardStyle.swift in Sources */,
 				5ECA69BE2FBAF2BA00BBAFBE /* ClearRecentSearchesUseCase.swift in Sources */,
@@ -762,6 +836,7 @@
 				5E61149F2FB337D500A15D10 /* MovieDTO.swift in Sources */,
 				5ECA69B42FBAED4600BBAFBE /* RecentSearchesRepository.swift in Sources */,
 				5ECA69C02FBAF57700BBAFBE /* SearchState.swift in Sources */,
+				5ECA69DD2FBC437800BBAFBE /* MovieDetailState.swift in Sources */,
 				5E6114642FB2150000A15D10 /* AppEnvironment.swift in Sources */,
 				5E6114DA2FB5B10500A15D10 /* MarkAsWatchedUseCase.swift in Sources */,
 				5E6114862FB302D600A15D10 /* ErrorView.swift in Sources */,
@@ -775,6 +850,7 @@
 				5E6114A52FB4219E00A15D10 /* MovieDetail.swift in Sources */,
 				5E61149A2FB32DD300A15D10 /* NetwordMonitor.swift in Sources */,
 				5E6114902FB316F000A15D10 /* APIError.swift in Sources */,
+				5ECA69D32FBC3C9E00BBAFBE /* FetchMovieDetailUseCase.swift in Sources */,
 				5ECA69BC2FBAF23E00BBAFBE /* RemoveRecentSearchUseCase.swift in Sources */,
 				5E6114F22FB5CF2400A15D10 /* DiscoverViewModel.swift in Sources */,
 				5E61149D2FB332F300A15D10 /* MockAPIClient.swift in Sources */,
@@ -1008,6 +1084,14 @@
 				kind = branch;
 			};
 		};
+		5ECA69ED2FBC770F00BBAFBE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1015,6 +1099,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E6114592FB210C200A15D10 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		5ECA69EE2FBC770F00BBAFBE /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5ECA69ED2FBC770F00BBAFBE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
