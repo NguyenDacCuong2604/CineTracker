@@ -37,7 +37,7 @@ struct MainTabView: View {
             .tag(AppTab.search)
 
             NavigationStack(path: $coordinator.watchlistPath) {
-                PlaceholderView(tab: .watchlist)
+                WatchlistView()
                     .navigationDestination(for: Route.self) { router in
                         destinationView(for: router)
                     }

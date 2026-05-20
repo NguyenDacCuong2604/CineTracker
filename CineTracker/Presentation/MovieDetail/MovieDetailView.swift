@@ -11,6 +11,7 @@ struct MovieDetailView: View {
     @State private var viewModel: MovieDetailViewModel
     @State private var showOverviewExpanded = false
     @State private var showShareSheet = false
+    @State private var showReviewSheet = false
 
     @Environment(AppCoordinator.self) private var coordinator
     @Environment(\.dismiss) private var dismiss
@@ -25,8 +26,11 @@ struct MovieDetailView: View {
                 fetchVideos: container.fetchMovieVideosUseCase,
                 fetchSimilar: container.fetchSimilarMoviesUseCase,
                 isInWatchlist: container.isInWatchlistUseCase,
+                getSavedMovie: container.getSavedMovieUseCase,
                 addToWatchlist: container.addToWatchlistUseCase,
-                removeFromWatchlist: container.removeFromWatchlistUseCase
+                removeFromWatchlist: container.removeFromWatchlistUseCase,
+                markAsWatched: container.markAsWatchedUseCase,
+                watchlistPublisher: container.watchlistPublisher
             )
         )
     }
@@ -45,6 +49,13 @@ struct MovieDetailView: View {
         }
         .refreshable {
             await viewModel.refresh()
+        }
+        .sheet(isPresented: $showReviewSheet) {
+            if let savedMovie = viewModel.state.savedMovie {
+                AddReviewSheet(movie: savedMovie) { rating, review in
+                    await viewModel.markWatched(rating: rating, review: review)
+                }
+            }
         }
     }
 
@@ -101,7 +112,18 @@ struct MovieDetailView: View {
                 .padding(.horizontal, AppSpacing.lg)
                 .padding(.vertical, AppSpacing.lg)
 
+            if let saved = viewModel.state.savedMovie,
+               saved.status == .watched
+            {
+                YourReviewSection(
+                    savedMovie: saved,
+                    onEditTap: { showReviewSheet = true }
+                )
+                .padding(.top, AppSpacing.lg)
+            }
+
             overviewSection(detail: detail)
+                .padding(.top, AppSpacing.xl)
 
             if case let .loaded(videos) = viewModel.state.videos,
                let trailer = videos.first
@@ -181,32 +203,53 @@ struct MovieDetailView: View {
     }
 
     private func actionButtons(detail: MovieDetail) -> some View {
-        HStack(spacing: AppSpacing.md) {
-            Button(action: {
-                Task { await viewModel.toggleWatchlist() }
-            }) {
-                HStack(spacing: AppSpacing.sm) {
-                    Image(systemName: viewModel.state.isInWatchlist ? "checkmark" : "plus")
-                    Text(viewModel.state.isInWatchlist ? "Đã thêm" : "Watchlist")
-                        .appFont(.headlineSmall)
+        VStack(spacing: AppSpacing.md) {
+            HStack(spacing: AppSpacing.md) {
+                Button(action: {
+                    Task { await viewModel.toggleWatchlist() }
+                }) {
+                    HStack(spacing: AppSpacing.sm) {
+                        Image(systemName: viewModel.state.isInWatchlist ? "checkmark" : "plus")
+                        Text(viewModel.state.isInWatchlist ? "Đã thêm" : "Watchlist")
+                            .appFont(.headlineSmall)
+                    }
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(
+                        RoundedRectangle(cornerRadius: AppRadius.md)
+                            .fill(viewModel.state.isInWatchlist ? Color.appSuccess : Color.appBrand)
+                    )
                 }
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: 48)
-                .background(
-                    RoundedRectangle(cornerRadius: AppRadius.md)
-                        .fill(viewModel.state.isInWatchlist ? Color.appSuccess : Color.appBrand)
-                )
+
+                ShareLink(item: shareURL(for: detail)) {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(.appBrand)
+                        .frame(width: 48, height: 48)
+                        .background(
+                            RoundedRectangle(cornerRadius: AppRadius.md)
+                                .stroke(Color.appBrand, lineWidth: 1.5)
+                        )
+                }
             }
 
-            ShareLink(item: shareURL(for: detail)) {
-                Image(systemName: "square.and.arrow.up")
+            if let saved = viewModel.state.savedMovie,
+               saved.status != .watched
+            {
+                Button(action: { showReviewSheet = true }) {
+                    HStack(spacing: AppSpacing.sm) {
+                        Image(systemName: "checkmark.circle")
+                        Text("Đánh dấu đã xem")
+                            .appFont(.headlineSmall)
+                    }
                     .foregroundColor(.appBrand)
-                    .frame(width: 48, height: 48)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
                     .background(
                         RoundedRectangle(cornerRadius: AppRadius.md)
                             .stroke(Color.appBrand, lineWidth: 1.5)
                     )
+                }
             }
         }
     }

@@ -15,4 +15,5 @@ struct MovieDetailState {
 
     var isInWatchlist: Bool = false
     var isRefreshing: Bool = false
+    var savedMovie: SavedMovie? = nil
 }

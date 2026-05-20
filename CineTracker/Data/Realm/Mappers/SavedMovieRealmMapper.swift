@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SavedMovierealmMapper {
+enum SavedMovieRealmMapper {
     static func toDomain(_ object: SavedMovieObject) -> SavedMovie {
         SavedMovie(
             id: object.id,

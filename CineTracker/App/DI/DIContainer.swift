@@ -5,6 +5,8 @@
 //  Created by MAC VN on 14/5/26.
 //
 
+import Combine
+
 @MainActor
 final class DIContainer {
     static let shared = DIContainer()
@@ -93,6 +95,30 @@ final class DIContainer {
 
     var isInWatchlistUseCase: IsInWatchlistUseCase {
         IsInWatchlistUseCase(repository: watchlistRepository)
+    }
+
+    var toggleFavoriteUseCase: ToggleFavoriteUseCase {
+        ToggleFavoriteUseCase(repository: watchlistRepository)
+    }
+
+    var searchWatchlistUseCase: SearchWatchlistUseCase {
+        SearchWatchlistUseCase(repository: watchlistRepository)
+    }
+
+    var batchRemoveFromWatchlistUseCase: BatchRemoveFromWatchlistUseCase {
+        BatchRemoveFromWatchlistUseCase(repository: watchlistRepository)
+    }
+
+    var restoreToWatchlistUseCase: RestoreToWatchlistUseCase {
+        RestoreToWatchlistUseCase(repository: watchlistRepository)
+    }
+
+    var getSavedMovieUseCase: GetSavedMovieUseCase {
+        GetSavedMovieUseCase(repository: watchlistRepository)
+    }
+
+    var watchlistPublisher: AnyPublisher<[SavedMovie], Never> {
+        watchlistRepository.savedMoviesPublisher
     }
 
     private init() {}
