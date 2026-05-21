@@ -24,6 +24,9 @@ enum Endpoint {
     /// Genres
     case movieGenres
 
+    case personDetail(id: Int)
+    case personMovieCredits(id: Int)
+
     /// Path of endpoint
     var path: String {
         switch self {
@@ -47,6 +50,10 @@ enum Endpoint {
             return "/search/movie"
         case .movieGenres:
             return "/genre/movie/list"
+        case let .personDetail(id):
+            return "/person/\(id)"
+        case let .personMovieCredits(id):
+            return "/person/\(id)/movie_credits"
         }
     }
 
@@ -71,6 +78,8 @@ enum Endpoint {
             items.append(URLQueryItem(name: "page", value: "\(page)"))
             items.append(URLQueryItem(name: "include_adult", value: "false"))
         case .movieDetail, .movieCredits, .movieVideos, .movieGenres:
+            break
+        case .personDetail, .personMovieCredits:
             break
         }
 

@@ -9,29 +9,25 @@ import SwiftUI
 
 struct MoviePosterCard: View {
     let movie: Movie
-    let width: CGFloat
-    var onTap: (() -> Void)? = nil
+    let width: CGFloat?
+    var onTap: (() -> Void)?
+
+    init(movie: Movie, width: CGFloat? = nil, onTap: (() -> Void)? = nil) {
+        self.movie = movie
+        self.width = width
+        self.onTap = onTap
+    }
 
     var body: some View {
         Button(action: { onTap?() }) {
             VStack(alignment: .leading, spacing: AppSpacing.xs) {
-                CachedAsyncImage(url: movie.posterURL) {
-                    SkeletonView(cornerRadius: AppRadius.md)
-                }
-                .aspectRatio(2 / 3, contentMode: .fill)
-                .frame(width: width)
-                .frame(height: width * 1.5)
-                .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
-                .overlay(
-                    RoundedRectangle(cornerRadius: AppRadius.md)
-                        .stroke(Color.appBackgroundTertiary, lineWidth: 0.5)
-                )
+                posterImage
 
                 Text(movie.title)
                     .appFont(.headlineSmall)
                     .foregroundColor(.appTextPrimary)
                     .lineLimit(1)
-                    .frame(width: width, alignment: .leading)
+                    .frame(maxWidth: width ?? .infinity, alignment: .leading)
 
                 HStack(spacing: AppSpacing.xs) {
                     Image(systemName: "star.fill")
@@ -46,10 +42,36 @@ struct MoviePosterCard: View {
                         .appFont(.caption)
                         .foregroundColor(.appTextSecondary)
                 }
-                .frame(width: width, alignment: .leading)
+                .frame(maxWidth: width ?? .infinity, alignment: .leading)
             }
         }
         .buttonStyle(.plain)
+    }
+
+    @ViewBuilder
+    private var posterImage: some View {
+        if let width = width {
+            CachedAsyncImage(url: movie.posterURL) {
+                SkeletonView(cornerRadius: AppRadius.md)
+            }
+            .frame(width: width, height: width * 1.5)
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+            .overlay(
+                RoundedRectangle(cornerRadius: AppRadius.md)
+                    .stroke(Color.appBackgroundTertiary, lineWidth: 0.5)
+            )
+        } else {
+            CachedAsyncImage(url: movie.posterURL) {
+                SkeletonView(cornerRadius: AppRadius.md)
+            }
+            .aspectRatio(2 / 3, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+            .overlay(
+                RoundedRectangle(cornerRadius: AppRadius.md)
+                    .stroke(Color.appBackgroundTertiary, lineWidth: 0.5)
+            )
+        }
     }
 }
 
@@ -66,8 +88,7 @@ struct MoviePosterCard: View {
                 rating: 8.4,
                 voteCount: 1000,
                 genreIDs: []
-            ),
-            width: 130
+            )
         )
 
         MoviePosterCard(
@@ -81,8 +102,7 @@ struct MoviePosterCard: View {
                 rating: 9.0,
                 voteCount: 0,
                 genreIDs: []
-            ),
-            width: 130
+            )
         )
     }
     .padding()

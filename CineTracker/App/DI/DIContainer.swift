@@ -121,5 +121,44 @@ final class DIContainer {
         watchlistRepository.savedMoviesPublisher
     }
 
+    var getStatisticsUseCase: GetStatisticsUseCase {
+        GetStatisticsUseCase(
+            repository: watchlistRepository,
+            movieRepository: movieRepository
+        )
+    }
+
+    var getMonthlyStatsUseCase: GetMonthlyStatsUseCase {
+        GetMonthlyStatsUseCase(repository: watchlistRepository)
+    }
+
+    var getGenreDistributionUseCase: GetGenreDistributionUseCase {
+        GetGenreDistributionUseCase(repository: watchlistRepository)
+    }
+
+    var getRatingDistributionUseCase: GetRatingDistributionUseCase {
+        GetRatingDistributionUseCase(repository: watchlistRepository)
+    }
+
+    var getWatchingActivityUseCase: GetWatchingActivityUseCase {
+        GetWatchingActivityUseCase(repository: watchlistRepository)
+    }
+
+    var getTopRatedMoviesByUserUseCase: GetTopRatedMoviesByUserUseCase {
+        GetTopRatedMoviesByUserUseCase(repository: watchlistRepository)
+    }
+
+    var fetchMoviesByCategoryUseCase: FetchMoviesByCategoryUseCase {
+        FetchMoviesByCategoryUseCase(repository: movieRepository)
+    }
+
+    var fetchPersonDetailUseCase: FetchPersonDetailUseCase {
+        FetchPersonDetailUseCase(repository: movieRepository)
+    }
+
+    var fetchPersonMovieCreditsUseCase: FetchPersonMovieCreditsUseCase {
+        FetchPersonMovieCreditsUseCase(repository: movieRepository)
+    }
+
     private init() {}
 }

@@ -107,6 +107,7 @@ struct MovieCarousel: View {
         onSeeAll: {},
         onMovieTap: { _ in }
     )
+    Text("Cuong")
 }
 
 #Preview("Loading") {

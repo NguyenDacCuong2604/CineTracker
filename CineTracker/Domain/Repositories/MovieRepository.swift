@@ -17,4 +17,6 @@ protocol MovieRepository {
     func similarMovies(id: Int, page: Int) async throws -> [Movie]
     func searchMovies(query: String, page: Int) async throws -> [Movie]
     func movieVideos(id: Int) async throws -> [Video]
+    func personDetail(id: Int) async throws -> Person
+    func personMovieCredits(id: Int) async throws -> (cast: [PersonMovieCredit], crew: [PersonMovieCredit])
 }

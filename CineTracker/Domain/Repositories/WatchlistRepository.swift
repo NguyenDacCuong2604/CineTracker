@@ -22,6 +22,8 @@ protocol WatchlistRepository {
     func restore(_ savedMovie: SavedMovie) throws
     func filteredMovies(status: SavedMovie.Status?, sortBy: WatchlistSortOption, query: String) -> [SavedMovie]
     func savedMovie(id: Int) -> SavedMovie?
+    func allWatchedMovies() -> [SavedMovie]
+    func allFavoriteMovies() -> [SavedMovie]
 }
 
 enum WatchlistSortOption: String, CaseIterable {
@@ -29,8 +31,8 @@ enum WatchlistSortOption: String, CaseIterable {
     case dateAddedAsc = "Thêm lâu nhất"
     case ratingDesc = "Rating cao nhất"
     case ratingAsc = "Rating thấp nhất"
-    case titleDesc = "Tên A-Z"
-    case titleAsc = "Tên Z-A"
+    case titleAsc = "Tên A-Z"
+    case titleDesc = "Tên Z-A"
     case releaseDateDesc = "Mới phát hành"
     case releaseDateAsc = "Cũ nhất"
 

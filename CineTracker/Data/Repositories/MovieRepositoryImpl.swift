@@ -187,4 +187,46 @@ final class MovieRepositoryImpl: MovieRepository {
                 return lhs.isOfficial && !rhs.isOfficial
             }
     }
+
+    func personDetail(id: Int) async throws -> Person {
+        let cacheKey = "person_detail_\(id)"
+
+        if let data = memoryCache.get(cacheKey),
+           let dto = try? JSONDecoder().decode(PersonDetailDTO.self, from: data)
+        {
+            return PersonMapper.map(dto)
+        }
+
+        let dto: PersonDetailDTO = try await apiClient.request(.personDetail(id: id))
+
+        if let data = try? JSONEncoder().encode(dto) {
+            memoryCache.set(data, for: cacheKey)
+        }
+
+        return PersonMapper.map(dto)
+    }
+
+    func personMovieCredits(id: Int) async throws -> (cast: [PersonMovieCredit], crew: [PersonMovieCredit]) {
+        let cacheKey = "person_credits_\(id)"
+
+        if let data = memoryCache.get(cacheKey),
+           let dto = try? JSONDecoder().decode(PersonCreditsDTO.self, from: data)
+        {
+            return (
+                cast: dto.cast.map(PersonMovieCreditMapper.mapCast),
+                crew: dto.crew.map(PersonMovieCreditMapper.mapCrew)
+            )
+        }
+
+        let dto: PersonCreditsDTO = try await apiClient.request(.personMovieCredits(id: id))
+
+        if let data = try? JSONEncoder().encode(dto) {
+            memoryCache.set(data, for: cacheKey)
+        }
+
+        return (
+            cast: dto.cast.map(PersonMovieCreditMapper.mapCast),
+            crew: dto.crew.map(PersonMovieCreditMapper.mapCrew)
+        )
+    }
 }

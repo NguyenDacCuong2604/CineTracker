@@ -24,29 +24,29 @@ struct WatchlistView: View {
 
     var body: some View {
         mainContent
-                .background(Color.appBackground)
-                .navigationTitle(navigationTitle)
-                .navigationBarTitleDisplayMode(.large)
-                .searchable(
-                    text: queryBinding,
-                    placement: .navigationBarDrawer(displayMode: .always),
-                    prompt: "Tìm trong watchlist..."
-                )
-                .toolbar {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        toolbarButtons
-                    }
+            .background(Color.appBackground)
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.large)
+            .searchable(
+                text: queryBinding,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Tìm trong watchlist..."
+            )
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    toolbarButtons
                 }
-                .sheet(item: $movieToReview) { movie in
-                    AddReviewSheet(movie: movie) { rating, review in
-                        await viewModel.markWatched(movie: movie, rating: rating, review: review)
-                    }
+            }
+            .sheet(item: $movieToReview) { movie in
+                AddReviewSheet(movie: movie) { rating, review in
+                    await viewModel.markWatched(movie: movie, rating: rating, review: review)
                 }
-                .overlay(alignment: .bottom) {
-                    if viewModel.state.showUndoToast {
-                        undoToastView
-                    }
+            }
+            .overlay(alignment: .bottom) {
+                if viewModel.state.showUndoToast {
+                    undoToastView
                 }
+            }
     }
 
     private var mainContent: some View {
@@ -59,7 +59,7 @@ struct WatchlistView: View {
                     )
                 )
                 .padding(.vertical, AppSpacing.sm)
-                
+
                 if viewModel.state.movies.isEmpty {
                     EmptyWatchlistView(
                         filterDescription: emptyFilterDescription,
@@ -144,7 +144,7 @@ struct WatchlistView: View {
             columns: [
                 GridItem(.flexible(), spacing: AppSpacing.md),
                 GridItem(.flexible(), spacing: AppSpacing.md),
-                GridItem(.flexible(), spacing: AppSpacing.md)
+                GridItem(.flexible(), spacing: AppSpacing.md),
             ],
             spacing: AppSpacing.md
         ) {

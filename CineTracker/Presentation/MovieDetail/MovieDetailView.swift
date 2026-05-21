@@ -133,8 +133,13 @@ struct MovieDetailView: View {
             }
 
             if case let .loaded(cast) = viewModel.state.cast {
-                CastSection(cast: cast)
-                    .padding(.top, AppSpacing.xl)
+                CastSection(
+                    cast: cast,
+                    onCastTap: { castMember in
+                        coordinator.push(.castDetail(id: castMember.id), on: coordinator.selectedTab)
+                    }
+                )
+                .padding(.top, AppSpacing.xl)
             }
 
             if case let .loaded(similar) = viewModel.state.similar {

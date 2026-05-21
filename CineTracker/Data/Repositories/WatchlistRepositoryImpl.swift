@@ -196,4 +196,18 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
         }
         return SavedMovieRealmMapper.toDomain(object)
     }
+
+    func allWatchedMovies() -> [SavedMovie] {
+        let objects = realm.objects(SavedMovieObject.self)
+            .where { $0.statusRaw == SavedMovie.Status.watched.rawValue }
+
+        return objects.map { SavedMovieRealmMapper.toDomain($0) }
+    }
+
+    func allFavoriteMovies() -> [SavedMovie] {
+        let objects = realm.objects(SavedMovieObject.self)
+            .where { $0.isFavorite == true }
+
+        return objects.map { SavedMovieRealmMapper.toDomain($0) }
+    }
 }

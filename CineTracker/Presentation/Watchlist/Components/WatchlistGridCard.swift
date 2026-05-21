@@ -21,7 +21,8 @@ struct WatchlistGridCard: View {
                     CachedAsyncImage(url: savedMovie.movie.posterURL, contentMode: .fill) {
                         SkeletonView(cornerRadius: AppRadius.md)
                     }
-                    .aspectRatio(2 / 3, contentMode: .fill)
+                    .aspectRatio(2 / 3, contentMode: .fit)
+                    .frame(maxWidth: .infinity)
                     .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
                     .overlay(alignment: .topLeading) {
                         if savedMovie.isFavorite {

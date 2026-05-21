@@ -1,0 +1,32 @@
+--exclude Carthage,Pods,DerivedData,.build,CineTracker/Resources
+
+--swiftversion 5.9
+--maxwidth 150
+--indent 4
+
+# Common safe defaults
+--wraparguments before-first
+--wrapparameters before-first
+--closingparen balanced
+--trimwhitespace always
+--semicolons never
+
+# Match SwiftLint sorted_imports
+--enable sortedImports
+
+# Remove redundant code (match explicit_init)
+--enable redundantInit
+--enable redundantReturn
+--enable redundantSelf
+
+# Match vertical_whitespace_*_braces
+--enable blankLinesAtStartOfScope
+--enable blankLinesAtEndOfScope
+
+# Match closure_spacing
+--enable spaceInsideBraces
+
+# Sane defaults
+--enable consecutiveBlankLines
+--enable trailingClosures
+--enable typeSugar

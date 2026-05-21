@@ -48,7 +48,7 @@ struct MainTabView: View {
             .tag(AppTab.watchlist)
 
             NavigationStack(path: $coordinator.statisticsPath) {
-                PlaceholderView(tab: .statistics)
+                StatisticsView()
             }
             .tabItem {
                 Label(AppTab.statistics.title, systemImage: AppTab.statistics.systemImage)
@@ -95,9 +95,9 @@ struct MainTabView: View {
         case let .movieDetail(id):
             MovieDetailView(movieID: id)
         case let .castDetail(id):
-            PlaceholderDetailView(title: "Cast Detail", subtitle: "ID: \(id)")
+            CastDetailView(personID: id)
         case let .allMovies(category):
-            PlaceholderDetailView(title: category.title, subtitle: "All movies")
+            AllMoviesView(category: category)
         }
     }
 }
