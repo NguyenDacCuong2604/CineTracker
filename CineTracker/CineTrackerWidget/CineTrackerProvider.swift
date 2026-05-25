@@ -6,6 +6,7 @@
 //
 
 import RealmSwift
+import UIKit
 import WidgetKit
 
 struct CineTrackerEntry: TimelineEntry {
@@ -14,19 +15,27 @@ struct CineTrackerEntry: TimelineEntry {
 }
 
 struct CineTrackerProvider: TimelineProvider {
+    private static let tmdbImageBase = "https://image.tmdb.org/t/p/w342"
+    private static let posterTargetSize = CGSize(width: 200, height: 300)
+
     func placeholder(in _: Context) -> CineTrackerEntry {
         CineTrackerEntry(date: Date(), data: WidgetData.placeholder)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (CineTrackerEntry) -> Void) {
-        let data = context.isPreview ? WidgetData.placeholder : fetchWidgetData()
-        let entry = CineTrackerEntry(date: Date(), data: data)
-        completion(entry)
+        if context.isPreview {
+            completion(CineTrackerEntry(date: Date(), data: WidgetData.placeholder))
+            return
+        }
+        Task {
+            let data = await fetchWidgetDataAsync()
+            completion(CineTrackerEntry(date: Date(), data: data))
+        }
     }
 
     func getTimeline(in _: Context, completion: @escaping (Timeline<CineTrackerEntry>) -> Void) {
         Task {
-            let data = await fetchWidgetDataAsync() // ← async version
+            let data = await fetchWidgetDataAsync()
             let entry = CineTrackerEntry(date: Date(), data: data)
 
             let nextRefresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
@@ -37,64 +46,143 @@ struct CineTrackerProvider: TimelineProvider {
     }
 
     private func fetchWidgetDataAsync() async -> WidgetData {
-        let data = fetchWidgetData()
+        let base = fetchBaseData()
 
-        // Pre-warm image cache
-        await prefetchImages(urls: data.movies.compactMap { $0.posterURL })
+        let uniqueMovies = mergeUnique(base.wantToWatchMovies, base.allMovies)
+        let withImages = await loadImages(for: uniqueMovies)
 
-        return data
+        let want = base.wantToWatchMovies.compactMap { movie in withImages[movie.id] }
+        let all = base.allMovies.compactMap { movie in withImages[movie.id] }
+
+        return WidgetData(
+            wantToWatchMovies: want,
+            allMovies: all,
+            totalCount: base.totalCount,
+            lastUpdated: base.lastUpdated
+        )
     }
 
-    private func prefetchImages(urls: [URL]) async {
-        await withTaskGroup(of: Void.self) { group in
-            for url in urls {
+    private func mergeUnique(_ a: [WidgetMovie], _ b: [WidgetMovie]) -> [WidgetMovie] {
+        var seen = Set<Int>()
+        var result: [WidgetMovie] = []
+        for movie in a + b where !seen.contains(movie.id) {
+            seen.insert(movie.id)
+            result.append(movie)
+        }
+        return result
+    }
+
+    private func loadImages(for movies: [WidgetMovie]) async -> [Int: WidgetMovie] {
+        await withTaskGroup(of: WidgetMovie.self) { group in
+            for movie in movies {
                 group.addTask {
-                    // Trigger URLSession cache
-                    _ = try? await URLSession.shared.data(from: url)
+                    let data = await loadImageData(from: movie.posterURL)
+                    return WidgetMovie(
+                        id: movie.id,
+                        title: movie.title,
+                        posterURL: movie.posterURL,
+                        posterData: data,
+                        userRating: movie.userRating,
+                        status: movie.status
+                    )
                 }
             }
+
+            var result: [Int: WidgetMovie] = [:]
+            for await movie in group {
+                result[movie.id] = movie
+            }
+            return result
         }
     }
 
-    private func fetchWidgetData() -> WidgetData {
+    private func loadImageData(from url: URL?) async -> Data? {
+        guard let url = url else { return nil }
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            if let http = response as? HTTPURLResponse, !(200 ..< 300).contains(http.statusCode) {
+                return nil
+            }
+            return downsample(data: data, to: Self.posterTargetSize) ?? data
+        } catch {
+            return nil
+        }
+    }
+
+    private func downsample(data: Data, to size: CGSize) -> Data? {
+        let scale = UIScreen.main.scale
+        let maxDimension = max(size.width, size.height) * scale
+
+        guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
+            return nil
+        }
+
+        let options: [CFString: Any] = [
+            kCGImageSourceCreateThumbnailFromImageAlways: true,
+            kCGImageSourceShouldCacheImmediately: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceThumbnailMaxPixelSize: maxDimension,
+        ]
+
+        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options as CFDictionary) else {
+            return nil
+        }
+
+        let image = UIImage(cgImage: cgImage)
+        return image.jpegData(compressionQuality: 0.85)
+    }
+
+    private func fetchBaseData() -> WidgetData {
         do {
             RealmConfig.configure()
             let realm = try Realm()
 
             let wantToWatchRaw = SavedMovieObject.WatchStatus.wantToWatch.rawValue
 
-            let objects = realm.objects(SavedMovieObject.self)
+            let wantObjects = realm.objects(SavedMovieObject.self)
                 .where { $0.statusRaw == wantToWatchRaw }
                 .sorted(byKeyPath: "addedDate", ascending: false)
                 .prefix(6)
 
-            let movies = objects.map { object in
-                let posterURL: URL? = object.posterURLString.flatMap {
-                    URL(string: $0) ?? URL(string: "https://image.tmdb.org/t/p/w342\($0)")
-                }
+            let allObjects = realm.objects(SavedMovieObject.self)
+                .sorted(byKeyPath: "addedDate", ascending: false)
+                .prefix(12)
 
-                // DEBUG
-                print("  → Final URL: \(posterURL?.absoluteString ?? "nil")")
-
-                return WidgetMovie(
-                    id: object.id,
-                    title: object.title,
-                    posterURL: posterURL,
-                    userRating: object.userRating,
-                    status: object.status == .wantToWatch ? L10n.MovieStatus.wantToWatch : L10n.MovieStatus.watched
-                )
-            }
+            let want = wantObjects.map(Self.makeMovie)
+            let all = allObjects.map(Self.makeMovie)
 
             let totalCount = realm.objects(SavedMovieObject.self).count
 
             return WidgetData(
-                movies: Array(movies),
+                wantToWatchMovies: Array(want),
+                allMovies: Array(all),
                 totalCount: totalCount,
                 lastUpdated: Date()
             )
         } catch {
-            print("Widget Realm error: \(error)")
             return WidgetData.empty
         }
+    }
+
+    private static func makeMovie(_ object: SavedMovieObject) -> WidgetMovie {
+        WidgetMovie(
+            id: object.id,
+            title: object.title,
+            posterURL: makePosterURL(from: object.posterURLString),
+            posterData: nil,
+            userRating: object.userRating,
+            status: object.status == .wantToWatch ? L10n.MovieStatus.wantToWatch : L10n.MovieStatus.watched
+        )
+    }
+
+    private static func makePosterURL(from raw: String?) -> URL? {
+        guard let raw = raw, !raw.isEmpty else { return nil }
+
+        if raw.lowercased().hasPrefix("http://") || raw.lowercased().hasPrefix("https://") {
+            return URL(string: raw)
+        }
+
+        let path = raw.hasPrefix("/") ? raw : "/" + raw
+        return URL(string: tmdbImageBase + path)
     }
 }
