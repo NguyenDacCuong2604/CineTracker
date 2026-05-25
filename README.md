@@ -1,355 +1,193 @@
-# 🎬 CineTracker
+﻿# CineTracker
 
-> Ứng dụng iOS quản lý phim cá nhân, được xây dựng bằng SwiftUI + Clean Architecture + MVVM-C. Đây là project học tập production-ready áp dụng đầy đủ các kỹ thuật iOS hiện đại.
+> Personal iOS movie tracking app built with SwiftUI, Clean Architecture, and MVVM.
+> Portfolio-friendly presentation + production-style technical documentation.
 
 ![Platform](https://img.shields.io/badge/Platform-iOS%2017%2B-blue)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0-purple)
+![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-5f9ea0)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 
----
+## Table of Contents
 
-## 📖 Mục lục
+- [Portfolio Overview](#portfolio-overview)
+- [Feature Highlights](#feature-highlights)
+- [Demo Shots](#demo-shots)
+- [Technical Documentation](#technical-documentation)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Deep Link](#deep-link)
+- [Localization](#localization)
+- [Dependencies](#dependencies)
+- [License](#license)
 
-- [Giới thiệu](#-giới-thiệu)
-- [Tính năng](#-tính-năng)
-- [Tech Stack](#-tech-stack)
-- [Kiến trúc](#-kiến-trúc)
-- [Cấu trúc Project](#-cấu-trúc-project)
-- [Yêu cầu](#-yêu-cầu)
-- [Cài đặt](#-cài-đặt)
-- [Cấu hình API Key](#-cấu-hình-api-key)
-- [Roadmap & Phases](#-roadmap--phases)
-- [Quy ước Coding](#-quy-ước-coding)
-- [Git Workflow](#-git-workflow)
-- [Testing](#-testing)
-- [Tài liệu tham khảo](#-tài-liệu-tham-khảo)
-- [License](#-license)
+## Portfolio Overview
 
----
+CineTracker là ứng dụng iOS giúp quản lý danh sách phim cá nhân theo hướng hiện đại:
 
-## 🎯 Giới thiệu
+- Khám phá phim từ TMDB
+- Theo dõi watchlist cá nhân
+- Đánh giá và ghi chú phim đã xem
+- Trực quan hóa thói quen xem phim bằng biểu đồ
+- Hỗ trợ Widget + Deep Link + đa ngôn ngữ
 
-**CineTracker** là một ứng dụng iOS mô phỏng các app quản lý phim chuyên nghiệp như Letterboxd, Trakt và JustWatch. Project này được xây dựng với mục tiêu áp dụng toàn diện các kỹ thuật phát triển iOS hiện đại:
+Mục tiêu của project:
 
-- ✅ SwiftUI declarative UI
-- ✅ Clean Architecture + MVVM-C pattern
-- ✅ Async/await concurrency
-- ✅ Protocol-oriented programming
-- ✅ Dependency Injection
-- ✅ Offline-first với Realm
-- ✅ Multi-layer caching
-- ✅ Comprehensive testing
+- Thể hiện khả năng xây app iOS end-to-end bằng SwiftUI
+- Áp dụng kiến trúc sạch, dễ mở rộng, dễ test
+- Tổ chức code theo chuẩn thực tế để có thể nâng cấp production
 
-Dữ liệu phim được lấy từ **[TMDB API](https://www.themoviedb.org/documentation/api)** - một dịch vụ miễn phí với hơn 800,000 phim và TV shows.
+## Feature Highlights
 
----
+### Discover
+- Nạp danh sách `Popular`, `Top Rated`, `Upcoming`, `Now Playing`
+- UI theo section/carousel, điều hướng tới chi tiết phim
 
-## ✨ Tính năng
+### Search
+- Tìm kiếm phim theo tên
+- Lưu và quản lý recent searches
 
-### Core Features
+### Movie Detail
+- Hiển thị thông tin chi tiết phim
+- Danh sách cast
+- Trailer YouTube
+- Similar movies
+- Chia sẻ deep link phim
 
-- 🔍 **Khám phá phim**: Trending, Popular, Top Rated, Upcoming
-- 🔎 **Tìm kiếm**: Search phim theo tên với debounce
-- 📝 **Watchlist cá nhân**: CRUD với swipe actions, batch operations
-- ⭐ **Rating & Review**: Đánh giá và viết nhận xét cá nhân
-- 🎥 **Chi tiết phim**: Cast, crew, trailer YouTube, similar movies
-- 📊 **Statistics**: Dashboard với Swift Charts (genre, monthly, ratings)
-- 🌙 **Dark Mode**: Hỗ trợ light/dark theme tự động
+### Watchlist
+- Thêm/Xóa phim
+- Đánh dấu đã xem
+- Đánh giá và review cá nhân
+- Đánh dấu yêu thích
+- Lọc, sắp xếp, tìm kiếm
+- Batch remove + khôi phục
 
-### Advanced Features
+### Statistics
+- Dashboard thống kê từ dữ liệu watchlist:
+  - Monthly bar chart
+  - Genre pie chart
+  - Rating distribution
+  - Activity heatmap
+  - Top rated movies
 
-- 🔐 **Secure Storage**: API key trong Keychain
-- 📱 **Home Screen Widget**: Hiển thị watchlist
-- 🔔 **Push Notifications**: Nhắc phim sắp ra rạp
-- 🌐 **Localization**: Tiếng Việt + English
-- ♿️ **Accessibility**: VoiceOver, Dynamic Type
-- 🔗 **Deep Linking**: Universal Links + URL Schemes
-- 💾 **Offline Mode**: Hoạt động khi không có mạng
-- 🎨 **Hero Animation**: Matched geometry transitions
-- ↩️ **Undo Operations**: Hủy xóa với toast notification
+### Profile & Settings
+- Cấu hình ngôn ngữ `vi/en`
+- Màn hình cài đặt cơ bản
 
----
+### Widget & Deep Link
+- Widget hiển thị nhanh phim trong watchlist
+- Deep link:
+  - `cinetracker://movie/{id}`
+  - `cinetracker://watchlist`
 
-## 🛠 Tech Stack
+## Demo Shots
 
-### Core
+Thêm screenshot vào thư mục `docs/images` rồi cập nhật links bên dưới:
 
-| Công nghệ | Phiên bản | Mục đích |
-|-----------|-----------|----------|
-| Swift | 5.9+ | Ngôn ngữ chính |
-| SwiftUI | 5.0+ | UI Framework |
-| iOS Target | 17.0+ | Dùng `@Observable` macro |
-| Xcode | 15+ | IDE |
-
-### Frameworks & Libraries
-
-| Library | Mục đích |
-|---------|----------|
-| **RealmSwift** | Local database |
-| **Swift Charts** | Biểu đồ thống kê |
-| **WidgetKit** | Home screen widget |
-| **UserNotifications** | Local notifications |
-| **OSLog** | Structured logging |
-| **WebKit** | Embed YouTube trailers |
-
-### Development Tools
-
-- **SwiftLint** - Code style enforcement
-- **xcconfig** - Multi-environment configuration
-- **GitHub Actions** - CI/CD
-- **Fastlane** (optional) - Automation
-
----
-
-## 🏗 Kiến trúc
-
-Project sử dụng **Clean Architecture** với 3 layer chính, kết hợp **MVVM-C** ở Presentation layer.
-
-```
-┌─────────────────────────────────────────────┐
-│           PRESENTATION LAYER                 │
-│  ┌────────────┐  ┌──────────────────────┐   │
-│  │   Views    │←→│     ViewModels       │   │
-│  │ (SwiftUI)  │  │   (@Observable)      │   │
-│  └────────────┘  └──────────┬───────────┘   │
-│         ↑                   ↓                │
-│  ┌─────────────────────────────────────┐    │
-│  │       Coordinator (Navigation)       │    │
-│  └─────────────────────────────────────┘    │
-└─────────────────────┬───────────────────────┘
-                      │ depends on
-                      ▼
-┌─────────────────────────────────────────────┐
-│             DOMAIN LAYER                     │
-│  ┌──────────────┐  ┌────────────────────┐   │
-│  │  Use Cases   │  │  Domain Models     │   │
-│  │  (Business)  │  │  (Pure Swift)      │   │
-│  └──────────────┘  └────────────────────┘   │
-│  ┌──────────────────────────────────────┐   │
-│  │     Repository Protocols              │   │
-│  └──────────────────────────────────────┘   │
-└─────────────────────┬───────────────────────┘
-                      │ implemented by
-                      ▼
-┌─────────────────────────────────────────────┐
-│              DATA LAYER                      │
-│  ┌──────────────┐  ┌────────────────────┐   │
-│  │ Repositories │  │     Services       │   │
-│  │              │  │  (API, Realm, Cache)│   │
-│  └──────────────┘  └────────────────────┘   │
-│  ┌──────────────────────────────────────┐   │
-│  │     DTOs + Mappers                    │   │
-│  └──────────────────────────────────────┘   │
-└─────────────────────────────────────────────┘
+```md
+![Discover](docs/images/discover.png)
+![Movie Detail](docs/images/movie-detail.png)
+![Watchlist](docs/images/watchlist.png)
+![Statistics](docs/images/statistics.png)
+![Widget](docs/images/widget.png)
 ```
 
-### Nguyên tắc thiết kế
+## Technical Documentation
 
-1. **Dependency Rule**: Inner layers không biết về outer layers
-2. **Protocol-Oriented**: Mọi service đều có protocol để mock được
-3. **Single Responsibility**: Mỗi class/struct làm 1 việc duy nhất
-4. **Testability**: Toàn bộ business logic test được mà không cần UI
+Phần này tập trung vào chi tiết kỹ thuật để reviewer/dev có thể đọc nhanh cấu trúc và cách chạy project.
 
----
+## Architecture
 
-## 📁 Cấu trúc Project
+### High-level
 
-```
+- `Presentation`: SwiftUI Views + ViewModels
+- `Domain`: Entities, Repository protocols, UseCases
+- `Data`: Repository implementations, API client, DTO/Mapper, Realm persistence
+- `Core`: Design system, navigation, localization, logger, cache, keychain
+- `App`: entry point, environment, DI container
+
+### Data Flow
+
+1. View trigger action tới ViewModel.
+2. ViewModel gọi UseCase.
+3. UseCase làm việc qua Repository protocol.
+4. Data layer triển khai repository, gọi network/local DB.
+5. Kết quả map về domain model và trả lại Presentation.
+
+### Dependency Injection
+
+`DIContainer` cung cấp:
+- `APIClient`
+- `MovieRepository`
+- `WatchlistRepository`
+- `RecentSearchesRepository`
+- Toàn bộ UseCases theo feature
+
+### Persistence
+
+- Realm lưu watchlist/review dữ liệu cục bộ
+- Sử dụng App Group Realm để app + widget đọc chung dữ liệu
+
+### Networking
+
+- `APIClientImpl` dựa trên `URLSession` + async/await
+- `Endpoint` định nghĩa path/query thống nhất
+- Error mapping rõ ràng (`APIError`)
+- Retry logic trong request interceptor
+
+## Project Structure
+
+```text
 CineTracker/
-│
-├── 📱 App/                              # App entry & DI
-│   ├── CineTrackerApp.swift             # @main entry point
-│   ├── AppDelegate.swift                # Push notifications
-│   ├── DI/
-│   │   ├── DIContainer.swift            # Dependency container
-│   │   ├── ServiceAssembly.swift
-│   │   └── RepositoryAssembly.swift
-│   └── Environment/
-│       ├── AppEnvironment.swift         # dev/staging/prod
-│       └── Configuration.swift          # xcconfig wrapper
-│
-├── 🔧 Core/                             # Reusable utilities
-│   ├── Network/
-│   │   ├── APIClient.swift              # Protocol
-│   │   ├── APIClientImpl.swift          # URLSession impl
-│   │   ├── Endpoint.swift               # Enum endpoints
-│   │   ├── HTTPMethod.swift
-│   │   ├── NetworkMonitor.swift         # Reachability
-│   │   ├── RequestInterceptor.swift     # Headers, retry
-│   │   └── APIError.swift
-│   │
-│   ├── Storage/
-│   │   ├── Realm/
-│   │   │   ├── RealmManager.swift
-│   │   │   ├── RealmMigration.swift     # Schema versioning
-│   │   │   └── RealmRepository.swift    # Generic repo
-│   │   ├── Cache/
-│   │   │   ├── ImageCache.swift         # NSCache wrapper
-│   │   │   ├── DiskCache.swift          # FileManager
-│   │   │   └── MemoryCache.swift
-│   │   ├── Keychain/
-│   │   │   └── KeychainManager.swift    # Secure storage
-│   │   └── Preferences/
-│   │       └── UserPreferences.swift    # @AppStorage wrapper
-│   │
-│   ├── DesignSystem/                    # UI Foundation
-│   │   ├── Colors.swift
-│   │   ├── Typography.swift
-│   │   ├── Spacing.swift
-│   │   ├── Components/
-│   │   │   ├── PrimaryButton.swift
-│   │   │   ├── LoadingView.swift
-│   │   │   ├── ErrorView.swift
-│   │   │   ├── SkeletonView.swift
-│   │   │   └── RatingView.swift
-│   │   └── Modifiers/
-│   │       ├── CardStyle.swift
-│   │       └── ShimmerEffect.swift
-│   │
-│   ├── Navigation/
-│   │   ├── AppCoordinator.swift
-│   │   ├── Route.swift                  # Type-safe routes
-│   │   ├── DeepLinkHandler.swift
-│   │   └── TabCoordinator.swift
-│   │
-│   ├── Logger/
-│   │   └── Logger.swift                 # OSLog wrapper
-│   │
-│   └── Extensions/
-│       ├── View+Extensions.swift
-│       ├── String+Extensions.swift
-│       └── Date+Extensions.swift
-│
-├── 💾 Data/                             # Data layer
-│   ├── Models/
-│   │   ├── DTO/                         # API response
-│   │   │   ├── MovieDTO.swift
-│   │   │   ├── MovieDetailDTO.swift
-│   │   │   ├── CastDTO.swift
-│   │   │   └── VideoDTO.swift
-│   │   ├── Domain/                      # Business models
-│   │   │   ├── Movie.swift
-│   │   │   ├── MovieDetail.swift
-│   │   │   └── Cast.swift
-│   │   ├── Realm/                       # Persistence
-│   │   │   ├── SavedMovieObject.swift
-│   │   │   └── ReviewObject.swift
-│   │   └── Mappers/
-│   │       └── MovieMapper.swift        # DTO → Domain
-│   │
-│   ├── Repositories/
-│   │   ├── Protocols/
-│   │   │   ├── MovieRepository.swift
-│   │   │   └── WatchlistRepository.swift
-│   │   └── Implementations/
-│   │       ├── MovieRepositoryImpl.swift
-│   │       └── WatchlistRepositoryImpl.swift
-│   │
-│   └── Services/
-│       ├── MovieService.swift           # API calls
-│       ├── ImageDownloader.swift
-│       └── NotificationService.swift
-│
-├── 🧠 Domain/                           # Business logic
-│   └── UseCases/
-│       ├── FetchPopularMoviesUseCase.swift
-│       ├── SearchMoviesUseCase.swift
-│       ├── AddToWatchlistUseCase.swift
-│       └── GetMovieStatisticsUseCase.swift
-│
-├── 🎨 Presentation/                     # Features
-│   ├── Discover/
-│   │   ├── DiscoverView.swift
-│   │   ├── DiscoverViewModel.swift
-│   │   ├── DiscoverState.swift
-│   │   └── Components/
-│   │       ├── MovieCarousel.swift
-│   │       ├── HeroBanner.swift
-│   │       └── CategorySection.swift
-│   │
-│   ├── Search/
-│   │   ├── SearchView.swift
-│   │   ├── SearchViewModel.swift
-│   │   └── Components/
-│   │       ├── SearchBar.swift
-│   │       ├── RecentSearchesView.swift
-│   │       └── FilterSheet.swift
-│   │
-│   ├── MovieDetail/
-│   │   ├── MovieDetailView.swift
-│   │   ├── MovieDetailViewModel.swift
-│   │   ├── Components/
-│   │   │   ├── ParallaxHeader.swift
-│   │   │   ├── CastSection.swift
-│   │   │   ├── TrailerPlayer.swift
-│   │   │   └── SimilarMoviesSection.swift
-│   │   └── AddReview/
-│   │       ├── AddReviewSheet.swift
-│   │       └── AddReviewViewModel.swift
-│   │
-│   ├── Watchlist/
-│   │   ├── WatchlistView.swift
-│   │   ├── WatchlistViewModel.swift
-│   │   └── Components/
-│   │       ├── WatchlistRow.swift
-│   │       ├── EmptyWatchlistView.swift
-│   │       └── FilterChips.swift
-│   │
-│   ├── Statistics/
-│   │   ├── StatisticsView.swift
-│   │   ├── StatisticsViewModel.swift
-│   │   └── Charts/
-│   │       ├── GenreChart.swift
-│   │       └── MonthlyChart.swift
-│   │
-│   └── Profile/
-│       ├── ProfileView.swift
-│       ├── SettingsView.swift
-│       └── AboutView.swift
-│
-├── 📦 Resources/
-│   ├── Assets.xcassets
-│   ├── Localizable.strings (en)
-│   ├── Localizable.strings (vi)
-│   ├── Fonts/
-│   ├── Info.plist
-│   ├── Debug.xcconfig
-│   └── Release.xcconfig
-│
-├── 🧩 CineTrackerWidget/                # Widget Extension
-│   └── WatchlistWidget.swift
-│
-├── 🧪 CineTrackerTests/                 # Unit tests
-│   ├── ViewModels/
-│   ├── UseCases/
-│   ├── Repositories/
-│   └── Mocks/
-│
-└── 🎭 CineTrackerUITests/               # UI tests
-    └── DiscoverFlowTests.swift
+├─ App/
+│  ├─ CineTrackerApp.swift
+│  ├─ DI/
+│  └─ Environment/
+├─ Core/
+│  ├─ DesignSystem/
+│  ├─ Localization/
+│  ├─ Logger/
+│  ├─ Navigation/
+│  └─ Storage/
+├─ Data/
+│  ├─ DTOs/
+│  ├─ Mappers/
+│  ├─ Network/
+│  ├─ Realm/
+│  └─ Repositories/
+├─ Domain/
+│  ├─ Entities/
+│  ├─ Repositories/
+│  └─ UseCases/
+├─ Presentation/
+│  ├─ Discover/
+│  ├─ Search/
+│  ├─ MovieDetail/
+│  ├─ Watchlist/
+│  ├─ Statistics/
+│  ├─ Profile/
+│  └─ CastDetail/
+├─ Resources/
+├─ CineTrackerWidget/
+└─ CineTracker.xcodeproj/
 ```
 
----
+## Tech Stack
 
-## 📋 Yêu cầu
+- Swift 5.9+
+- SwiftUI (iOS 17+)
+- Combine
+- Async/Await
+- RealmSwift
+- YouTubePlayerKit
+- Swift Charts
+- WidgetKit
+- OSLog
 
-### Hệ thống
-
-- **macOS**: Sonoma 14.0+ (khuyến nghị Sequoia 15+)
-- **Xcode**: 15.0+
-- **iOS Simulator**: iOS 17.0+
-- **Swift**: 5.9+
-
-### Tài khoản
-
-- [TMDB Account](https://www.themoviedb.org/signup) (miễn phí) để lấy API key
-- Apple Developer Account (chỉ cần khi test trên device thật hoặc submit App Store)
-
----
-
-## 🚀 Cài đặt
+## Getting Started
 
 ### 1. Clone repository
 
@@ -358,509 +196,62 @@ git clone https://github.com/<your-username>/CineTracker.git
 cd CineTracker
 ```
 
-### 2. Cài đặt dependencies
+### 2. Create secrets file
 
-Project sử dụng **Swift Package Manager**, dependencies sẽ tự động resolve khi mở Xcode.
+Tạo file `CineTracker/Resources/Secrets.xcconfig`:
 
-Mở project bằng Xcode:
-
-```bash
-open CineTracker.xcodeproj
-```
-
-Hoặc nếu dùng workspace:
-
-```bash
-open CineTracker.xcworkspace
-```
-
-### 3. Cấu hình API Key
-
-Xem chi tiết ở phần [Cấu hình API Key](#-cấu-hình-api-key) bên dưới.
-
-### 4. Chọn Scheme & Build
-
-- Scheme: `CineTracker-Debug` (development) hoặc `CineTracker-Release` (production)
-- Target: iPhone 15 Pro Simulator (hoặc thiết bị thật)
-- Build: `⌘ + B`
-- Run: `⌘ + R`
-
----
-
-## 🔑 Cấu hình API Key
-
-### Bước 1: Đăng ký TMDB API Key
-
-1. Truy cập [TMDB](https://www.themoviedb.org/) và tạo tài khoản
-2. Vào [Settings → API](https://www.themoviedb.org/settings/api)
-3. Request API key (Developer, free tier)
-4. Copy `API Read Access Token (v4 auth)`
-
-### Bước 2: Tạo file Secrets.xcconfig
-
-Tạo file `Resources/Secrets.xcconfig` (file này **không commit** lên Git):
-
-```
-// Secrets.xcconfig
-// CẢNH BÁO: KHÔNG commit file này lên Git!
-
+```xcconfig
 TMDB_API_KEY = your_api_key_here
 TMDB_BASE_URL = https:/$()/api.themoviedb.org/3
 TMDB_IMAGE_BASE_URL = https:/$()/image.tmdb.org/t/p
+ENABLE_VERBOSE_LOGGING = YES
 ```
 
-> ⚠️ **Lưu ý**: Trong xcconfig, ký tự `//` được coi là comment. Dùng `$()` để escape: `https:/$()/api...`
+Lưu ý: dùng `https:/$()/...` trong `.xcconfig` để tránh `//` bị parse như comment.
 
-### Bước 3: Verify .gitignore
+### 3. Verify gitignore
 
-Đảm bảo file `.gitignore` đã có:
+Đảm bảo không commit secrets:
 
 ```gitignore
-# Secrets
-Resources/Secrets.xcconfig
+CineTracker/Resources/Secrets.xcconfig
 *.xcconfig.local
 ```
 
-### Bước 4: Build & Run
-
-API key sẽ được đọc từ `Info.plist` thông qua `Configuration.swift` và lưu vào Keychain ở lần chạy đầu tiên.
-
----
-
-## 🗓 Roadmap & Phases
-
-Project được chia thành **10 phase**, mỗi phase tập trung vào một mảng kiến thức cụ thể.
-
-### Phase 1: Foundation & Setup `🔴 Critical`
-**Thời gian**: 3-4 ngày
-
-- [ ] Khởi tạo Xcode project (iOS 17+, SwiftUI)
-- [ ] Setup SPM dependencies (Realm)
-- [ ] Cấu hình multi-environment (`.xcconfig`)
-- [ ] Setup `OSLog` logger
-- [ ] Setup SwiftLint
-- [ ] Cấu hình `.gitignore`
-- [ ] Đăng ký TMDB API + lưu Keychain
-
-**Keywords học**: `Xcode xcconfig multiple environments`, `Swift OSLog production`, `SwiftLint configuration`, `Swift Keychain Services`
-
----
-
-### Phase 2: Design System `🔴 Critical`
-**Thời gian**: 3-4 ngày
-
-- [ ] Color palette (light + dark mode)
-- [ ] Typography scale
-- [ ] Spacing system
-- [ ] Core components (Button, Loading, Error, Empty, Rating, Skeleton)
-- [ ] Custom ViewModifiers (`.cardStyle()`, `.shimmer()`)
-- [ ] Design System Catalog preview
-
-**Keywords học**: `SwiftUI design system`, `SwiftUI custom ViewModifier`, `SwiftUI shimmer effect`, `SwiftUI Color asset catalog`
-
----
-
-### Phase 3: Networking Layer `🔴 Critical`
-**Thời gian**: 4-5 ngày
-
-- [ ] `APIClient` protocol + impl với async/await
-- [ ] Generic `request<T: Decodable>`
-- [ ] `Endpoint` enum
-- [ ] `RequestInterceptor` (auth, retry)
-- [ ] `NetworkMonitor` (NWPathMonitor)
-- [ ] `APIError` chi tiết
-- [ ] Task cancellation
-- [ ] Mock APIClient cho test
-
-**Keywords học**: `Swift async await URLSession production`, `Swift NWPathMonitor`, `Swift Task cancellation`, `Swift generic network layer`
-
----
-
-### Phase 4: Data Layer - Repository Pattern `🔴 Critical`
-**Thời gian**: 3-4 ngày
-
-- [ ] DTO models (Codable)
-- [ ] Domain models (pure Swift)
-- [ ] Mappers (DTO → Domain)
-- [ ] `MovieRepository` với cache strategy
-- [ ] `WatchlistRepository` với Realm
-- [ ] Generic `RealmRepository<T>`
-- [ ] Realm Migration setup
-- [ ] 3-layer ImageCache (Memory → Disk → Network)
-
-**Keywords học**: `Swift Repository pattern`, `Realm Swift migration`, `iOS image caching NSCache`, `Swift DTO Domain mapping`
-
----
-
-### Phase 5: Discover Tab `🔴 Critical`
-**Thời gian**: 4-5 ngày
-
-- [ ] `TabView` với 5 tab
-- [ ] `DiscoverView` với multiple sections
-- [ ] Hero Banner auto-scroll
-- [ ] `LazyHGrid` horizontal carousels
-- [ ] `MoviePosterCard` component
-- [ ] Parallax scroll effect
-- [ ] Pull to refresh
-- [ ] `@Observable` ViewModel
-- [ ] `ViewState<T>` enum
-- [ ] Skeleton loading
-
-**Keywords học**: `SwiftUI TabView paged`, `SwiftUI parallax scroll`, `SwiftUI @Observable iOS 17`, `SwiftUI refreshable`
-
----
-
-### Phase 6: Navigation & Deep Linking `🔴 Critical`
-**Thời gian**: 3-4 ngày
-
-- [ ] `AppCoordinator` với `NavigationPath`
-- [ ] Type-safe `Route` enum
-- [ ] `.navigationDestination(for:)` setup
-- [ ] Programmatic navigation
-- [ ] URL Scheme: `cinetracker://`
-- [ ] Universal Links
-- [ ] State restoration
-
-**Keywords học**: `SwiftUI NavigationStack Coordinator`, `iOS deep link URL scheme`, `iOS Universal Links setup`, `SwiftUI onOpenURL`
-
----
-
-### Phase 7: Movie Detail + Sheets `🔴 Critical`
-**Thời gian**: 5-6 ngày
-
-- [ ] Parallax header với backdrop
-- [ ] Info section + genre chips
-- [ ] Cast & Crew horizontal scroll
-- [ ] YouTube trailer embed
-- [ ] Similar Movies section
-- [ ] Action buttons (Watchlist, Watched, Share)
-- [ ] Add Review Sheet (rating, text, date, photo)
-- [ ] Alert error handling
-- [ ] Hero animation transition
-
-**Keywords học**: `SwiftUI parallax header GeometryReader`, `SwiftUI WKWebView YouTube`, `SwiftUI matchedGeometryEffect`, `SwiftUI sheet detents`
-
----
-
-### Phase 8: Watchlist + CRUD `🔴 Critical`
-**Thời gian**: 4-5 ngày
-
-- [ ] List view + Grid view toggle
-- [ ] Filter chips (All, Want, Watched, Favorites)
-- [ ] Sort options
-- [ ] Local search trong Realm
-- [ ] Swipe Actions (delete, mark watched)
-- [ ] Context Menu
-- [ ] Batch selection mode
-- [ ] Undo delete với toast
-- [ ] Empty state
-- [ ] Smooth animations
-
-**Keywords học**: `SwiftUI List swipeActions`, `SwiftUI contextMenu`, `SwiftUI EditMode multi-selection`, `Realm Swift query`
-
----
-
-### Phase 9: Statistics & Charts `🟡 Nice to have`
-**Thời gian**: 3-4 ngày
-
-- [ ] Swift Charts setup
-- [ ] Summary cards
-- [ ] Bar chart (monthly)
-- [ ] Pie chart (genres)
-- [ ] Line chart (rating trend)
-- [ ] Top 10 list
-- [ ] Calendar heatmap
-
-**Keywords học**: `Swift Charts iOS 16 tutorial`, `Swift Charts customization`, `SwiftUI calendar heatmap`
-
----
-
-### Phase 10: Polish, Testing, Widget, Localization `🟡 Nice to have`
-**Thời gian**: 5-7 ngày
-
-- [ ] Localization (en, vi)
-- [ ] Accessibility (VoiceOver, Dynamic Type)
-- [ ] Widget Extension
-- [ ] Push Notifications
-- [ ] Unit tests (ViewModels, UseCases)
-- [ ] UI tests (happy paths)
-- [ ] Snapshot tests (optional)
-- [ ] CI/CD với GitHub Actions
-
-**Keywords học**: `iOS String Catalog xcstrings`, `SwiftUI accessibility`, `iOS WidgetKit tutorial`, `Swift unit test ViewModel async`, `GitHub Actions iOS`
-
----
-
-## ✍️ Quy ước Coding
-
-### Naming Conventions
-
-```swift
-// Types: PascalCase
-struct MovieDetail { }
-class MovieViewModel { }
-protocol MovieRepository { }
-enum APIError { }
-
-// Variables & functions: camelCase
-let movieTitle = "Inception"
-func fetchPopularMovies() async throws { }
-
-// Constants: camelCase (không UPPER_CASE)
-static let maxRetryCount = 3
-
-// Private properties: prefix _ KHÔNG dùng
-// Dùng `private` keyword thay vì _
-private var cache: [String: Movie] = [:]
-```
-
-### File Organization
-
-```swift
-// MARK: - Properties
-private let repository: MovieRepository
-@Published var movies: [Movie] = []
-
-// MARK: - Initialization
-init(repository: MovieRepository) {
-    self.repository = repository
-}
-
-// MARK: - Public Methods
-func fetchMovies() async { }
-
-// MARK: - Private Methods
-private func handleError(_ error: Error) { }
-```
-
-### SwiftUI Best Practices
-
-- ✅ Tách subview khi `body` quá 50 dòng
-- ✅ Dùng `@ViewBuilder` cho conditional views
-- ✅ Extract complex views thành computed properties (`private var headerView: some View`)
-- ❌ Không dùng `AnyView` trừ khi thực sự cần
-- ❌ Không nested quá 3 levels of containers
-
-### Async/Await
-
-```swift
-// ✅ Tốt: rõ ràng và type-safe
-func fetchMovie(id: Int) async throws -> Movie {
-    try await repository.movie(id: id)
-}
-
-// ❌ Tránh: completion handler trừ khi bắt buộc
-func fetchMovie(id: Int, completion: @escaping (Result<Movie, Error>) -> Void) { }
-```
-
----
-
-## 🔀 Git Workflow
-
-Project sử dụng **single-branch workflow** với branch `main` duy nhất. Đơn giản, phù hợp cho project học tập cá nhân.
-
-### Quy trình làm việc
+### 4. Open and run
 
 ```bash
-# 1. Đảm bảo có code mới nhất
-git pull origin main
-
-# 2. Làm việc → commit thường xuyên
-git add .
-git commit -m "feat(network): add APIClient with async/await"
-
-# 3. Push lên GitHub
-git push origin main
+open CineTracker/CineTracker.xcodeproj
 ```
 
-### Commit Convention
+Chọn scheme `CineTracker` và chạy trên iOS 17+ simulator/device.
 
-Theo [Conventional Commits](https://www.conventionalcommits.org/):
+## Configuration
 
-```
-<type>(<scope>): <subject>
+- `Configuration.swift` đọc key từ `Info.plist`
+- `Debug.xcconfig`/`Release.xcconfig` include `Secrets.xcconfig`
+- `RealmConfig.swift` cấu hình Realm cho App Group `group.codewithcuongnd.CineTracker`
 
-[optional body]
-```
+## Deep Link
 
-**Types**:
-- `feat`: Tính năng mới
-- `fix`: Sửa bug
-- `docs`: Cập nhật documentation
-- `style`: Format code, không đổi logic
-- `refactor`: Refactor code
-- `test`: Thêm/sửa tests
-- `chore`: Build, dependencies, config
+- `cinetracker://movie/{id}`: mở Movie Detail theo id
+- `cinetracker://watchlist`: chuyển tab sang Watchlist
 
-**Examples**:
+## Localization
 
-```
-feat(network): add APIClient with async/await support
-fix(watchlist): resolve crash when deleting last item
-refactor(discover): extract MovieCarousel to component
-docs(readme): update Phase 3 keywords
-chore(deps): bump RealmSwift to 10.45.0
-```
+- Hỗ trợ `vi` và `en`
+- Tài nguyên:
+  - `CineTracker/Resources/vi.lproj/Localizable.strings`
+  - `CineTracker/Resources/en.lproj/Localizable.strings`
 
-### Best Practices
+## Dependencies
 
-- ✅ **Commit nhỏ và thường xuyên**: mỗi commit chỉ làm 1 việc rõ ràng
-- ✅ **Push cuối ngày**: tránh mất code khi máy hỏng
-- ✅ **Tag sau mỗi phase**: dễ rollback nếu cần
+Swift Package Manager đang sử dụng:
 
-```bash
-# Tag sau khi hoàn thành Phase 1
-git tag -a v0.1.0-phase1 -m "Complete Phase 1: Foundation & Setup"
-git push origin v0.1.0-phase1
+- `realm-swift` (community branch)
+- `realm-core`
+- `YouTubePlayerKit` (2.0.5)
 
-# Xem lại lịch sử các tag
-git tag -l
-```
+## License
 
-- ✅ **Rollback nếu cần**:
-
-```bash
-# Quay về commit cụ thể (giữ thay đổi local)
-git reset --soft <commit-hash>
-
-# Quay về tag (mất thay đổi chưa commit)
-git reset --hard v0.1.0-phase1
-```
-
----
-
-## 🧪 Testing
-
-### Chạy tests
-
-```bash
-# Unit tests
-xcodebuild test -scheme CineTracker \
-  -destination 'platform=iOS Simulator,name=iPhone 15 Pro'
-
-# UI tests
-xcodebuild test -scheme CineTrackerUITests \
-  -destination 'platform=iOS Simulator,name=iPhone 15 Pro'
-
-# Hoặc trong Xcode: ⌘ + U
-```
-
-### Coverage Goals
-
-| Layer | Target Coverage |
-|-------|----------------|
-| Use Cases | 90%+ |
-| ViewModels | 80%+ |
-| Repositories | 80%+ |
-| Mappers | 100% |
-| Views | 30%+ (snapshot tests) |
-
-### Mocking Strategy
-
-Mọi service đều có protocol → tạo Mock dễ dàng:
-
-```swift
-final class MockMovieRepository: MovieRepository {
-    var moviesToReturn: [Movie] = []
-    var shouldThrowError = false
-    
-    func popularMovies() async throws -> [Movie] {
-        if shouldThrowError { throw APIError.networkUnavailable }
-        return moviesToReturn
-    }
-}
-```
-
----
-
-## 📚 Tài liệu tham khảo
-
-### Official Docs
-
-- [Apple Developer - SwiftUI](https://developer.apple.com/documentation/swiftui)
-- [Swift Language Guide](https://docs.swift.org/swift-book/)
-- [Swift Concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/)
-- [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
-
-### Architecture
-
-- [Clean Architecture by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [iOS Clean Architecture - kudoleh](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM)
-- [Point-Free Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture)
-
-### Libraries
-
-- [RealmSwift Documentation](https://www.mongodb.com/docs/realm/sdk/swift/)
-- [Swift Charts Tutorial](https://developer.apple.com/documentation/charts)
-
-### API
-
-- [TMDB API Documentation](https://developer.themoviedb.org/docs)
-- [TMDB API Reference](https://developer.themoviedb.org/reference/intro/getting-started)
-
-### Communities
-
-- [Hacking with Swift](https://www.hackingwithswift.com/)
-- [Swift by Sundell](https://www.swiftbysundell.com/)
-- [Point-Free](https://www.pointfree.co/)
-- [r/iOSProgramming](https://www.reddit.com/r/iOSProgramming/)
-
----
-
-## 🤝 Đóng góp
-
-Đây là project học tập cá nhân. Tuy nhiên, nếu bạn có gợi ý hoặc tìm thấy bug, feel free tạo Issue hoặc PR.
-
-### Reporting Bugs
-
-Khi tạo issue, vui lòng cung cấp:
-- iOS version + Device model
-- Xcode version
-- Steps to reproduce
-- Expected vs actual behavior
-- Screenshots (nếu có)
-
----
-
-## 📄 License
-
-Project này được phát hành dưới [MIT License](LICENSE).
-
-```
-MIT License
-
-Copyright (c) 2026 <Your Name>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-```
-
----
-
-## 🙏 Acknowledgements
-
-- [TMDB](https://www.themoviedb.org/) - Free movie data API
-- [Letterboxd](https://letterboxd.com/) - Design inspiration
-- [Apple](https://developer.apple.com/) - SwiftUI & iOS frameworks
-
----
-
-## 📞 Liên hệ
-
-- **Author**: `<Your Name>`
-- **Email**: `<your.email@example.com>`
-- **GitHub**: [@your-username](https://github.com/your-username)
-- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/your-profile)
-
----
-
-<div align="center">
-
-**⭐ Nếu project này hữu ích, hãy cho mình một star nhé! ⭐**
-
-Made with ❤️ and ☕ in Vietnam
-
-</div>
+MIT License. Xem [LICENSE](LICENSE).
