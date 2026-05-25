@@ -12,7 +12,6 @@
 
 - [Portfolio Overview](#portfolio-overview)
 - [Feature Highlights](#feature-highlights)
-- [Demo Shots](#demo-shots)
 - [Technical Documentation](#technical-documentation)
 - [Architecture](#architecture)
 - [Project Structure](#project-structure)
@@ -83,16 +82,6 @@ Mục tiêu của project:
   - `cinetracker://movie/{id}`
   - `cinetracker://watchlist`
 
-## Demo Shots
-
-Thêm screenshot vào thư mục `docs/images` rồi cập nhật links bên dưới:
-
-```md
-![Discover](docs/images/discover.png)
-![Movie Detail](docs/images/movie-detail.png)
-![Watchlist](docs/images/watchlist.png)
-![Statistics](docs/images/statistics.png)
-![Widget](docs/images/widget.png)
 ```
 
 ## Technical Documentation
@@ -192,7 +181,7 @@ CineTracker/
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/<your-username>/CineTracker.git
+git clone https://github.com/NguyenDacCuong2604/CineTracker.git
 cd CineTracker
 ```
 
