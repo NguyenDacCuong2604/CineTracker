@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ErrorView: View {
     var icon: String = "exclamationmark.triangle.fill"
-    var title: String = "Đã có lỗi xảy ra"
+    var title: String = L10n.Common.errorTitle
     let message: String
-    var retryTitle: String = "Thử lại"
+    var retryTitle: String = L10n.Common.retry
     let onRetry: (() -> Void)?
 
     var body: some View {

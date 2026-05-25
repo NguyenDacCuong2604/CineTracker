@@ -24,7 +24,7 @@ struct UndoToast: View {
             Spacer()
 
             Button(action: onUndo) {
-                Text("Hoàn tác")
+                Text(L10n.Common.undo)
                     .appFont(.headlineSmall)
                     .foregroundColor(.appBrandSecondary)
             }

@@ -48,7 +48,7 @@ struct SettingsView: View {
             Section(L10n.Settings.about) {
                 Link(destination: URL(string: "https://www.themoviedb.org")!) {
                     HStack {
-                        Text("Powered by TMDB")
+                        Text(L10n.Settings.poweredByTMDB)
                         Spacer()
                         Image(systemName: "arrow.up.right.square")
                             .foregroundColor(.appTextSecondary)

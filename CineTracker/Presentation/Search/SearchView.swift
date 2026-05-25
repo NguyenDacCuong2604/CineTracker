@@ -30,12 +30,12 @@ struct SearchView: View {
                 }
             }
             .background(Color.appBackground)
-            .navigationTitle("Tìm kiếm")
+            .navigationTitle(L10n.Search.title)
             .navigationBarTitleDisplayMode(.large)
             .searchable(
                 text: $viewModel.query,
                 placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Tìm phim..."
+                prompt: L10n.Search.placeholder
             )
             .submitLabel(.search)
             .onSubmit(of: .search) {
@@ -117,8 +117,8 @@ struct SearchView: View {
     private func emptyContent(query: String) -> some View {
         EmptyStateView(
             icon: "movieclapper",
-            title: "Không tìm thấy",
-            message: "Không có phim nào khớp với \"\(query)\""
+            title: L10n.Search.notFound,
+            message: L10n.Search.noMatchingMovies(query)
         )
         .frame(minHeight: 400)
     }

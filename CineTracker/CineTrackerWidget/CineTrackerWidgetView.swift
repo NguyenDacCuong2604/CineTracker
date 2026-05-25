@@ -71,7 +71,7 @@ struct SmallWidgetView: View {
             Image(systemName: "popcorn.fill")
                 .font(.system(size: 32))
                 .foregroundColor(.orange)
-            Text("Watchlist trống")
+            Text(L10n.Widget.emptySmall)
                 .font(.caption)
                 .multilineTextAlignment(.center)
         }
@@ -90,7 +90,7 @@ struct MediumWidgetView: View {
                 HStack {
                     Image(systemName: "popcorn.fill")
                         .foregroundColor(.orange)
-                    Text("Watchlist (\(data.totalCount))")
+                    Text(L10n.Widget.watchlistHeader(data.totalCount))
                         .font(.caption)
                         .fontWeight(.semibold)
                     Spacer()
@@ -131,7 +131,7 @@ struct MediumWidgetView: View {
             Image(systemName: "popcorn.fill")
                 .font(.system(size: 32))
                 .foregroundColor(.orange)
-            Text("Chưa có phim trong watchlist")
+            Text(L10n.Widget.emptyMedium)
                 .font(.caption)
         }
     }
@@ -151,7 +151,7 @@ struct LargeWidgetView: View {
                     Text("CineTracker")
                         .font(.headline)
                     Spacer()
-                    Text("\(data.totalCount) phim")
+                    Text(L10n.Widget.movieCount(data.totalCount))
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -197,9 +197,9 @@ struct LargeWidgetView: View {
             Image(systemName: "popcorn.fill")
                 .font(.system(size: 48))
                 .foregroundColor(.orange)
-            Text("Watchlist trống")
+            Text(L10n.Widget.emptyLargeTitle)
                 .font(.headline)
-            Text("Thêm phim trong app để hiển thị ở đây")
+            Text(L10n.Widget.emptyLargeMessage)
                 .font(.caption)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)

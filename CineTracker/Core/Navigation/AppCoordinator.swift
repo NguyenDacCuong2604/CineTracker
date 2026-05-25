@@ -63,11 +63,11 @@ enum AppTab: String, CaseIterable, Hashable {
 
     var title: String {
         switch self {
-        case .discover: return "Khám phá"
-        case .search: return "Tìm kiếm"
-        case .watchlist: return "Watchlist"
-        case .statistics: return "Thống kê"
-        case .profile: return "Cá nhân"
+        case .discover: return L10n.Tabs.discover
+        case .search: return L10n.Tabs.search
+        case .watchlist: return L10n.Tabs.watchlist
+        case .statistics: return L10n.Tabs.statistics
+        case .profile: return L10n.Tabs.profile
         }
     }
 

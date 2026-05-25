@@ -39,7 +39,7 @@ struct MovieCarousel: View {
             if onSeeAll != nil {
                 Button(action: { onSeeAll?() }) {
                     HStack(spacing: AppSpacing.xs) {
-                        Text("Xem tất cả")
+                        Text(L10n.Discover.seeAll)
                             .appFont(.bodySmall)
                         Image(systemName: "chevron.right")
                             .font(.system(size: 12))
@@ -89,7 +89,7 @@ struct MovieCarousel: View {
     }
 
     private var emptyContent: some View {
-        Text("Không có phim")
+        Text(L10n.Discover.emptyCarousel)
             .appFont(.bodyMedium)
             .foregroundColor(.appTextSecondary)
             .frame(maxWidth: .infinity)

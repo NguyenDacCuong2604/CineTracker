@@ -22,9 +22,9 @@ struct WidgetData {
 
     static let placeholder = WidgetData(
         movies: [
-            WidgetMovie(id: 1, title: "Inception", posterURL: nil, userRating: 0, status: "Muốn xem"),
-            WidgetMovie(id: 2, title: "Interstellar", posterURL: nil, userRating: 4.5, status: "Đã xem"),
-            WidgetMovie(id: 3, title: "Tenet", posterURL: nil, userRating: 0, status: "Muốn xem"),
+            WidgetMovie(id: 1, title: "Inception", posterURL: nil, userRating: 0, status: L10n.MovieStatus.wantToWatch),
+            WidgetMovie(id: 2, title: "Interstellar", posterURL: nil, userRating: 4.5, status: L10n.MovieStatus.watched),
+            WidgetMovie(id: 3, title: "Tenet", posterURL: nil, userRating: 0, status: L10n.MovieStatus.wantToWatch),
         ],
         totalCount: 12,
         lastUpdated: Date()

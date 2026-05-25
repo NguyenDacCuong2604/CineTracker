@@ -140,7 +140,7 @@ private struct PlaceholderView: View {
                 .foregroundColor(.appTextTertiary)
             Text(tab.title)
                 .appFont(.headlineLarge)
-            Text("Sẽ làm ở phase tiếp theo")
+            Text(L10n.Common.loading)
                 .appFont(.bodyMedium)
                 .foregroundColor(.appTextSecondary)
         }

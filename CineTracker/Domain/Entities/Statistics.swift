@@ -26,7 +26,7 @@ struct Statistics: Equatable {
 
     var formattedDays: String {
         let days = Double(totalMinutesWatched) / (60 * 24)
-        return String(format: "%.1f ngày", days)
+        return L10n.Stats.daysWatched(days)
     }
 
     static let empty = Statistics(

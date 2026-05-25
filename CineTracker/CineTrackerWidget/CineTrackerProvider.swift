@@ -81,7 +81,7 @@ struct CineTrackerProvider: TimelineProvider {
                     title: object.title,
                     posterURL: posterURL,
                     userRating: object.userRating,
-                    status: object.status == .wantToWatch ? "Muốn xem" : "Đã xem"
+                    status: object.status == .wantToWatch ? L10n.MovieStatus.wantToWatch : L10n.MovieStatus.watched
                 )
             }
 

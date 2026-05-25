@@ -27,29 +27,29 @@ extension APIError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noInternet:
-            return "Không có kết nối internet. Vui long kiểm tra mạng."
+            return L10n.APIError.noInternet
         case .timeout:
-            return "Kết nối quá lâu. Vui lòng thử lại."
+            return L10n.APIError.timeout
         case .cancelled:
-            return "Yêu cầu đã bị huỷ."
+            return L10n.APIError.cancelled
         case let .badRequest(message):
-            return message ?? "Yêu cầu không hợp lệ."
+            return message ?? L10n.APIError.badRequest
         case .unauthorized:
-            return "API key không hợp lệ hoặc đã hết hạn."
+            return L10n.APIError.unauthorized
         case .forbidden:
-            return "Bạn không có quyền truy cập tài nguyên này."
+            return L10n.APIError.forbidden
         case .notFound:
-            return "Không tìm thấy nội dung."
+            return L10n.APIError.notFound
         case let .serverError(code):
-            return "Lỗi máy chủ (\(code)). Vui lòng thử lại sau."
+            return L10n.APIError.serverError(code)
         case let .httpError(code, message):
-            return message ?? "Lỗi HTTP \(code)"
+            return message ?? L10n.APIError.httpError(code)
         case let .decodingFailed(error):
-            return "Không xử lý được dữ liệu: \(error.localizedDescription)"
+            return L10n.APIError.decodingFailed(error.localizedDescription)
         case .invalidURL:
-            return "URL không hợp lệ."
+            return L10n.APIError.invalidURL
         case .invalidResponse:
-            return "Phản hồi không hợp lệ."
+            return L10n.APIError.invalidResponse
         case let .unknown(error):
             return error.localizedDescription
         }

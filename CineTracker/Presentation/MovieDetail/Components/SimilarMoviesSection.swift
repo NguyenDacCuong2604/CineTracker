@@ -13,12 +13,12 @@ struct SimilarMoviesSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("Có thể bạn cũng thích")
+            Text(L10n.MovieDetail.mightLike)
                 .appFont(.headlineLarge)
                 .padding(.horizontal, AppSpacing.lg)
 
             if movies.isEmpty {
-                Text("Không có gợi ý")
+                Text(L10n.MovieDetail.noSuggestions)
                     .appFont(.bodyMedium)
                     .foregroundColor(.appTextSecondary)
                     .padding(.horizontal, AppSpacing.lg)

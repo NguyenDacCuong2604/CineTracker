@@ -13,7 +13,7 @@ struct TopMoviesSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("🏆 Top 15 phim của bạn")
+            Text(L10n.Statistics.topMoviesTitle)
                 .appFont(.headlineLarge)
 
             if movies.isEmpty {
@@ -87,7 +87,7 @@ struct TopMoviesSection: View {
     }
 
     private var emptyState: some View {
-        Text("Chưa rate phim nào")
+        Text(L10n.Statistics.noRated)
             .appFont(.bodyMedium)
             .foregroundColor(.appTextSecondary)
             .frame(maxWidth: .infinity)

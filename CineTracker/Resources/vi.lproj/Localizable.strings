@@ -1,41 +1,63 @@
-/* 
+/*
   Localizable.strings
   CineTracker
 
   Created by MAC VN on 25/5/26.
-  
+
 */
-/* Common */
+
+/* MARK: - Common */
 "common.cancel" = "Huỷ";
 "common.confirm" = "Xác nhận";
 "common.done" = "Xong";
 "common.retry" = "Thử lại";
 "common.loading" = "Đang tải...";
 "common.error" = "Đã xảy ra lỗi";
+"common.errorTitle" = "Đã có lỗi xảy ra";
+"common.save" = "Lưu";
+"common.delete" = "Xoá";
+"common.edit" = "Sửa";
+"common.undo" = "Hoàn tác";
+"common.readMore" = "Đọc thêm";
+"common.collapse" = "Thu gọn";
 
-/* Tabs */
+/* MARK: - Tabs */
 "tabs.discover" = "Khám phá";
 "tabs.search" = "Tìm kiếm";
 "tabs.watchlist" = "Watchlist";
 "tabs.statistics" = "Thống kê";
 "tabs.profile" = "Cá nhân";
 
-/* Discover */
+/* MARK: - Discover */
 "discover.title" = "Khám phá";
 "discover.popular" = "🔥 Phổ biến";
 "discover.topRated" = "⭐ Đánh giá cao";
 "discover.upcoming" = "🎬 Sắp ra mắt";
 "discover.nowPlaying" = "🎥 Đang chiếu";
 "discover.seeAll" = "Xem tất cả";
+"discover.trending" = "Thịnh hành";
+"discover.emptyCarousel" = "Không có phim";
+"discover.trendingError" = "Không tải được phim thịnh hành";
 
-/* Search */
+/* MARK: - Movie Category */
+"movieCategory.trending" = "Thịnh hành";
+"movieCategory.popular" = "Phổ biến";
+"movieCategory.topRated" = "Đánh giá cao";
+"movieCategory.upcoming" = "Sắp ra mắt";
+"movieCategory.nowPlaying" = "Đang chiếu";
+
+/* MARK: - Search */
 "search.title" = "Tìm kiếm";
 "search.placeholder" = "Tìm phim...";
 "search.recent" = "Tìm kiếm gần đây";
 "search.clearAll" = "Xoá tất cả";
 "search.noResults" = "Không tìm thấy phim";
+"search.notFound" = "Không tìm thấy";
+"search.noMatchingMovies" = "Không có phim nào khớp với \"%@\"";
+"search.startSearching" = "Bắt đầu tìm kiếm phim";
+"search.searchHint" = "Nhập tên phim để bắt đầu khám phá";
 
-/* Watchlist */
+/* MARK: - Watchlist */
 "watchlist.title" = "Watchlist";
 "watchlist.all" = "Tất cả";
 "watchlist.wantToWatch" = "Muốn xem";
@@ -44,8 +66,36 @@
 "watchlist.empty" = "Watchlist trống";
 "watchlist.emptyMessage" = "Thêm phim từ Khám phá để bắt đầu";
 "watchlist.exploreCTA" = "Khám phá phim";
+"watchlist.searchPlaceholder" = "Tìm trong watchlist...";
+"watchlist.selectedCount" = "%d đã chọn";
+"watchlist.addToFavorites" = "Yêu thích";
+"watchlist.removeFromFavorites" = "Bỏ yêu thích";
+"watchlist.markAsWatched" = "Đánh dấu đã xem";
+"watchlist.removedFromWatchlist" = "Đã xoá khỏi watchlist";
+"watchlist.ratingLabel" = "Đánh giá";
+"watchlist.emptyFavoritesTitle" = "Chưa có phim yêu thích";
+"watchlist.emptyFavoritesMessage" = "Đánh dấu yêu thích những bộ phim ấn tượng nhất với bạn";
+"watchlist.emptyWatchedTitle" = "Chưa xem phim nào";
+"watchlist.emptyWatchedMessage" = "Đánh dấu các phim đã xem để theo dõi lịch sử xem";
+"watchlist.emptyWantToWatchTitle" = "Chưa có phim muốn xem";
+"watchlist.emptyWantToWatchMessage" = "Thêm những bộ phim bạn muốn xem vào danh sách";
+"watchlist.emptyAllMessage" = "Khám phá và thêm những bộ phim yêu thích vào watchlist";
 
-/* Movie Detail */
+/* MARK: - Watchlist Sort */
+"watchlistSort.dateAddedDesc" = "Mới thêm gần đây";
+"watchlistSort.dateAddedAsc" = "Thêm lâu nhất";
+"watchlistSort.ratingDesc" = "Rating cao nhất";
+"watchlistSort.ratingAsc" = "Rating thấp nhất";
+"watchlistSort.titleAsc" = "Tên A-Z";
+"watchlistSort.titleDesc" = "Tên Z-A";
+"watchlistSort.releaseDateDesc" = "Mới phát hành";
+"watchlistSort.releaseDateAsc" = "Cũ nhất";
+
+/* MARK: - Movie Status */
+"movieStatus.wantToWatch" = "Muốn xem";
+"movieStatus.watched" = "Đã xem";
+
+/* MARK: - Movie Detail */
 "movieDetail.cast" = "Diễn viên";
 "movieDetail.trailer" = "Trailer";
 "movieDetail.similar" = "Phim tương tự";
@@ -54,18 +104,151 @@
 "movieDetail.inWatchlist" = "Đã thêm";
 "movieDetail.markWatched" = "Đánh dấu đã xem";
 "movieDetail.edit" = "Sửa";
+"movieDetail.contentTitle" = "Nội dung";
+"movieDetail.noDescription" = "Chưa có mô tả";
+"movieDetail.mightLike" = "Có thể bạn cũng thích";
+"movieDetail.noSuggestions" = "Không có gợi ý";
+"movieDetail.noCastInfo" = "Không có thông tin diễn viên";
+"movieDetail.watchlistLabel" = "Watchlist";
 
-/* Statistics */
+/* MARK: - Review */
+"review.yourRating" = "Đánh giá của bạn";
+"review.yourFeelings" = "Cảm nhận của bạn";
+"review.placeholder" = "Viết cảm nhận về phim...";
+"review.characterCount" = "%d / 1000 ký tự";
+"review.maxRating" = "/ 5.0";
+"review.watchedOn" = "Đã xem ngày %@";
+"review.sheetTitle" = "Đánh dấu đã xem";
+
+/* MARK: - Cast Detail */
+"castDetail.birthday" = "Sinh nhật";
+"castDetail.lifeStatusCurrent" = "Hiện tại";
+"castDetail.lifeStatusDeceased" = "Đã mất";
+"castDetail.placeOfBirth" = "Nơi sinh";
+"castDetail.biography" = "Tiểu sử";
+"castDetail.filmography" = "Phim đã tham gia";
+"castDetail.noFilmography" = "Không có thông tin filmography";
+"castDetail.role" = "Vai: %@";
+
+/* MARK: - Statistics */
 "statistics.title" = "Thống kê";
 "statistics.totalMovies" = "Tổng phim";
 "statistics.watched" = "Đã xem";
 "statistics.watchTime" = "Thời gian xem";
 "statistics.avgRating" = "Rating TB";
+"statistics.avgRatingFull" = "Rating trung bình";
 "statistics.monthly" = "Phim đã xem theo tháng";
 "statistics.genres" = "Phân bố thể loại";
 "statistics.topMovies" = "🏆 Top 10 phim của bạn";
+"statistics.topMoviesTitle" = "🏆 Top 15 phim của bạn";
+"statistics.noData" = "Chưa có dữ liệu";
+"statistics.monthAxisLabel" = "Tháng";
+"statistics.movieCountAxisLabel" = "Số phim";
+"statistics.emptyMessage" = "Thêm phim vào watchlist và đánh dấu đã xem để thấy thống kê của bạn";
+"statistics.exploreMovies" = "Khám phá phim";
+"statistics.last12Months" = "12 tháng gần nhất";
+"statistics.wantToWatch" = "Muốn xem";
+"statistics.favorites" = "Yêu thích";
+"statistics.ratingDistribution" = "Phân bố đánh giá";
+"statistics.ratingSubtitle" = "Số phim theo số sao bạn đã rate";
+"statistics.noRated" = "Chưa rate phim nào";
+"statistics.noGenreData" = "Chưa có dữ liệu thể loại";
+"statistics.watchingActivity" = "Hoạt động xem phim";
+"statistics.yearLabel" = "Năm %d";
+"statistics.moviesUnit" = "phim";
+"statistics.few" = "Ít";
+"statistics.many" = "Nhiều";
+"statistics.tapCellHint" = "Chạm ô để xem chi tiết";
+"statistics.noWatchOnDay" = "Không xem phim";
+"statistics.moviesOnDay" = "%d phim";
+"statistics.noWatchActivity" = "Chưa có hoạt động xem phim trong năm %d";
+"statistics.dateLocale" = "vi_VN";
+"statistics.monthShort.1" = "T1";
+"statistics.monthShort.2" = "T2";
+"statistics.monthShort.3" = "T3";
+"statistics.monthShort.4" = "T4";
+"statistics.monthShort.5" = "T5";
+"statistics.monthShort.6" = "T6";
+"statistics.monthShort.7" = "T7";
+"statistics.monthShort.8" = "T8";
+"statistics.monthShort.9" = "T9";
+"statistics.monthShort.10" = "T10";
+"statistics.monthShort.11" = "T11";
+"statistics.monthShort.12" = "T12";
+"statistics.weekdayShort.0" = "T2";
+"statistics.weekdayShort.1" = "T3";
+"statistics.weekdayShort.2" = "T4";
+"statistics.weekdayShort.3" = "T5";
+"statistics.weekdayShort.4" = "T6";
+"statistics.weekdayShort.5" = "T7";
+"statistics.weekdayShort.6" = "CN";
 
-/* Profile */
+/* MARK: - All Movies */
+"allMovies.loadError" = "Không thể tải phim";
+"allMovies.loadingMore" = "Đang tải thêm";
+
+/* MARK: - API Error */
+"apiError.noInternet" = "Không có kết nối internet. Vui lòng kiểm tra mạng.";
+"apiError.timeout" = "Kết nối quá lâu. Vui lòng thử lại.";
+"apiError.cancelled" = "Yêu cầu đã bị huỷ.";
+"apiError.badRequest" = "Yêu cầu không hợp lệ.";
+"apiError.unauthorized" = "API key không hợp lệ hoặc đã hết hạn.";
+"apiError.forbidden" = "Bạn không có quyền truy cập tài nguyên này.";
+"apiError.notFound" = "Không tìm thấy nội dung.";
+"apiError.serverError" = "Lỗi máy chủ (%d). Vui lòng thử lại sau.";
+"apiError.httpError" = "Lỗi HTTP %d";
+"apiError.decodingFailed" = "Không xử lý được dữ liệu: %@";
+"apiError.invalidURL" = "URL không hợp lệ.";
+"apiError.invalidResponse" = "Phản hồi không hợp lệ.";
+
+/* MARK: - Person */
+"person.departmentActing" = "Diễn viên";
+"person.departmentDirecting" = "Đạo diễn";
+"person.departmentWriting" = "Biên kịch";
+"person.departmentProduction" = "Sản xuất";
+"person.departmentCamera" = "Quay phim";
+"person.departmentEditing" = "Dựng phim";
+"person.departmentSound" = "Âm thanh";
+"person.departmentArt" = "Mỹ thuật";
+"person.deceasedOn" = "Đã mất ngày %@";
+"person.ageYears" = "%d tuổi";
+"person.birthdayLocale" = "vi_VN";
+
+/* MARK: - Stats */
+"stats.daysWatched" = "%.1f ngày";
+
+/* MARK: - Genre */
+"genre.action" = "Hành động";
+"genre.adventure" = "Phiêu lưu";
+"genre.animation" = "Hoạt hình";
+"genre.comedy" = "Hài";
+"genre.crime" = "Tội phạm";
+"genre.documentary" = "Tài liệu";
+"genre.drama" = "Chính kịch";
+"genre.family" = "Gia đình";
+"genre.fantasy" = "Giả tưởng";
+"genre.history" = "Lịch sử";
+"genre.horror" = "Kinh dị";
+"genre.music" = "Âm nhạc";
+"genre.mystery" = "Bí ẩn";
+"genre.romance" = "Lãng mạn";
+"genre.scienceFiction" = "Khoa học viễn tưởng";
+"genre.thriller" = "Giật gân";
+"genre.war" = "Chiến tranh";
+"genre.western" = "Cao bồi";
+"genre.other" = "Khác";
+
+/* MARK: - Widget */
+"widget.displayName" = "CineTracker Watchlist";
+"widget.description" = "Hiển thị danh sách phim trong watchlist của bạn.";
+"widget.emptySmall" = "Watchlist trống";
+"widget.emptyMedium" = "Chưa có phim trong watchlist";
+"widget.emptyLargeTitle" = "Watchlist trống";
+"widget.emptyLargeMessage" = "Thêm phim trong app để hiển thị ở đây";
+"widget.watchlistHeader" = "Watchlist (%d)";
+"widget.movieCount" = "%d phim";
+
+/* MARK: - Profile */
 "profile.title" = "Cá nhân";
 "profile.welcome" = "Xin chào!";
 "profile.subtitle" = "Quản lý ứng dụng của bạn";
@@ -77,8 +260,9 @@
 "profile.clearCacheMessage" = "Các ảnh đã cache sẽ phải tải lại từ network";
 "profile.madeWith" = "Made with ❤️ in Vietnam";
 "profile.version" = "Phiên bản %@";
+"profile.calculatingCache" = "Đang tính";
 
-/* Settings */
+/* MARK: - Settings */
 "settings.title" = "Cài đặt";
 "settings.appearance" = "Giao diện";
 "settings.theme" = "Chế độ";
@@ -93,3 +277,4 @@
 "settings.showSpoilersNote" = "Cho phép hiển thị tên vai diễn có thể spoiler";
 "settings.about" = "Về ứng dụng";
 "settings.sourceCode" = "Mã nguồn (GitHub)";
+"settings.poweredByTMDB" = "Cung cấp bởi TMDB";

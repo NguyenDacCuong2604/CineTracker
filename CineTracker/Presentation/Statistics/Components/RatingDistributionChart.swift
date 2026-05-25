@@ -17,10 +17,10 @@ struct RatingDistributionChart: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("Phân bố đánh giá")
+            Text(L10n.Statistics.ratingDistribution)
                 .appFont(.headlineLarge)
 
-            Text("Số phim theo số sao bạn đã rate")
+            Text(L10n.Statistics.ratingSubtitle)
                 .appFont(.bodySmall)
                 .foregroundColor(.appTextSecondary)
 
@@ -85,7 +85,7 @@ struct RatingDistributionChart: View {
     }
 
     private var emptyState: some View {
-        Text("Chưa rate phim nào")
+        Text(L10n.Statistics.noRated)
             .appFont(.bodyMedium)
             .foregroundColor(.appTextSecondary)
             .frame(maxWidth: .infinity)

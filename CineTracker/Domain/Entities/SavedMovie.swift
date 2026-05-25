@@ -23,8 +23,8 @@ struct SavedMovie: Identifiable, Hashable {
 
         var title: String {
             switch self {
-            case .wantToWatch: return "Muốn xem"
-            case .watched: return "Đã xem"
+            case .wantToWatch: return L10n.MovieStatus.wantToWatch
+            case .watched: return L10n.MovieStatus.watched
             }
         }
     }

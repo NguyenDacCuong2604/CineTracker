@@ -22,42 +22,42 @@ struct StatsOverview: View {
                 icon: "popcorn.fill",
                 iconColor: .appBrand,
                 value: "\(statistics.totalMovies)",
-                label: "Tổng phim"
+                label: L10n.Statistics.totalMovies
             )
 
             StatCard(
                 icon: "checkmark.circle.fill",
                 iconColor: .appSuccess,
                 value: "\(statistics.totalWatched)",
-                label: "Đã xem"
+                label: L10n.Statistics.watched
             )
 
             StatCard(
                 icon: "clock.fill",
                 iconColor: .appInfo,
                 value: statistics.formattedWatchTime,
-                label: "Thời gian xem"
+                label: L10n.Statistics.watchTime
             )
 
             StatCard(
                 icon: "star.fill",
                 iconColor: .appBrandSecondary,
                 value: String(format: "%.1f", statistics.averageUserRating),
-                label: "Rating trung bình"
+                label: L10n.Statistics.avgRatingFull
             )
 
             StatCard(
                 icon: "bookmark.fill",
                 iconColor: .appWarning,
                 value: "\(statistics.totalWantToWatch)",
-                label: "Muốn xem"
+                label: L10n.Statistics.wantToWatch
             )
 
             StatCard(
                 icon: "heart.fill",
                 iconColor: .appError,
                 value: "\(statistics.totalFavorites)",
-                label: "Yêu thích"
+                label: L10n.Statistics.favorites
             )
         }
     }

@@ -19,7 +19,7 @@ struct GenrePieChart: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("Phân bố thể loại")
+            Text(L10n.Statistics.genres)
                 .appFont(.headlineLarge)
 
             if genreStats.isEmpty {
@@ -77,7 +77,7 @@ struct GenrePieChart: View {
     }
 
     private var emptyState: some View {
-        Text("Chưa có dữ liệu thể loại")
+        Text(L10n.Statistics.noGenreData)
             .appFont(.bodyMedium)
             .foregroundColor(.appTextSecondary)
             .frame(maxWidth: .infinity)

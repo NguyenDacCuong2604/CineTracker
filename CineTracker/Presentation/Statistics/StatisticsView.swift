@@ -32,7 +32,7 @@ struct StatisticsView: View {
             .padding(AppSpacing.lg)
         }
         .background(Color.appBackground)
-        .navigationTitle("Thống kê")
+        .navigationTitle(L10n.Statistics.title)
         .navigationBarTitleDisplayMode(.large)
         .onAppear {
             viewModel.refresh()
@@ -47,17 +47,17 @@ struct StatisticsView: View {
                 .font(.system(size: 70))
                 .foregroundColor(.appTextTertiary)
 
-            Text("Chưa có dữ liệu")
+            Text(L10n.Statistics.noData)
                 .appFont(.headlineMedium)
 
-            Text("Thêm phim vào watchlist và đánh dấu đã xem để thấy thống kê của bạn")
+            Text(L10n.Statistics.emptyMessage)
                 .appFont(.bodyMedium)
                 .foregroundColor(.appTextSecondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, AppSpacing.xl)
 
             PrimaryButton(
-                title: "Khám phá phim",
+                title: L10n.Statistics.exploreMovies,
                 icon: "sparkles",
                 action: {
                     coordinator.selectedTab = .discover

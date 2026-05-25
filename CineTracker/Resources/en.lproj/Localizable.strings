@@ -1,41 +1,63 @@
-/* 
+/*
   Localizable.strings
   CineTracker
 
   Created by MAC VN on 25/5/26.
-  
+
 */
-/* Common */
+
+/* MARK: - Common */
 "common.cancel" = "Cancel";
 "common.confirm" = "Confirm";
 "common.done" = "Done";
 "common.retry" = "Retry";
 "common.loading" = "Loading...";
 "common.error" = "An error occurred";
+"common.errorTitle" = "Something went wrong";
+"common.save" = "Save";
+"common.delete" = "Delete";
+"common.edit" = "Edit";
+"common.undo" = "Undo";
+"common.readMore" = "Read More";
+"common.collapse" = "Show Less";
 
-/* Tabs */
+/* MARK: - Tabs */
 "tabs.discover" = "Discover";
 "tabs.search" = "Search";
 "tabs.watchlist" = "Watchlist";
 "tabs.statistics" = "Statistics";
 "tabs.profile" = "Profile";
 
-/* Discover */
+/* MARK: - Discover */
 "discover.title" = "Discover";
 "discover.popular" = "🔥 Popular";
 "discover.topRated" = "⭐ Top Rated";
 "discover.upcoming" = "🎬 Upcoming";
 "discover.nowPlaying" = "🎥 Now Playing";
 "discover.seeAll" = "See All";
+"discover.trending" = "Trending";
+"discover.emptyCarousel" = "No movies";
+"discover.trendingError" = "Couldn't load trending movies";
 
-/* Search */
+/* MARK: - Movie Category */
+"movieCategory.trending" = "Trending";
+"movieCategory.popular" = "Popular";
+"movieCategory.topRated" = "Top Rated";
+"movieCategory.upcoming" = "Upcoming";
+"movieCategory.nowPlaying" = "Now Playing";
+
+/* MARK: - Search */
 "search.title" = "Search";
 "search.placeholder" = "Search movies...";
 "search.recent" = "Recent Searches";
 "search.clearAll" = "Clear All";
 "search.noResults" = "No movies found";
+"search.notFound" = "Not Found";
+"search.noMatchingMovies" = "No movies match \"%@\"";
+"search.startSearching" = "Start searching for movies";
+"search.searchHint" = "Type a movie title to begin exploring";
 
-/* Watchlist */
+/* MARK: - Watchlist */
 "watchlist.title" = "Watchlist";
 "watchlist.all" = "All";
 "watchlist.wantToWatch" = "Want to Watch";
@@ -44,8 +66,36 @@
 "watchlist.empty" = "Your watchlist is empty";
 "watchlist.emptyMessage" = "Add movies from Discover to get started";
 "watchlist.exploreCTA" = "Explore Movies";
+"watchlist.searchPlaceholder" = "Search in watchlist...";
+"watchlist.selectedCount" = "%d selected";
+"watchlist.addToFavorites" = "Favorite";
+"watchlist.removeFromFavorites" = "Unfavorite";
+"watchlist.markAsWatched" = "Mark as Watched";
+"watchlist.removedFromWatchlist" = "Removed from watchlist";
+"watchlist.ratingLabel" = "Rating";
+"watchlist.emptyFavoritesTitle" = "No favorites yet";
+"watchlist.emptyFavoritesMessage" = "Mark your most loved movies as favorites";
+"watchlist.emptyWatchedTitle" = "No watched movies yet";
+"watchlist.emptyWatchedMessage" = "Mark movies as watched to track your viewing history";
+"watchlist.emptyWantToWatchTitle" = "No movies to watch yet";
+"watchlist.emptyWantToWatchMessage" = "Add movies you'd like to watch to your list";
+"watchlist.emptyAllMessage" = "Discover and add your favorite movies to the watchlist";
 
-/* Movie Detail */
+/* MARK: - Watchlist Sort */
+"watchlistSort.dateAddedDesc" = "Recently Added";
+"watchlistSort.dateAddedAsc" = "Oldest Added";
+"watchlistSort.ratingDesc" = "Highest Rating";
+"watchlistSort.ratingAsc" = "Lowest Rating";
+"watchlistSort.titleAsc" = "Title A-Z";
+"watchlistSort.titleDesc" = "Title Z-A";
+"watchlistSort.releaseDateDesc" = "Newest Release";
+"watchlistSort.releaseDateAsc" = "Oldest Release";
+
+/* MARK: - Movie Status */
+"movieStatus.wantToWatch" = "Want to Watch";
+"movieStatus.watched" = "Watched";
+
+/* MARK: - Movie Detail */
 "movieDetail.cast" = "Cast";
 "movieDetail.trailer" = "Trailer";
 "movieDetail.similar" = "Similar Movies";
@@ -54,18 +104,151 @@
 "movieDetail.inWatchlist" = "Added";
 "movieDetail.markWatched" = "Mark as Watched";
 "movieDetail.edit" = "Edit";
+"movieDetail.contentTitle" = "Overview";
+"movieDetail.noDescription" = "No description available";
+"movieDetail.mightLike" = "You might also like";
+"movieDetail.noSuggestions" = "No suggestions";
+"movieDetail.noCastInfo" = "No cast information";
+"movieDetail.watchlistLabel" = "Watchlist";
 
-/* Statistics */
+/* MARK: - Review */
+"review.yourRating" = "Your Rating";
+"review.yourFeelings" = "Your Thoughts";
+"review.placeholder" = "Write your thoughts about the movie...";
+"review.characterCount" = "%d / 1000 characters";
+"review.maxRating" = "/ 5.0";
+"review.watchedOn" = "Watched on %@";
+"review.sheetTitle" = "Mark as Watched";
+
+/* MARK: - Cast Detail */
+"castDetail.birthday" = "Birthday";
+"castDetail.lifeStatusCurrent" = "Current";
+"castDetail.lifeStatusDeceased" = "Deceased";
+"castDetail.placeOfBirth" = "Place of Birth";
+"castDetail.biography" = "Biography";
+"castDetail.filmography" = "Filmography";
+"castDetail.noFilmography" = "No filmography information";
+"castDetail.role" = "As: %@";
+
+/* MARK: - Statistics */
 "statistics.title" = "Statistics";
 "statistics.totalMovies" = "Total Movies";
 "statistics.watched" = "Watched";
 "statistics.watchTime" = "Watch Time";
 "statistics.avgRating" = "Avg Rating";
+"statistics.avgRatingFull" = "Average Rating";
 "statistics.monthly" = "Monthly Watching";
 "statistics.genres" = "Genre Distribution";
 "statistics.topMovies" = "🏆 Your Top 10 Movies";
+"statistics.topMoviesTitle" = "🏆 Your Top 15 Movies";
+"statistics.noData" = "No data yet";
+"statistics.monthAxisLabel" = "Month";
+"statistics.movieCountAxisLabel" = "Movies";
+"statistics.emptyMessage" = "Add movies to watchlist and mark them as watched to see your stats";
+"statistics.exploreMovies" = "Explore Movies";
+"statistics.last12Months" = "Last 12 months";
+"statistics.wantToWatch" = "Want to Watch";
+"statistics.favorites" = "Favorites";
+"statistics.ratingDistribution" = "Rating Distribution";
+"statistics.ratingSubtitle" = "Movies by your star rating";
+"statistics.noRated" = "No rated movies yet";
+"statistics.noGenreData" = "No genre data yet";
+"statistics.watchingActivity" = "Watching Activity";
+"statistics.yearLabel" = "Year %d";
+"statistics.moviesUnit" = "movies";
+"statistics.few" = "Less";
+"statistics.many" = "More";
+"statistics.tapCellHint" = "Tap a cell to see details";
+"statistics.noWatchOnDay" = "No movies watched";
+"statistics.moviesOnDay" = "%d movies";
+"statistics.noWatchActivity" = "No watching activity in %d";
+"statistics.dateLocale" = "en_US";
+"statistics.monthShort.1" = "Jan";
+"statistics.monthShort.2" = "Feb";
+"statistics.monthShort.3" = "Mar";
+"statistics.monthShort.4" = "Apr";
+"statistics.monthShort.5" = "May";
+"statistics.monthShort.6" = "Jun";
+"statistics.monthShort.7" = "Jul";
+"statistics.monthShort.8" = "Aug";
+"statistics.monthShort.9" = "Sep";
+"statistics.monthShort.10" = "Oct";
+"statistics.monthShort.11" = "Nov";
+"statistics.monthShort.12" = "Dec";
+"statistics.weekdayShort.0" = "Mon";
+"statistics.weekdayShort.1" = "Tue";
+"statistics.weekdayShort.2" = "Wed";
+"statistics.weekdayShort.3" = "Thu";
+"statistics.weekdayShort.4" = "Fri";
+"statistics.weekdayShort.5" = "Sat";
+"statistics.weekdayShort.6" = "Sun";
 
-/* Profile */
+/* MARK: - All Movies */
+"allMovies.loadError" = "Couldn't load movies";
+"allMovies.loadingMore" = "Loading more";
+
+/* MARK: - API Error */
+"apiError.noInternet" = "No internet connection. Please check your network.";
+"apiError.timeout" = "Connection timed out. Please try again.";
+"apiError.cancelled" = "The request was cancelled.";
+"apiError.badRequest" = "Invalid request.";
+"apiError.unauthorized" = "API key is invalid or expired.";
+"apiError.forbidden" = "You don't have permission to access this resource.";
+"apiError.notFound" = "Content not found.";
+"apiError.serverError" = "Server error (%d). Please try again later.";
+"apiError.httpError" = "HTTP error %d";
+"apiError.decodingFailed" = "Couldn't process data: %@";
+"apiError.invalidURL" = "Invalid URL.";
+"apiError.invalidResponse" = "Invalid response.";
+
+/* MARK: - Person */
+"person.departmentActing" = "Actor";
+"person.departmentDirecting" = "Director";
+"person.departmentWriting" = "Writer";
+"person.departmentProduction" = "Producer";
+"person.departmentCamera" = "Cinematographer";
+"person.departmentEditing" = "Editor";
+"person.departmentSound" = "Sound";
+"person.departmentArt" = "Art";
+"person.deceasedOn" = "Passed away on %@";
+"person.ageYears" = "%d years old";
+"person.birthdayLocale" = "en_US";
+
+/* MARK: - Stats */
+"stats.daysWatched" = "%.1f days";
+
+/* MARK: - Genre */
+"genre.action" = "Action";
+"genre.adventure" = "Adventure";
+"genre.animation" = "Animation";
+"genre.comedy" = "Comedy";
+"genre.crime" = "Crime";
+"genre.documentary" = "Documentary";
+"genre.drama" = "Drama";
+"genre.family" = "Family";
+"genre.fantasy" = "Fantasy";
+"genre.history" = "History";
+"genre.horror" = "Horror";
+"genre.music" = "Music";
+"genre.mystery" = "Mystery";
+"genre.romance" = "Romance";
+"genre.scienceFiction" = "Science Fiction";
+"genre.thriller" = "Thriller";
+"genre.war" = "War";
+"genre.western" = "Western";
+"genre.other" = "Other";
+
+/* MARK: - Widget */
+"widget.displayName" = "CineTracker Watchlist";
+"widget.description" = "Shows your watchlist movies.";
+"widget.emptySmall" = "Watchlist empty";
+"widget.emptyMedium" = "No movies in watchlist";
+"widget.emptyLargeTitle" = "Watchlist empty";
+"widget.emptyLargeMessage" = "Add movies in the app to show them here";
+"widget.watchlistHeader" = "Watchlist (%d)";
+"widget.movieCount" = "%d movies";
+
+/* MARK: - Profile */
 "profile.title" = "Profile";
 "profile.welcome" = "Hello!";
 "profile.subtitle" = "Manage your app";
@@ -77,8 +260,9 @@
 "profile.clearCacheMessage" = "Cached images will be re-downloaded from network";
 "profile.madeWith" = "Made with ❤️ in Vietnam";
 "profile.version" = "Version %@";
+"profile.calculatingCache" = "Calculating";
 
-/* Settings */
+/* MARK: - Settings */
 "settings.title" = "Settings";
 "settings.appearance" = "Appearance";
 "settings.theme" = "Theme";
@@ -93,3 +277,4 @@
 "settings.showSpoilersNote" = "Allow showing potentially spoiler character names";
 "settings.about" = "About";
 "settings.sourceCode" = "Source Code (GitHub)";
+"settings.poweredByTMDB" = "Powered by TMDB";

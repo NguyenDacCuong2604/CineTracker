@@ -129,7 +129,7 @@ struct CastDetailView: View {
             if let birthday = person.formattedBirthday {
                 infoRow(
                     icon: "calendar",
-                    label: "Sinh nhật",
+                    label: L10n.CastDetail.birthday,
                     value: birthday
                 )
             }
@@ -137,7 +137,7 @@ struct CastDetailView: View {
             if let lifeStatus = person.lifeStatus {
                 infoRow(
                     icon: person.deathday == nil ? "heart.fill" : "heart.slash.fill",
-                    label: person.deathday == nil ? "Hiện tại" : "Đã mất",
+                    label: person.deathday == nil ? L10n.CastDetail.lifeStatusCurrent : L10n.CastDetail.lifeStatusDeceased,
                     value: lifeStatus
                 )
             }
@@ -145,7 +145,7 @@ struct CastDetailView: View {
             if let placeOfBirth = person.placeOfBirth, !placeOfBirth.isEmpty {
                 infoRow(
                     icon: "mappin.circle.fill",
-                    label: "Nơi sinh",
+                    label: L10n.CastDetail.placeOfBirth,
                     value: placeOfBirth
                 )
             }
@@ -179,7 +179,7 @@ struct CastDetailView: View {
 
     private func biographySection(person: Person) -> some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-            Text("Tiểu sử")
+            Text(L10n.CastDetail.biography)
                 .appFont(.headlineLarge)
 
             Text(person.biography)
@@ -190,7 +190,7 @@ struct CastDetailView: View {
                 .fixedSize(horizontal: false, vertical: true)
 
             if person.biography.count > 300 {
-                Button(showBiographyExpanded ? "Thu gọn" : "Đọc thêm") {
+                Button(showBiographyExpanded ? L10n.Common.collapse : L10n.Common.readMore) {
                     withAnimation { showBiographyExpanded.toggle() }
                 }
                 .appFont(.headlineSmall)
@@ -205,7 +205,7 @@ struct CastDetailView: View {
         switch viewModel.state.credits {
         case .idle, .loading:
             VStack(alignment: .leading, spacing: AppSpacing.md) {
-                Text("Phim đã tham gia")
+                Text(L10n.CastDetail.filmography)
                     .appFont(.headlineLarge)
                     .padding(.horizontal, AppSpacing.lg)
 
@@ -221,10 +221,10 @@ struct CastDetailView: View {
 
         case let .loaded(credits) where credits.isEmpty:
             VStack(alignment: .leading, spacing: AppSpacing.md) {
-                Text("Phim đã tham gia")
+                Text(L10n.CastDetail.filmography)
                     .appFont(.headlineLarge)
                     .padding(.horizontal, AppSpacing.lg)
-                Text("Không có thông tin filmography")
+                Text(L10n.CastDetail.noFilmography)
                     .appFont(.bodyMedium)
                     .foregroundColor(.appTextSecondary)
                     .padding(.horizontal, AppSpacing.lg)
@@ -241,7 +241,7 @@ struct CastDetailView: View {
     private func filmographyContent(credits: [PersonMovieCredit]) -> some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
             HStack {
-                Text("Phim đã tham gia")
+                Text(L10n.CastDetail.filmography)
                     .appFont(.headlineLarge)
 
                 Text("(\(credits.count))")
@@ -266,7 +266,7 @@ struct CastDetailView: View {
                             )
 
                             if let character = credit.character, !character.isEmpty {
-                                Text("Vai: \(character)")
+                                Text(L10n.CastDetail.role(character))
                                     .appFont(.caption)
                                     .foregroundColor(.appTextTertiary)
                                     .lineLimit(2)

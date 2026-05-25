@@ -106,7 +106,7 @@ struct WatchlistRow: View {
 
     private var userRatingView: some View {
         HStack(spacing: 2) {
-            Text("Đánh giá")
+            Text(L10n.Watchlist.ratingLabel)
                 .appFont(.caption)
                 .foregroundColor(.appTextSecondary)
 

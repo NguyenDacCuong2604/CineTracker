@@ -26,15 +26,28 @@ protocol WatchlistRepository {
     func allFavoriteMovies() -> [SavedMovie]
 }
 
-enum WatchlistSortOption: String, CaseIterable {
-    case dateAddedDesc = "Mới thêm gần đây"
-    case dateAddedAsc = "Thêm lâu nhất"
-    case ratingDesc = "Rating cao nhất"
-    case ratingAsc = "Rating thấp nhất"
-    case titleAsc = "Tên A-Z"
-    case titleDesc = "Tên Z-A"
-    case releaseDateDesc = "Mới phát hành"
-    case releaseDateAsc = "Cũ nhất"
+enum WatchlistSortOption: CaseIterable {
+    case dateAddedDesc
+    case dateAddedAsc
+    case ratingDesc
+    case ratingAsc
+    case titleAsc
+    case titleDesc
+    case releaseDateDesc
+    case releaseDateAsc
+
+    var title: String {
+        switch self {
+        case .dateAddedDesc: return L10n.WatchlistSort.dateAddedDesc
+        case .dateAddedAsc: return L10n.WatchlistSort.dateAddedAsc
+        case .ratingDesc: return L10n.WatchlistSort.ratingDesc
+        case .ratingAsc: return L10n.WatchlistSort.ratingAsc
+        case .titleAsc: return L10n.WatchlistSort.titleAsc
+        case .titleDesc: return L10n.WatchlistSort.titleDesc
+        case .releaseDateDesc: return L10n.WatchlistSort.releaseDateDesc
+        case .releaseDateAsc: return L10n.WatchlistSort.releaseDateAsc
+        }
+    }
 
     var sfSymbol: String {
         switch self {

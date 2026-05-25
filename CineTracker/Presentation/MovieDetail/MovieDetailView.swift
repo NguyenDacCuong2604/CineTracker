@@ -215,7 +215,7 @@ struct MovieDetailView: View {
                 }) {
                     HStack(spacing: AppSpacing.sm) {
                         Image(systemName: viewModel.state.isInWatchlist ? "checkmark" : "plus")
-                        Text(viewModel.state.isInWatchlist ? "Đã thêm" : "Watchlist")
+                        Text(viewModel.state.isInWatchlist ? L10n.MovieDetail.inWatchlist : L10n.MovieDetail.watchlistLabel)
                             .appFont(.headlineSmall)
                     }
                     .foregroundColor(.white)
@@ -244,7 +244,7 @@ struct MovieDetailView: View {
                 Button(action: { showReviewSheet = true }) {
                     HStack(spacing: AppSpacing.sm) {
                         Image(systemName: "checkmark.circle")
-                        Text("Đánh dấu đã xem")
+                        Text(L10n.MovieDetail.markWatched)
                             .appFont(.headlineSmall)
                     }
                     .foregroundColor(.appBrand)
@@ -265,16 +265,16 @@ struct MovieDetailView: View {
 
     private func overviewSection(detail: MovieDetail) -> some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-            Text("Nội dung")
+            Text(L10n.MovieDetail.contentTitle)
                 .appFont(.headlineLarge)
-            Text(detail.overview.isEmpty ? "Chưa có mô tả" : detail.overview)
+            Text(detail.overview.isEmpty ? L10n.MovieDetail.noDescription : detail.overview)
                 .appFont(.bodyMedium)
                 .foregroundColor(.appTextSecondary)
                 .lineLimit(showOverviewExpanded ? nil : 4)
                 .animation(.easeInOut(duration: 0.2), value: showOverviewExpanded)
 
             if detail.overview.count > 200 {
-                Button(showOverviewExpanded ? "Thu gọn" : "Đọc thêm") {
+                Button(showOverviewExpanded ? L10n.Common.collapse : L10n.Common.readMore) {
                     withAnimation { showOverviewExpanded.toggle() }
                 }
                 .appFont(.headlineSmall)
@@ -286,7 +286,7 @@ struct MovieDetailView: View {
 
     private func trailerSection(video: Video) -> some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("Trailer")
+            Text(L10n.MovieDetail.trailer)
                 .appFont(.headlineLarge)
                 .padding(.horizontal, AppSpacing.lg)
             TrailerPlayer(videoID: video.key)

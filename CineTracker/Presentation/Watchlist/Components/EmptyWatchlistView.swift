@@ -32,7 +32,7 @@ struct EmptyWatchlistView: View {
 
             if let onDiscover = onDiscover {
                 PrimaryButton(
-                    title: "Khám phá phim",
+                    title: L10n.Watchlist.exploreCTA,
                     icon: "sparkles",
                     action: onDiscover
                 )
@@ -48,26 +48,26 @@ struct EmptyWatchlistView: View {
     private var emptyTitle: String {
         switch filterDescription {
         case "favorites":
-            return "Chưa có phim yêu thích"
+            return L10n.Watchlist.emptyFavoritesTitle
         case "watched":
-            return "Chưa xem phim nào"
+            return L10n.Watchlist.emptyWatchedTitle
         case "wantToWatch":
-            return "Chưa có phim muốn xem"
+            return L10n.Watchlist.emptyWantToWatchTitle
         default:
-            return "Watchlist trống"
+            return L10n.Watchlist.empty
         }
     }
 
     private var emptyMessage: String {
         switch filterDescription {
         case "favorites":
-            return "Đánh dấu yêu thích những bộ phim ấn tượng nhất với bạn"
+            return L10n.Watchlist.emptyFavoritesMessage
         case "watched":
-            return "Đánh dấu các phim đã xem để theo dõi lịch sử xem"
+            return L10n.Watchlist.emptyWatchedMessage
         case "wantToWatch":
-            return "Thêm những bộ phim bạn muốn xem vào danh sách"
+            return L10n.Watchlist.emptyWantToWatchMessage
         default:
-            return "Khám phá và thêm những bộ phim yêu thích vào watchlist"
+            return L10n.Watchlist.emptyAllMessage
         }
     }
 }

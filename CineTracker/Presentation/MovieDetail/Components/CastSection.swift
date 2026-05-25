@@ -13,12 +13,12 @@ struct CastSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("Diễn viên")
+            Text(L10n.MovieDetail.cast)
                 .appFont(.headlineLarge)
                 .padding(.horizontal, AppSpacing.lg)
 
             if cast.isEmpty {
-                Text("Không có thông tin diễn viên")
+                Text(L10n.MovieDetail.noCastInfo)
                     .appFont(.bodyMedium)
                     .foregroundColor(.appTextSecondary)
                     .padding(.horizontal, AppSpacing.lg)

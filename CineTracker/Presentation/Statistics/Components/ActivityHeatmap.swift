@@ -26,9 +26,9 @@ struct ActivityHeatmap: View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Hoạt động xem phim")
+                    Text(L10n.Statistics.watchingActivity)
                         .appFont(.headlineLarge)
-                    Text("Năm \(currentYear)")
+                    Text(L10n.Statistics.yearLabel(currentYear))
                         .appFont(.bodySmall)
                         .foregroundColor(.appTextSecondary)
                 }
@@ -40,7 +40,7 @@ struct ActivityHeatmap: View {
                         Text("\(totalThisYear)")
                             .appFont(.headlineMedium)
                             .foregroundColor(.appBrand)
-                        Text("phim")
+                        Text(L10n.Statistics.moviesUnit)
                             .appFont(.caption)
                             .foregroundColor(.appTextSecondary)
                     }
@@ -151,10 +151,7 @@ struct ActivityHeatmap: View {
     }
 
     private func monthName(_ month: Int) -> String {
-        let months = ["T1", "T2", "T3", "T4", "T5", "T6",
-                      "T7", "T8", "T9", "T10", "T11", "T12"]
-        guard month >= 1 && month <= 12 else { return "" }
-        return months[month - 1]
+        L10n.Statistics.monthShort(month)
     }
 
     private var weekdayLabels: some View {
@@ -175,8 +172,7 @@ struct ActivityHeatmap: View {
 
     private func weekdayName(_ day: Int) -> String {
         // 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri, 5=Sat, 6=Sun
-        let names = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"]
-        return names[day]
+        L10n.Statistics.weekdayShort(day)
     }
 
     private var heatmapGrid: some View {
@@ -245,12 +241,12 @@ struct ActivityHeatmap: View {
                     Image(systemName: "popcorn.fill")
                         .foregroundColor(.appBrand)
                         .font(.system(size: 11))
-                    Text("\(activity.movieCount) phim")
+                    Text(L10n.Statistics.moviesOnDay(activity.movieCount))
                         .appFont(.headlineSmall)
                         .foregroundColor(.appBrand)
                 }
             } else {
-                Text("Không xem phim")
+                Text(L10n.Statistics.noWatchOnDay)
                     .appFont(.caption)
                     .foregroundColor(.appTextTertiary)
             }
@@ -267,13 +263,13 @@ struct ActivityHeatmap: View {
     private func formatTooltipDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM yyyy"
-        formatter.locale = Locale(identifier: "vi_VN")
+        formatter.locale = Locale(identifier: L10n.Statistics.dateLocale)
         return formatter.string(from: date)
     }
 
     private var legendView: some View {
         HStack(spacing: AppSpacing.sm) {
-            Text("Ít")
+            Text(L10n.Statistics.few)
                 .appFont(.caption)
                 .foregroundColor(.appTextSecondary)
 
@@ -285,20 +281,20 @@ struct ActivityHeatmap: View {
                 }
             }
 
-            Text("Nhiều")
+            Text(L10n.Statistics.many)
                 .appFont(.caption)
                 .foregroundColor(.appTextSecondary)
 
             Spacer()
 
-            Text("Chạm ô để xem chi tiết")
+            Text(L10n.Statistics.tapCellHint)
                 .appFont(.caption)
                 .foregroundColor(.appTextTertiary)
         }
     }
 
     private var emptyState: some View {
-        Text("Chưa có hoạt động xem phim trong năm \(currentYear)")
+        Text(L10n.Statistics.noWatchActivity(currentYear))
             .appFont(.bodyMedium)
             .foregroundColor(.appTextSecondary)
             .frame(maxWidth: .infinity)

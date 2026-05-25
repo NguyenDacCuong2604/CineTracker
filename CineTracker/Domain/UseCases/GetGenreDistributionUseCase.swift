@@ -11,26 +11,29 @@ struct GetGenreDistributionUseCase: SyncUseCase {
     typealias Input = Void
     typealias Output = [GenreStats]
 
-    private static let genres: [Int: String] = [
-        28: "Hành động",
-        12: "Phiêu lưu",
-        16: "Hoạt hình",
-        35: "Hài",
-        80: "Tội phạm",
-        99: "Tài liệu",
-        18: "Chính kịch",
-        10751: "Gia đình",
-        14: "Giả tưởng",
-        36: "Lịch sử",
-        27: "Kinh dị",
-        10402: "Âm nhạc",
-        9648: "Bí ẩn",
-        10749: "Lãng mạn",
-        878: "Khoa học viễn tưởng",
-        53: "Giật gân",
-        10752: "Chiến tranh",
-        37: "Cao bồi",
-    ]
+    private static func genreName(for id: Int) -> String? {
+        switch id {
+        case 28: return L10n.Genre.action
+        case 12: return L10n.Genre.adventure
+        case 16: return L10n.Genre.animation
+        case 35: return L10n.Genre.comedy
+        case 80: return L10n.Genre.crime
+        case 99: return L10n.Genre.documentary
+        case 18: return L10n.Genre.drama
+        case 10751: return L10n.Genre.family
+        case 14: return L10n.Genre.fantasy
+        case 36: return L10n.Genre.history
+        case 27: return L10n.Genre.horror
+        case 10402: return L10n.Genre.music
+        case 9648: return L10n.Genre.mystery
+        case 10749: return L10n.Genre.romance
+        case 878: return L10n.Genre.scienceFiction
+        case 53: return L10n.Genre.thriller
+        case 10752: return L10n.Genre.war
+        case 37: return L10n.Genre.western
+        default: return nil
+        }
+    }
 
     private let repository: WatchlistRepository
     private static let topCount = 7
@@ -55,7 +58,7 @@ struct GetGenreDistributionUseCase: SyncUseCase {
         var stats = genreCounts.map { id, count in
             GenreStats(
                 id: id,
-                name: Self.genres[id] ?? "Khác",
+                name: Self.genreName(for: id) ?? L10n.Genre.other,
                 count: count,
                 percentage: Double(count) / Double(totalCount) * 100
             )
@@ -69,7 +72,7 @@ struct GetGenreDistributionUseCase: SyncUseCase {
             stats = topStats + [
                 GenreStats(
                     id: -1,
-                    name: "Khác",
+                    name: L10n.Genre.other,
                     count: restCount,
                     percentage: Double(restCount) / Double(totalCount) * 100
                 ),

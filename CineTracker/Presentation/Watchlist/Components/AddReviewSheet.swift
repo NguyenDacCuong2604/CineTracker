@@ -39,20 +39,20 @@ struct AddReviewSheet: View {
                     .padding(.horizontal, AppSpacing.lg)
 
                     VStack(spacing: AppSpacing.md) {
-                        Text("Đánh giá của bạn")
+                        Text(L10n.Review.yourRating)
                             .appFont(.headlineSmall)
 
                         RatingView(rating: $rating, starSize: 40)
 
                         if rating > 0 {
-                            Text("\(rating, specifier: "%.1f") / 5.0")
+                            Text("\(rating, specifier: "%.1f") \(L10n.Review.maxRating)")
                                 .appFont(.bodyMedium)
                                 .foregroundColor(.appTextSecondary)
                         }
                     }
 
                     VStack(alignment: .leading, spacing: AppSpacing.sm) {
-                        Text("Cảm nhận của bạn")
+                        Text(L10n.Review.yourFeelings)
                             .appFont(.headlineSmall)
                             .padding(.horizontal, AppSpacing.lg)
 
@@ -67,7 +67,7 @@ struct AddReviewSheet: View {
                             .padding(.horizontal, AppSpacing.lg)
                             .overlay(alignment: .topLeading) {
                                 if review.isEmpty {
-                                    Text("Viết cảm nhận về phim...")
+                                    Text(L10n.Review.placeholder)
                                         .appFont(.bodyMedium)
                                         .foregroundColor(.appTextTertiary)
                                         .padding(.horizontal, AppSpacing.lg + AppSpacing.sm + 4)
@@ -76,7 +76,7 @@ struct AddReviewSheet: View {
                                 }
                             }
 
-                        Text("\(review.count) / 1000 ký tự")
+                        Text(L10n.Review.characterCount(review.count))
                             .appFont(.caption)
                             .foregroundColor(review.count > 1000 ? .appError : .appTextTertiary)
                             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -86,17 +86,17 @@ struct AddReviewSheet: View {
                 .padding(.vertical, AppSpacing.lg)
             }
             .background(Color.appBackground)
-            .navigationTitle("Đánh dấu đã xem")
+            .navigationTitle(L10n.Review.sheetTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("Huỷ") {
+                    Button(L10n.Common.cancel) {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Lưu") {
+                    Button(L10n.Common.save) {
                         Task {
                             await onSubmit(rating, review)
                             dismiss()

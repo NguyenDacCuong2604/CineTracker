@@ -101,7 +101,7 @@ struct AllMoviesView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.appWarning)
 
-            Text("Không thể tải phim")
+            Text(L10n.AllMovies.loadError)
 
             Text(message)
                 .appFont(.bodyMedium)
@@ -110,7 +110,7 @@ struct AllMoviesView: View {
                 .padding(.horizontal, AppSpacing.xl)
 
             PrimaryButton(
-                title: "Thử lại",
+                title: L10n.Common.retry,
                 icon: "arrow.clockwise",
                 action: {
                     Task { await viewModel.refresh() }
@@ -128,7 +128,7 @@ struct AllMoviesView: View {
             ProgressView()
                 .scaleEffect(0.8)
 
-            Text("Đang tải thêm")
+            Text(L10n.AllMovies.loadingMore)
                 .appFont(.bodySmall)
                 .foregroundColor(.appTextSecondary)
         }

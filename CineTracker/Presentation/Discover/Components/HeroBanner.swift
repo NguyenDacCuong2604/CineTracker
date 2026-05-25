@@ -122,7 +122,7 @@ struct HeroBanner: View {
             HStack(spacing: AppSpacing.xs) {
                 Image(systemName: "flame.fill")
                     .foregroundColor(.appBrand)
-                Text("Trending")
+                Text(L10n.Discover.trending)
                     .appFont(.label)
                     .foregroundColor(.white)
             }

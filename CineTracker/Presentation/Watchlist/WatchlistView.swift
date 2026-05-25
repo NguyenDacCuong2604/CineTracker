@@ -30,7 +30,7 @@ struct WatchlistView: View {
             .searchable(
                 text: queryBinding,
                 placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Tìm trong watchlist..."
+                prompt: L10n.Watchlist.searchPlaceholder
             )
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -115,7 +115,7 @@ struct WatchlistView: View {
                         Button(role: .destructive) {
                             Task { await viewModel.removeMovie(movie) }
                         } label: {
-                            Label("Xoá", systemImage: "trash")
+                            Label(L10n.Common.delete, systemImage: "trash")
                         }
                     }
                 }
@@ -124,7 +124,7 @@ struct WatchlistView: View {
                         Button {
                             movieToReview = movie
                         } label: {
-                            Label("Đã xem", systemImage: "checkmark")
+                            Label(L10n.Watchlist.watched, systemImage: "checkmark")
                         }
                         .tint(.appSuccess)
                     }
@@ -171,7 +171,7 @@ struct WatchlistView: View {
             Task { await viewModel.toggleFavorite(movie) }
         } label: {
             Label(
-                movie.isFavorite ? "Bỏ yêu thích" : "Yêu thích",
+                movie.isFavorite ? L10n.Watchlist.removeFromFavorites : L10n.Watchlist.addToFavorites,
                 systemImage: movie.isFavorite ? "heart.slash" : "heart"
             )
         }
@@ -180,7 +180,7 @@ struct WatchlistView: View {
             Button {
                 movieToReview = movie
             } label: {
-                Label("Đánh dấu đã xem", systemImage: "checkmark")
+                Label(L10n.Watchlist.markAsWatched, systemImage: "checkmark")
             }
         }
 
@@ -189,7 +189,7 @@ struct WatchlistView: View {
         Button(role: .destructive) {
             Task { await viewModel.removeMovie(movie) }
         } label: {
-            Label("Xoá", systemImage: "trash")
+            Label(L10n.Common.delete, systemImage: "trash")
         }
     }
 
@@ -199,7 +199,7 @@ struct WatchlistView: View {
 
     private var undoToastView: some View {
         UndoToast(
-            message: "Đã xoá khỏi watchlist",
+            message: L10n.Watchlist.removedFromWatchlist,
             onUndo: {
                 Task { await viewModel.undoDelete() }
             },
@@ -212,7 +212,7 @@ struct WatchlistView: View {
     }
 
     private var navigationTitle: String {
-        viewModel.state.isEditMode ? "\(viewModel.state.selectedIDs.count) đã chọn" : "Watchlist"
+        viewModel.state.isEditMode ? L10n.Watchlist.selectedCount(viewModel.state.selectedIDs.count) : L10n.Watchlist.title
     }
 
     private var queryBinding: Binding<String> {
@@ -225,7 +225,7 @@ struct WatchlistView: View {
     @ViewBuilder
     private var toolbarButtons: some View {
         if viewModel.state.isEditMode {
-            Button("Xong") {
+            Button(L10n.Common.done) {
                 viewModel.toggleEditMode()
             }
             .fontWeight(.semibold)
@@ -243,7 +243,7 @@ struct WatchlistView: View {
                     Button {
                         viewModel.setSort(option)
                     } label: {
-                        Label(option.rawValue, systemImage: option.sfSymbol)
+                        Label(option.title, systemImage: option.sfSymbol)
                     }
                 }
             } label: {
@@ -257,7 +257,7 @@ struct WatchlistView: View {
             }
 
             if !viewModel.state.movies.isEmpty {
-                Button("Sửa") {
+                Button(L10n.Common.edit) {
                     viewModel.toggleEditMode()
                 }
             }

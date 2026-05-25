@@ -13,17 +13,17 @@ struct MonthlyBarChart: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            Text("Phim đã xem theo tháng")
+            Text(L10n.Statistics.monthly)
                 .appFont(.headlineLarge)
 
-            Text("12 tháng gần nhất")
+            Text(L10n.Statistics.last12Months)
                 .appFont(.bodySmall)
                 .foregroundColor(.appTextSecondary)
 
             Chart(monthlyStats) { stat in
                 BarMark(
-                    x: .value("Tháng", stat.date, unit: .month),
-                    y: .value("Số phim", stat.count)
+                    x: .value(L10n.Statistics.monthAxisLabel, stat.date, unit: .month),
+                    y: .value(L10n.Statistics.movieCountAxisLabel, stat.count)
                 )
                 .foregroundStyle(
                     LinearGradient(

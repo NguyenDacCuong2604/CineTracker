@@ -26,7 +26,7 @@ struct DiscoverView: View {
 
                 // Popular
                 MovieCarousel(
-                    title: "🔥 Phổ biến",
+                    title: L10n.Discover.popular,
                     state: carouselState(from: viewModel.state.popular),
                     onSeeAll: { coordinator.push(.allMovies(category: .popular), on: .discover) },
                     onMovieTap: handleMovieTap
@@ -34,7 +34,7 @@ struct DiscoverView: View {
 
                 // Top Rated
                 MovieCarousel(
-                    title: "⭐ Đánh giá cao",
+                    title: L10n.Discover.topRated,
                     state: carouselState(from: viewModel.state.topRated),
                     onSeeAll: { coordinator.push(.allMovies(category: .topRated), on: .discover) },
                     onMovieTap: handleMovieTap
@@ -42,7 +42,7 @@ struct DiscoverView: View {
 
                 // Upcoming
                 MovieCarousel(
-                    title: "🎬 Sắp ra mắt",
+                    title: L10n.Discover.upcoming,
                     state: carouselState(from: viewModel.state.upcoming),
                     onSeeAll: { coordinator.push(.allMovies(category: .upcoming), on: .discover) },
                     onMovieTap: handleMovieTap
@@ -50,7 +50,7 @@ struct DiscoverView: View {
 
                 // Now Playing
                 MovieCarousel(
-                    title: "🎥 Đang chiếu",
+                    title: L10n.Discover.nowPlaying,
                     state: carouselState(from: viewModel.state.nowPlaying),
                     onSeeAll: { coordinator.push(.allMovies(category: .nowPlaying), on: .discover) },
                     onMovieTap: handleMovieTap
@@ -61,7 +61,7 @@ struct DiscoverView: View {
             .padding(.vertical, AppSpacing.md)
         }
         .background(Color.appBackground)
-        .navigationTitle("Khám phá")
+        .navigationTitle(L10n.Discover.title)
         .navigationBarTitleDisplayMode(.large)
         .refreshable {
             await viewModel.refresh()
@@ -84,7 +84,7 @@ struct DiscoverView: View {
             )
         case .error:
             ErrorView(
-                message: "Không tải được phim trending",
+                message: L10n.Discover.trendingError,
                 onRetry: {
                     Task { await viewModel.retrySection(.trending) }
                 }

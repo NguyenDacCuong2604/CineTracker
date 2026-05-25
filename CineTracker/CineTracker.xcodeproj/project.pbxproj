@@ -179,6 +179,8 @@
 		5ECA6AEE2FC4288C00BBAFBE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5ECA6AED2FC4288C00BBAFBE /* RealmSwift */; };
 		5ECA6AEF2FC4288C00BBAFBE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5ECA6AED2FC4288C00BBAFBE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5ECA6AF12FC42B4600BBAFBE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114652FB215DD00A15D10 /* Configuration.swift */; };
+		5ECA6B022FC44AF500BBAFBE /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A682FC3F42700BBAFBE /* L10n.swift */; };
+		5ECA6B032FC44B0700BBAFBE /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A6A2FC3F96200BBAFBE /* LocalizationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1258,12 +1260,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECA6B022FC44AF500BBAFBE /* L10n.swift in Sources */,
 				5ECA6AE12FC424D000BBAFBE /* Logger.swift in Sources */,
 				5ECA6ADF2FC424B000BBAFBE /* SavedMovieRealmMapper.swift in Sources */,
 				5ECA6AF12FC42B4600BBAFBE /* Configuration.swift in Sources */,
 				5ECA6ADA2FC4245600BBAFBE /* SavedMovie.swift in Sources */,
 				5ECA6ADD2FC4248A00BBAFBE /* SavedMovieObject.swift in Sources */,
 				5ECA6ADC2FC4247600BBAFBE /* WatchlistRepository.swift in Sources */,
+				5ECA6B032FC44B0700BBAFBE /* LocalizationManager.swift in Sources */,
 				5ECA6ADE2FC4249E00BBAFBE /* WatchlistRepositoryImpl.swift in Sources */,
 				5ECA6AE02FC424C000BBAFBE /* RealmConfig.swift in Sources */,
 				5ECA6ADB2FC4246200BBAFBE /* Movie.swift in Sources */,

@@ -21,11 +21,11 @@ enum Route: Hashable {
 
         var title: String {
             switch self {
-            case .trending: return "Trending"
-            case .popular: return " Popular"
-            case .topRated: return "Top Rated"
-            case .upcoming: return "Upcoming"
-            case .nowPlaying: return "Now Playing"
+            case .trending: return L10n.MovieCategory.trending
+            case .popular: return L10n.MovieCategory.popular
+            case .topRated: return L10n.MovieCategory.topRated
+            case .upcoming: return L10n.MovieCategory.upcoming
+            case .nowPlaying: return L10n.MovieCategory.nowPlaying
             }
         }
     }

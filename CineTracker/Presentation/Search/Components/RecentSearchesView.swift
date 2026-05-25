@@ -24,13 +24,13 @@ struct RecentSearchesView: View {
     private var listContent: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text("Tìm kiếm gần đây")
+                Text(L10n.Search.recent)
                     .appFont(.headlineSmall)
                     .foregroundColor(.appTextPrimary)
 
                 Spacer()
 
-                Button("Xoá tất cả") {
+                Button(L10n.Search.clearAll) {
                     onClearAll()
                 }
                 .appFont(.bodySmall)
@@ -79,11 +79,11 @@ struct RecentSearchesView: View {
                 .font(.system(size: 50))
                 .foregroundColor(.appTextTertiary)
 
-            Text("Bắt đầu tìm kiếm phim")
+            Text(L10n.Search.startSearching)
                 .appFont(.headlineMedium)
                 .foregroundColor(.appTextPrimary)
 
-            Text("Nhập tên phim để bắt đầu khám phá")
+            Text(L10n.Search.searchHint)
                 .appFont(.bodyMedium)
                 .foregroundColor(.appTextSecondary)
                 .multilineTextAlignment(.center)

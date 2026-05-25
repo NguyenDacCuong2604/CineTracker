@@ -16,8 +16,8 @@ struct CineTrackerWidget: Widget {
             CineTrackerWidgetView(entry: entry)
                 .containerBackground(.background, for: .widget)
         }
-        .configurationDisplayName("CineTracker Watchlist")
-        .description("Hiển thị danh sách phim trong watchlist của bạn.")
+        .configurationDisplayName(L10n.Widget.displayName)
+        .description(L10n.Widget.description)
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }

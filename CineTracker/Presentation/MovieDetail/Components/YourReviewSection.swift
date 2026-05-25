@@ -14,7 +14,7 @@ struct YourReviewSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
             HStack {
-                Text("Đánh giá của bạn")
+                Text(L10n.MovieDetail.yourReview)
                     .appFont(.headlineLarge)
 
                 Spacer()
@@ -23,7 +23,7 @@ struct YourReviewSection: View {
                     HStack(spacing: AppSpacing.xs) {
                         Image(systemName: "pencil")
                             .font(.system(size: 12))
-                        Text("Sửa")
+                        Text(L10n.Common.edit)
                             .appFont(.bodySmall)
                     }
                     .foregroundColor(.appBrand)
@@ -66,7 +66,7 @@ struct YourReviewSection: View {
                     .foregroundColor(.appTextPrimary)
                     .padding(.leading, AppSpacing.xs)
 
-                Text("/ 5.0")
+                Text(L10n.Review.maxRating)
                     .appFont(.bodyMedium)
                     .foregroundColor(.appTextSecondary)
             }
@@ -96,7 +96,7 @@ struct YourReviewSection: View {
                 .foregroundColor(.appTextTertiary)
                 .font(.system(size: 11))
 
-            Text("Đã xem ngày \(date.formatted(date: .abbreviated, time: .omitted))")
+            Text(L10n.Review.watchedOn(date.formatted(date: .abbreviated, time: .omitted)))
                 .appFont(.caption)
                 .foregroundColor(.appTextTertiary)
         }

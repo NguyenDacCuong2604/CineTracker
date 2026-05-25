@@ -32,10 +32,10 @@ enum WatchlistFilter: Hashable {
 
     var title: String {
         switch self {
-        case .all: return "Tất cả"
-        case .wantToWatch: return "Muốn xem"
-        case .watched: return "Đã xem"
-        case .favorites: return "Yêu thích"
+        case .all: return L10n.Watchlist.all
+        case .wantToWatch: return L10n.Watchlist.wantToWatch
+        case .watched: return L10n.Watchlist.watched
+        case .favorites: return L10n.Watchlist.favorites
         }
     }
 

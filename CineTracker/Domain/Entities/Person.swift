@@ -30,7 +30,7 @@ struct Person: Identifiable, Hashable {
         guard let birthday = birthday else { return nil }
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMMM yyyy"
-        formatter.locale = Locale(identifier: "vi_VN")
+        formatter.locale = Locale(identifier: L10n.Person.birthdayLocale)
         return formatter.string(from: birthday)
     }
 
@@ -39,24 +39,24 @@ struct Person: Identifiable, Hashable {
         if let deathday = deathday {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
-            return "Đã mất ngày \(formatter.string(from: deathday))"
+            return L10n.Person.deceasedOn(formatter.string(from: deathday))
         }
         if let age = age {
-            return "\(age) tuổi"
+            return L10n.Person.ageYears(age)
         }
         return nil
     }
 
     var departmentTitle: String {
         switch knownForDepartment.lowercased() {
-        case "acting": return "Diễn viên"
-        case "directing": return "Đạo diễn"
-        case "writing": return "Biên kịch"
-        case "production": return "Sản xuất"
-        case "camera": return "Quay phim"
-        case "editing": return "Dựng phim"
-        case "sound": return "Âm thanh"
-        case "art": return "Mỹ thuật"
+        case "acting": return L10n.Person.departmentActing
+        case "directing": return L10n.Person.departmentDirecting
+        case "writing": return L10n.Person.departmentWriting
+        case "production": return L10n.Person.departmentProduction
+        case "camera": return L10n.Person.departmentCamera
+        case "editing": return L10n.Person.departmentEditing
+        case "sound": return L10n.Person.departmentSound
+        case "art": return L10n.Person.departmentArt
         default: return knownForDepartment
         }
     }
