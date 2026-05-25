@@ -1,0 +1,95 @@
+/* 
+  Localizable.strings
+  CineTracker
+
+  Created by MAC VN on 25/5/26.
+  
+*/
+/* Common */
+"common.cancel" = "Huỷ";
+"common.confirm" = "Xác nhận";
+"common.done" = "Xong";
+"common.retry" = "Thử lại";
+"common.loading" = "Đang tải...";
+"common.error" = "Đã xảy ra lỗi";
+
+/* Tabs */
+"tabs.discover" = "Khám phá";
+"tabs.search" = "Tìm kiếm";
+"tabs.watchlist" = "Watchlist";
+"tabs.statistics" = "Thống kê";
+"tabs.profile" = "Cá nhân";
+
+/* Discover */
+"discover.title" = "Khám phá";
+"discover.popular" = "🔥 Phổ biến";
+"discover.topRated" = "⭐ Đánh giá cao";
+"discover.upcoming" = "🎬 Sắp ra mắt";
+"discover.nowPlaying" = "🎥 Đang chiếu";
+"discover.seeAll" = "Xem tất cả";
+
+/* Search */
+"search.title" = "Tìm kiếm";
+"search.placeholder" = "Tìm phim...";
+"search.recent" = "Tìm kiếm gần đây";
+"search.clearAll" = "Xoá tất cả";
+"search.noResults" = "Không tìm thấy phim";
+
+/* Watchlist */
+"watchlist.title" = "Watchlist";
+"watchlist.all" = "Tất cả";
+"watchlist.wantToWatch" = "Muốn xem";
+"watchlist.watched" = "Đã xem";
+"watchlist.favorites" = "Yêu thích";
+"watchlist.empty" = "Watchlist trống";
+"watchlist.emptyMessage" = "Thêm phim từ Khám phá để bắt đầu";
+"watchlist.exploreCTA" = "Khám phá phim";
+
+/* Movie Detail */
+"movieDetail.cast" = "Diễn viên";
+"movieDetail.trailer" = "Trailer";
+"movieDetail.similar" = "Phim tương tự";
+"movieDetail.yourReview" = "Đánh giá của bạn";
+"movieDetail.addToWatchlist" = "Thêm vào Watchlist";
+"movieDetail.inWatchlist" = "Đã thêm";
+"movieDetail.markWatched" = "Đánh dấu đã xem";
+"movieDetail.edit" = "Sửa";
+
+/* Statistics */
+"statistics.title" = "Thống kê";
+"statistics.totalMovies" = "Tổng phim";
+"statistics.watched" = "Đã xem";
+"statistics.watchTime" = "Thời gian xem";
+"statistics.avgRating" = "Rating TB";
+"statistics.monthly" = "Phim đã xem theo tháng";
+"statistics.genres" = "Phân bố thể loại";
+"statistics.topMovies" = "🏆 Top 10 phim của bạn";
+
+/* Profile */
+"profile.title" = "Cá nhân";
+"profile.welcome" = "Xin chào!";
+"profile.subtitle" = "Quản lý ứng dụng của bạn";
+"profile.totalMovies" = "Phim đã thêm";
+"profile.watched" = "Đã xem";
+"profile.settings" = "Cài đặt";
+"profile.clearCache" = "Xoá bộ nhớ đệm";
+"profile.clearCacheTitle" = "Xoá cache?";
+"profile.clearCacheMessage" = "Các ảnh đã cache sẽ phải tải lại từ network";
+"profile.madeWith" = "Made with ❤️ in Vietnam";
+"profile.version" = "Phiên bản %@";
+
+/* Settings */
+"settings.title" = "Cài đặt";
+"settings.appearance" = "Giao diện";
+"settings.theme" = "Chế độ";
+"settings.themeSystem" = "Theo hệ thống";
+"settings.themeLight" = "Sáng";
+"settings.themeDark" = "Tối";
+"settings.language" = "Ngôn ngữ";
+"settings.languageSelect" = "Chọn ngôn ngữ";
+"settings.languageNote" = "Khởi động lại app để áp dụng";
+"settings.content" = "Nội dung";
+"settings.showSpoilers" = "Hiển thị spoiler";
+"settings.showSpoilersNote" = "Cho phép hiển thị tên vai diễn có thể spoiler";
+"settings.about" = "Về ứng dụng";
+"settings.sourceCode" = "Mã nguồn (GitHub)";

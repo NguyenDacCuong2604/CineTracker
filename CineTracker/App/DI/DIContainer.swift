@@ -160,5 +160,9 @@ final class DIContainer {
         FetchPersonMovieCreditsUseCase(repository: movieRepository)
     }
 
+    var cacheManager: CacheManager {
+        CacheManager.shared
+    }
+
     private init() {}
 }

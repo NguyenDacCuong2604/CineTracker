@@ -1,0 +1,95 @@
+/* 
+  Localizable.strings
+  CineTracker
+
+  Created by MAC VN on 25/5/26.
+  
+*/
+/* Common */
+"common.cancel" = "Cancel";
+"common.confirm" = "Confirm";
+"common.done" = "Done";
+"common.retry" = "Retry";
+"common.loading" = "Loading...";
+"common.error" = "An error occurred";
+
+/* Tabs */
+"tabs.discover" = "Discover";
+"tabs.search" = "Search";
+"tabs.watchlist" = "Watchlist";
+"tabs.statistics" = "Statistics";
+"tabs.profile" = "Profile";
+
+/* Discover */
+"discover.title" = "Discover";
+"discover.popular" = "🔥 Popular";
+"discover.topRated" = "⭐ Top Rated";
+"discover.upcoming" = "🎬 Upcoming";
+"discover.nowPlaying" = "🎥 Now Playing";
+"discover.seeAll" = "See All";
+
+/* Search */
+"search.title" = "Search";
+"search.placeholder" = "Search movies...";
+"search.recent" = "Recent Searches";
+"search.clearAll" = "Clear All";
+"search.noResults" = "No movies found";
+
+/* Watchlist */
+"watchlist.title" = "Watchlist";
+"watchlist.all" = "All";
+"watchlist.wantToWatch" = "Want to Watch";
+"watchlist.watched" = "Watched";
+"watchlist.favorites" = "Favorites";
+"watchlist.empty" = "Your watchlist is empty";
+"watchlist.emptyMessage" = "Add movies from Discover to get started";
+"watchlist.exploreCTA" = "Explore Movies";
+
+/* Movie Detail */
+"movieDetail.cast" = "Cast";
+"movieDetail.trailer" = "Trailer";
+"movieDetail.similar" = "Similar Movies";
+"movieDetail.yourReview" = "Your Review";
+"movieDetail.addToWatchlist" = "Add to Watchlist";
+"movieDetail.inWatchlist" = "Added";
+"movieDetail.markWatched" = "Mark as Watched";
+"movieDetail.edit" = "Edit";
+
+/* Statistics */
+"statistics.title" = "Statistics";
+"statistics.totalMovies" = "Total Movies";
+"statistics.watched" = "Watched";
+"statistics.watchTime" = "Watch Time";
+"statistics.avgRating" = "Avg Rating";
+"statistics.monthly" = "Monthly Watching";
+"statistics.genres" = "Genre Distribution";
+"statistics.topMovies" = "🏆 Your Top 10 Movies";
+
+/* Profile */
+"profile.title" = "Profile";
+"profile.welcome" = "Hello!";
+"profile.subtitle" = "Manage your app";
+"profile.totalMovies" = "Movies Added";
+"profile.watched" = "Watched";
+"profile.settings" = "Settings";
+"profile.clearCache" = "Clear Cache";
+"profile.clearCacheTitle" = "Clear cache?";
+"profile.clearCacheMessage" = "Cached images will be re-downloaded from network";
+"profile.madeWith" = "Made with ❤️ in Vietnam";
+"profile.version" = "Version %@";
+
+/* Settings */
+"settings.title" = "Settings";
+"settings.appearance" = "Appearance";
+"settings.theme" = "Theme";
+"settings.themeSystem" = "System";
+"settings.themeLight" = "Light";
+"settings.themeDark" = "Dark";
+"settings.language" = "Language";
+"settings.languageSelect" = "Select Language";
+"settings.languageNote" = "Restart app to apply";
+"settings.content" = "Content";
+"settings.showSpoilers" = "Show Spoilers";
+"settings.showSpoilersNote" = "Allow showing potentially spoiler character names";
+"settings.about" = "About";
+"settings.sourceCode" = "Source Code (GitHub)";

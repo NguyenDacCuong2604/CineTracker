@@ -56,7 +56,7 @@ struct MainTabView: View {
             .tag(AppTab.statistics)
 
             NavigationStack(path: $coordinator.profilePath) {
-                PlaceholderView(tab: .profile)
+                ProfileView()
             }
             .tabItem {
                 Label(AppTab.profile.title, systemImage: AppTab.profile.systemImage)
@@ -79,14 +79,25 @@ struct MainTabView: View {
     }
 
     private func handleDeepLink(_ url: URL) {
-        AppLogger.navigation.info("Received deep link: \(url.absoluteString)")
+        guard url.scheme == "cinetracker" else { return }
 
-        guard let result = DeepLinkHandler.parse(url) else {
-            AppLogger.navigation.warning("Failed to parse deep link: \(url.absoluteString)")
-            return
+        let host = url.host ?? ""
+        let pathComponents = url.pathComponents.filter { $0 != "/" }
+
+        switch host {
+        case "movie":
+            if let idString = pathComponents.first, let id = Int(idString) {
+                coordinator.selectedTab = .discover
+                coordinator.push(.movieDetail(id: id), on: .discover)
+            }
+
+        case "watchlist":
+            coordinator.selectedTab = .watchlist
+            coordinator.popToRoot(tab: .watchlist)
+
+        default:
+            break
         }
-
-        coordinator.handle(result)
     }
 
     @ViewBuilder

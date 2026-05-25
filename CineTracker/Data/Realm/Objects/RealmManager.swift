@@ -39,9 +39,6 @@ final class RealmManager {
 
     private static func performMigration(migration _: Migration, oldVersion: UInt64) {
         AppLogger.database.info("Migrating Realm from v\(oldVersion) to v\(currentSchemaVersion)")
-
-        // When change schema, add migration logic
-        // ...
     }
 
     @MainActor

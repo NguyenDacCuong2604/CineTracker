@@ -10,6 +10,7 @@ import Foundation
 import OSLog
 import Realm
 import RealmSwift
+import WidgetKit
 
 final class WatchlistRepositoryImpl: WatchlistRepository {
     private let realm: Realm
@@ -52,6 +53,7 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
             realm.add(object)
         }
         AppLogger.database.info("Added movie to watchlist: \(movie.title)")
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func remove(id: Int) throws {
@@ -61,6 +63,8 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
         try realm.write {
             realm.delete(object)
         }
+
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func contains(id: Int) -> Bool {
@@ -77,6 +81,8 @@ final class WatchlistRepositoryImpl: WatchlistRepository {
             object.userReview = review
             object.watchedDate = Date()
         }
+
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func toggleFavorite(id: Int) throws {

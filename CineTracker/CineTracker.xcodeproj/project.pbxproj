@@ -40,7 +40,6 @@
 		5E61149D2FB332F300A15D10 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61149C2FB332EC00A15D10 /* MockAPIClient.swift */; };
 		5E61149E2FB334DA00A15D10 /* APIClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114952FB3215B00A15D10 /* APIClientImpl.swift */; };
 		5E61149F2FB337D500A15D10 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61149B2FB3316D00A15D10 /* MovieDTO.swift */; };
-		5E6114A12FB3390B00A15D10 /* NetworkTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114A02FB3380B00A15D10 /* NetworkTestView.swift */; };
 		5E6114A32FB4202100A15D10 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114A22FB4201E00A15D10 /* Movie.swift */; };
 		5E6114A52FB4219E00A15D10 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114A42FB4219800A15D10 /* MovieDetail.swift */; };
 		5E6114A72FB4234400A15D10 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114A62FB4234100A15D10 /* Cast.swift */; };
@@ -80,7 +79,6 @@
 		5ECA69AC2FBAB75100BBAFBE /* HeroBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69AB2FBAB74C00BBAFBE /* HeroBanner.swift */; };
 		5ECA69AE2FBAC01A00BBAFBE /* MovieCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69AD2FBAC00C00BBAFBE /* MovieCarousel.swift */; };
 		5ECA69B02FBAC51F00BBAFBE /* MoviePosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69AF2FBAC51900BBAFBE /* MoviePosterCard.swift */; };
-		5ECA69B12FBAEADF00BBAFBE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5E61145A2FB210C200A15D10 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5ECA69B42FBAED4600BBAFBE /* RecentSearchesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B32FBAED3600BBAFBE /* RecentSearchesRepository.swift */; };
 		5ECA69B62FBAEDC600BBAFBE /* RecentSearchesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B52FBAEDB400BBAFBE /* RecentSearchesRepositoryImpl.swift */; };
 		5ECA69B82FBAF06E00BBAFBE /* GetRecentSearchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA69B72FBAF06500BBAFBE /* GetRecentSearchesUseCase.swift */; };
@@ -156,7 +154,42 @@
 		5ECA6A542FBEDAAF00BBAFBE /* CastDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A532FBEDAA900BBAFBE /* CastDetailState.swift */; };
 		5ECA6A562FBEDAF300BBAFBE /* CastDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A552FBEDAED00BBAFBE /* CastDetailViewModel.swift */; };
 		5ECA6A582FBEDE0D00BBAFBE /* CastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A572FBEDE0100BBAFBE /* CastDetailView.swift */; };
+		5ECA6A592FBF13B500BBAFBE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5E61145A2FB210C200A15D10 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5ECA6A5D2FC3EB0400BBAFBE /* ProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A5C2FC3EB0100BBAFBE /* ProfileState.swift */; };
+		5ECA6A5F2FC3EBE300BBAFBE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A5E2FC3EBDC00BBAFBE /* ProfileViewModel.swift */; };
+		5ECA6A612FC3F10300BBAFBE /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A602FC3F10200BBAFBE /* CacheManager.swift */; };
+		5ECA6A632FC3F25600BBAFBE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A622FC3F25200BBAFBE /* ProfileView.swift */; };
+		5ECA6A652FC3F2F500BBAFBE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A642FC3F2F300BBAFBE /* SettingView.swift */; };
+		5ECA6A692FC3F42800BBAFBE /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A682FC3F42700BBAFBE /* L10n.swift */; };
+		5ECA6A6B2FC3F96300BBAFBE /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6A6A2FC3F96200BBAFBE /* LocalizationManager.swift */; };
+		5ECA6A732FC3FD5500BBAFBE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA6A712FC3FD5400BBAFBE /* Localizable.strings */; };
+		5ECA6A782FC404AE00BBAFBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA6A772FC404AE00BBAFBE /* LaunchScreen.storyboard */; };
+		5ECA6AB82FC420BB00BBAFBE /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6AB72FC420BA00BBAFBE /* RealmConfig.swift */; };
+		5ECA6AC62FC4230B00BBAFBE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECA6A7F2FC4126900BBAFBE /* WidgetKit.framework */; };
+		5ECA6AC72FC4230B00BBAFBE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECA6A812FC4126900BBAFBE /* SwiftUI.framework */; };
+		5ECA6AD42FC4231100BBAFBE /* CineTrackerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5ECA6AC52FC4230B00BBAFBE /* CineTrackerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5ECA6ADA2FC4245600BBAFBE /* SavedMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114BC2FB467D400A15D10 /* SavedMovie.swift */; };
+		5ECA6ADB2FC4246200BBAFBE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114A22FB4201E00A15D10 /* Movie.swift */; };
+		5ECA6ADC2FC4247600BBAFBE /* WatchlistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114BA2FB466C900A15D10 /* WatchlistRepository.swift */; };
+		5ECA6ADD2FC4248A00BBAFBE /* SavedMovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114B62FB45CD400A15D10 /* SavedMovieObject.swift */; };
+		5ECA6ADE2FC4249E00BBAFBE /* WatchlistRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114BE2FB46A1000A15D10 /* WatchlistRepositoryImpl.swift */; };
+		5ECA6ADF2FC424B000BBAFBE /* SavedMovieRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114CD2FB5A8FC00A15D10 /* SavedMovieRealmMapper.swift */; };
+		5ECA6AE02FC424C000BBAFBE /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA6AB72FC420BA00BBAFBE /* RealmConfig.swift */; };
+		5ECA6AE12FC424D000BBAFBE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114672FB21A5A00A15D10 /* Logger.swift */; };
+		5ECA6AEE2FC4288C00BBAFBE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5ECA6AED2FC4288C00BBAFBE /* RealmSwift */; };
+		5ECA6AEF2FC4288C00BBAFBE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5ECA6AED2FC4288C00BBAFBE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5ECA6AF12FC42B4600BBAFBE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6114652FB215DD00A15D10 /* Configuration.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5ECA6AD22FC4231100BBAFBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E6114172FB20A0400A15D10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ECA6AC42FC4230B00BBAFBE;
+			remoteInfo = CineTrackerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5ECA69B22FBAEADF00BBAFBE /* Embed Frameworks */ = {
@@ -165,7 +198,29 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5ECA69B12FBAEADF00BBAFBE /* RealmSwift in Embed Frameworks */,
+				5ECA6A592FBF13B500BBAFBE /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ECA6A982FC4126C00BBAFBE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5ECA6AD42FC4231100BBAFBE /* CineTrackerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ECA6AF02FC4288C00BBAFBE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5ECA6AEF2FC4288C00BBAFBE /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +263,6 @@
 		5E6114992FB32DCA00A15D10 /* NetwordMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwordMonitor.swift; sourceTree = "<group>"; };
 		5E61149B2FB3316D00A15D10 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
 		5E61149C2FB332EC00A15D10 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
-		5E6114A02FB3380B00A15D10 /* NetworkTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestView.swift; sourceTree = "<group>"; };
 		5E6114A22FB4201E00A15D10 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		5E6114A42FB4219800A15D10 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		5E6114A62FB4234100A15D10 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
@@ -323,7 +377,44 @@
 		5ECA6A532FBEDAA900BBAFBE /* CastDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailState.swift; sourceTree = "<group>"; };
 		5ECA6A552FBEDAED00BBAFBE /* CastDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailViewModel.swift; sourceTree = "<group>"; };
 		5ECA6A572FBEDE0100BBAFBE /* CastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailView.swift; sourceTree = "<group>"; };
+		5ECA6A5C2FC3EB0100BBAFBE /* ProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileState.swift; sourceTree = "<group>"; };
+		5ECA6A5E2FC3EBDC00BBAFBE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5ECA6A602FC3F10200BBAFBE /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		5ECA6A622FC3F25200BBAFBE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5ECA6A642FC3F2F300BBAFBE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		5ECA6A682FC3F42700BBAFBE /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		5ECA6A6A2FC3F96200BBAFBE /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		5ECA6A722FC3FD5400BBAFBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5ECA6A742FC3FE0300BBAFBE /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5ECA6A772FC404AE00BBAFBE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5ECA6A7F2FC4126900BBAFBE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5ECA6A812FC4126900BBAFBE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5ECA6AB52FC412EF00BBAFBE /* CineTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CineTracker.entitlements; sourceTree = "<group>"; };
+		5ECA6AB72FC420BA00BBAFBE /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
+		5ECA6AC52FC4230B00BBAFBE /* CineTrackerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CineTrackerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ECA6AD92FC4232D00BBAFBE /* CineTrackerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CineTrackerWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5ECA6AD52FC4231100BBAFBE /* Exceptions for "CineTrackerWidget" folder in "CineTrackerWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5ECA6AC42FC4230B00BBAFBE /* CineTrackerWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5ECA6AC82FC4230B00BBAFBE /* CineTrackerWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5ECA6AD52FC4231100BBAFBE /* Exceptions for "CineTrackerWidget" folder in "CineTrackerWidgetExtension" target */,
+			);
+			path = CineTrackerWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5E61141C2FB20A0400A15D10 /* Frameworks */ = {
@@ -335,12 +426,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5ECA6AC22FC4230B00BBAFBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ECA6AEE2FC4288C00BBAFBE /* RealmSwift in Frameworks */,
+				5ECA6AC72FC4230B00BBAFBE /* SwiftUI.framework in Frameworks */,
+				5ECA6AC62FC4230B00BBAFBE /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		5E6114162FB20A0400A15D10 = {
 			isa = PBXGroup;
 			children = (
+				5ECA6AD92FC4232D00BBAFBE /* CineTrackerWidgetExtension.entitlements */,
+				5ECA6AB52FC412EF00BBAFBE /* CineTracker.entitlements */,
 				5E6114692FB221C200A15D10 /* .swiftlint.yml */,
 				5ECA6A102FBDA22600BBAFBE /* .swiftformat.yml */,
 				5E6114622FB213ED00A15D10 /* CineTracker-Info.plist */,
@@ -351,6 +454,9 @@
 				5E61144F2FB20F0F00A15D10 /* Domain */,
 				5E6114512FB20F2000A15D10 /* Presentation */,
 				5E6114342FB20D4400A15D10 /* Resources */,
+				5ECA6AC82FC4230B00BBAFBE /* CineTrackerWidget */,
+				5ECA6A7E2FC4126900BBAFBE /* Frameworks */,
+				5ECA6AC52FC4230B00BBAFBE /* CineTrackerWidgetExtension.appex */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,7 +491,7 @@
 		5E6114332FB20D3200A15D10 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				5E6114442FB20E6F00A15D10 /* Extensions */,
+				5ECA6A662FC3F38500BBAFBE /* Localization */,
 				5E6114432FB20E6600A15D10 /* Logger */,
 				5E6114412FB20E5600A15D10 /* Navigation */,
 				5E61143D2FB20E2100A15D10 /* DesignSystem */,
@@ -397,10 +503,12 @@
 		5E6114342FB20D4400A15D10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA6A712FC3FD5400BBAFBE /* Localizable.strings */,
 				5E6114262FB20A0600A15D10 /* Assets.xcassets */,
 				5E61145C2FB211F100A15D10 /* Debug.xcconfig */,
 				5E61145E2FB2126A00A15D10 /* Release.xcconfig */,
 				5E61146F2FB2CFB400A15D10 /* Secrets.xcconfig */,
+				5ECA6A772FC404AE00BBAFBE /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -423,18 +531,10 @@
 		5E6114362FB20D8700A15D10 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				5E61143C2FB20E1500A15D10 /* Preferences */,
+				5ECA6A602FC3F10200BBAFBE /* CacheManager.swift */,
 				5E61143B2FB20E0600A15D10 /* Keychain */,
-				5E6114372FB20D9000A15D10 /* Realm */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		5E6114372FB20D9000A15D10 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		5E61143B2FB20E0600A15D10 /* Keychain */ = {
@@ -443,13 +543,6 @@
 				5E6114682FB21C2C00A15D10 /* KeychainManager.swift */,
 			);
 			path = Keychain;
-			sourceTree = "<group>";
-		};
-		5E61143C2FB20E1500A15D10 /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Preferences;
 			sourceTree = "<group>";
 		};
 		5E61143D2FB20E2100A15D10 /* DesignSystem */ = {
@@ -498,13 +591,6 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
-		5E6114442FB20E6F00A15D10 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		5E6114452FB20E8000A15D10 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +607,7 @@
 		5E6114492FB20EA400A15D10 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA6AB72FC420BA00BBAFBE /* RealmConfig.swift */,
 				5E6114CC2FB5A73C00A15D10 /* Mappers */,
 				5E6114CB2FB5A72500A15D10 /* Objects */,
 			);
@@ -602,6 +689,7 @@
 		5E6114512FB20F2000A15D10 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5ECA6A5B2FC3EAFE00BBAFBE /* Profile */,
 				5ECA6A522FBEDA9700BBAFBE /* CastDetail */,
 				5ECA6A3B2FBEA6C400BBAFBE /* AllMovies */,
 				5E6114ED2FB5CA7B00A15D10 /* MainTabView.swift */,
@@ -610,7 +698,6 @@
 				5E6114542FB20F3C00A15D10 /* MovieDetail */,
 				5E6114532FB20F3200A15D10 /* Search */,
 				5E6114522FB20F2900A15D10 /* Discover */,
-				5E6114A02FB3380B00A15D10 /* NetworkTestView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -822,6 +909,35 @@
 			path = CastDetail;
 			sourceTree = "<group>";
 		};
+		5ECA6A5B2FC3EAFE00BBAFBE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5ECA6A642FC3F2F300BBAFBE /* SettingView.swift */,
+				5ECA6A622FC3F25200BBAFBE /* ProfileView.swift */,
+				5ECA6A5E2FC3EBDC00BBAFBE /* ProfileViewModel.swift */,
+				5ECA6A5C2FC3EB0100BBAFBE /* ProfileState.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5ECA6A662FC3F38500BBAFBE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				5ECA6A6A2FC3F96200BBAFBE /* LocalizationManager.swift */,
+				5ECA6A682FC3F42700BBAFBE /* L10n.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		5ECA6A7E2FC4126900BBAFBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ECA6A7F2FC4126900BBAFBE /* WidgetKit.framework */,
+				5ECA6A812FC4126900BBAFBE /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -835,10 +951,12 @@
 				5ECA69B22FBAEADF00BBAFBE /* Embed Frameworks */,
 				5E61146A2FB222F700A15D10 /* Run SwiftLint */,
 				5ECA6A0F2FBDA13B00BBAFBE /* Run SwiftFormat */,
+				5ECA6A982FC4126C00BBAFBE /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5ECA6AD32FC4231100BBAFBE /* PBXTargetDependency */,
 			);
 			name = CineTracker;
 			packageProductDependencies = (
@@ -848,6 +966,30 @@
 			productName = CineTracker;
 			productReference = 5E6114582FB20FB600A15D10 /* CineTracker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5ECA6AC42FC4230B00BBAFBE /* CineTrackerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ECA6AD62FC4231100BBAFBE /* Build configuration list for PBXNativeTarget "CineTrackerWidgetExtension" */;
+			buildPhases = (
+				5ECA6AC12FC4230B00BBAFBE /* Sources */,
+				5ECA6AC22FC4230B00BBAFBE /* Frameworks */,
+				5ECA6AC32FC4230B00BBAFBE /* Resources */,
+				5ECA6AF02FC4288C00BBAFBE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5ECA6AC82FC4230B00BBAFBE /* CineTrackerWidget */,
+			);
+			name = CineTrackerWidgetExtension;
+			packageProductDependencies = (
+				5ECA6AED2FC4288C00BBAFBE /* RealmSwift */,
+			);
+			productName = CineTrackerWidgetExtension;
+			productReference = 5ECA6AC52FC4230B00BBAFBE /* CineTrackerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -862,6 +1004,9 @@
 					5E61141E2FB20A0400A15D10 = {
 						CreatedOnToolsVersion = 26.4.1;
 					};
+					5ECA6AC42FC4230B00BBAFBE = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 5E61141A2FB20A0400A15D10 /* Build configuration list for PBXProject "CineTracker" */;
@@ -870,6 +1015,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 5E6114162FB20A0400A15D10;
 			minimizedProjectReferenceProxies = 1;
@@ -883,6 +1029,7 @@
 			projectRoot = "";
 			targets = (
 				5E61141E2FB20A0400A15D10 /* CineTracker */,
+				5ECA6AC42FC4230B00BBAFBE /* CineTrackerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -892,10 +1039,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECA6A732FC3FD5500BBAFBE /* Localizable.strings in Resources */,
 				5E6114702FB2CFB400A15D10 /* Secrets.xcconfig in Resources */,
 				5E61145D2FB211F100A15D10 /* Debug.xcconfig in Resources */,
+				5ECA6A782FC404AE00BBAFBE /* LaunchScreen.storyboard in Resources */,
 				5E6114272FB20A0600A15D10 /* Assets.xcassets in Resources */,
 				5E61145F2FB2126A00A15D10 /* Release.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ECA6AC32FC4230B00BBAFBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,12 +1107,14 @@
 				5E6114D42FB5ADD300A15D10 /* SearchMoviesUseCase.swift in Sources */,
 				5E6114EE2FB5CA8300A15D10 /* MainTabView.swift in Sources */,
 				5E61146B2FB22C7B00A15D10 /* Logger.swift in Sources */,
+				5ECA6A5D2FC3EB0400BBAFBE /* ProfileState.swift in Sources */,
 				5E6114E22FB5BBEA00A15D10 /* FetchTopRatedMoviesUseCase.swift in Sources */,
 				5ECA6A0C2FBD93AE00BBAFBE /* GetSavedMovieUseCase.swift in Sources */,
 				5E6114B72FB45CDE00A15D10 /* SavedMovieObject.swift in Sources */,
 				5ECA69C92FBB013800BBAFBE /* RecentSearchesView.swift in Sources */,
 				5ECA69DF2FBC448800BBAFBE /* MovieDetailViewModel.swift in Sources */,
 				5ECA69E22FBC4C3F00BBAFBE /* ParallaxHeader.swift in Sources */,
+				5ECA6A6B2FC3F96300BBAFBE /* LocalizationManager.swift in Sources */,
 				5ECA6A542FBEDAAF00BBAFBE /* CastDetailState.swift in Sources */,
 				5E61146C2FB22CB000A15D10 /* KeychainManager.swift in Sources */,
 				5ECA69CB2FBB054200BBAFBE /* DeepLinkHandler.swift in Sources */,
@@ -973,6 +1131,7 @@
 				5ECA6A492FBEC4E000BBAFBE /* PersonCreditsDTO.swift in Sources */,
 				5ECA69FE2FBD547600BBAFBE /* WatchlistRow.swift in Sources */,
 				5ECA69E42FBC4F7F00BBAFBE /* CastSection.swift in Sources */,
+				5ECA6A612FC3F10300BBAFBE /* CacheManager.swift in Sources */,
 				5ECA6A232FBDC11200BBAFBE /* StatisticsState.swift in Sources */,
 				5E61148A2FB307BC00A15D10 /* RatingView.swift in Sources */,
 				5ECA6A252FBDC13300BBAFBE /* StatisticsViewModel.swift in Sources */,
@@ -993,6 +1152,7 @@
 				5ECA6A042FBD604400BBAFBE /* EmptyWatchlistView.swift in Sources */,
 				5ECA69CF2FBC3B0900BBAFBE /* VideoDTO.swift in Sources */,
 				5E6114E62FB5BD8B00A15D10 /* FetchUpcomingMoviesUseCase.swift in Sources */,
+				5ECA6A652FC3F2F500BBAFBE /* SettingView.swift in Sources */,
 				5ECA6A562FBEDAF300BBAFBE /* CastDetailViewModel.swift in Sources */,
 				5ECA69D52FBC3D7400BBAFBE /* FetchMovieCastUseCase.swift in Sources */,
 				5ECA69DB2FBC403400BBAFBE /* IsInWatchlistUseCase.swift in Sources */,
@@ -1007,6 +1167,7 @@
 				5ECA6A082FBD63EA00BBAFBE /* AddReviewSheet.swift in Sources */,
 				5ECA69EC2FBC5A5100BBAFBE /* MovieDetailView.swift in Sources */,
 				5ECA69E62FBC552C00BBAFBE /* TrailerPlayer.swift in Sources */,
+				5ECA6A5F2FC3EBE300BBAFBE /* ProfileViewModel.swift in Sources */,
 				5E6114822FB2FAE500A15D10 /* LoadingView.swift in Sources */,
 				5ECA6A1D2FBDBF1B00BBAFBE /* GetRatingDistributionUseCase.swift in Sources */,
 				5E6114B92FB4639000A15D10 /* RealmManager.swift in Sources */,
@@ -1017,6 +1178,7 @@
 				5ECA6A582FBEDE0D00BBAFBE /* CastDetailView.swift in Sources */,
 				5E6114252FB20A0400A15D10 /* ContentView.swift in Sources */,
 				5ECA69F72FBCC74B00BBAFBE /* RestoreToWatchlistUseCase.swift in Sources */,
+				5ECA6AB82FC420BB00BBAFBE /* RealmConfig.swift in Sources */,
 				5E6114802FB2E96500A15D10 /* SecondaryButton.swift in Sources */,
 				5ECA6A022FBD5C7600BBAFBE /* FilterChips.swift in Sources */,
 				5ECA6A312FBDC4F800BBAFBE /* RatingDistributionChart.swift in Sources */,
@@ -1070,6 +1232,7 @@
 				5E6114642FB2150000A15D10 /* AppEnvironment.swift in Sources */,
 				5E6114DA2FB5B10500A15D10 /* MarkAsWatchedUseCase.swift in Sources */,
 				5E6114862FB302D600A15D10 /* ErrorView.swift in Sources */,
+				5ECA6A632FC3F25600BBAFBE /* ProfileView.swift in Sources */,
 				5ECA6A432FBEBE6200BBAFBE /* Person.swift in Sources */,
 				5E6114EC2FB5C39000A15D10 /* AppCoordinator.swift in Sources */,
 				5E6114D22FB5ACB700A15D10 /* FetchPopularMovieUseCase.swift in Sources */,
@@ -1078,7 +1241,7 @@
 				5E6114922FB31A9400A15D10 /* Endpoint.swift in Sources */,
 				5E6114942FB320F400A15D10 /* APIClient.swift in Sources */,
 				5E6114BF2FB46A1C00A15D10 /* WatchlistRepositoryImpl.swift in Sources */,
-				5E6114A12FB3390B00A15D10 /* NetworkTestView.swift in Sources */,
+				5ECA6A692FC3F42800BBAFBE /* L10n.swift in Sources */,
 				5ECA6A002FBD58FE00BBAFBE /* WatchlistGridCard.swift in Sources */,
 				5E6114A52FB4219E00A15D10 /* MovieDetail.swift in Sources */,
 				5E61149A2FB32DD300A15D10 /* NetwordMonitor.swift in Sources */,
@@ -1091,7 +1254,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5ECA6AC12FC4230B00BBAFBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ECA6AE12FC424D000BBAFBE /* Logger.swift in Sources */,
+				5ECA6ADF2FC424B000BBAFBE /* SavedMovieRealmMapper.swift in Sources */,
+				5ECA6AF12FC42B4600BBAFBE /* Configuration.swift in Sources */,
+				5ECA6ADA2FC4245600BBAFBE /* SavedMovie.swift in Sources */,
+				5ECA6ADD2FC4248A00BBAFBE /* SavedMovieObject.swift in Sources */,
+				5ECA6ADC2FC4247600BBAFBE /* WatchlistRepository.swift in Sources */,
+				5ECA6ADE2FC4249E00BBAFBE /* WatchlistRepositoryImpl.swift in Sources */,
+				5ECA6AE02FC424C000BBAFBE /* RealmConfig.swift in Sources */,
+				5ECA6ADB2FC4246200BBAFBE /* Movie.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5ECA6AD32FC4231100BBAFBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5ECA6AC42FC4230B00BBAFBE /* CineTrackerWidgetExtension */;
+			targetProxy = 5ECA6AD22FC4231100BBAFBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5ECA6A712FC3FD5400BBAFBE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ECA6A722FC3FD5400BBAFBE /* en */,
+				5ECA6A742FC3FE0300BBAFBE /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5E6114282FB20A0600A15D10 /* Debug */ = {
@@ -1148,6 +1347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1156,6 +1356,7 @@
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1208,6 +1409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1215,6 +1417,7 @@
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1224,6 +1427,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = CineTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 459UU2KUBV;
@@ -1233,7 +1438,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "CineTracker Dev";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1258,6 +1463,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = CineTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 459UU2KUBV;
@@ -1267,7 +1474,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "CineTracker Dev";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1280,6 +1487,70 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5ECA6AD72FC4231100BBAFBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CineTrackerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 459UU2KUBV;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CineTrackerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CineTrackerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codewithcuongnd.CineTracker.CineTrackerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5ECA6AD82FC4231100BBAFBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CineTrackerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 459UU2KUBV;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CineTrackerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CineTrackerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codewithcuongnd.CineTracker.CineTrackerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -1304,6 +1575,15 @@
 			buildConfigurations = (
 				5E61142B2FB20A0600A15D10 /* Debug */,
 				5E61142C2FB20A0600A15D10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ECA6AD62FC4231100BBAFBE /* Build configuration list for PBXNativeTarget "CineTrackerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ECA6AD72FC4231100BBAFBE /* Debug */,
+				5ECA6AD82FC4231100BBAFBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1339,6 +1619,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5ECA69ED2FBC770F00BBAFBE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;
+		};
+		5ECA6AED2FC4288C00BBAFBE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E6114592FB210C200A15D10 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
